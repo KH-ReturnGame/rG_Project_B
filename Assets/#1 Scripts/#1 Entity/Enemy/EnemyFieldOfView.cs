@@ -90,7 +90,7 @@ public class EnemyFieldOfView : MonoBehaviour {
         }
         else
         {
-            testEnemy.RemoveState(EnemyStates.IsDetect);
+            // testEnemy.RemoveState(EnemyStates.IsDetect);
             return null;
         }
     }
