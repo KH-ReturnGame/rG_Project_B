@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4975993657011957926}
   - component: {fileID: 5527108368449254637}
   - component: {fileID: 6829942510056746336}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: kcik_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 576055015557389213}
   - component: {fileID: 2048986376942135593}
   - component: {fileID: 8604187387022277946}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}

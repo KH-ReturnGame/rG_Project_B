@@ -144,6 +144,7 @@ namespace PlayerOwnedStates
         public override void Enter(Player entity)
         {
             Time.timeScale = 0.1f;
+            entity.gameObject.layer = 10;
         }
         public override void Execute(Player entity)
         {
@@ -152,6 +153,7 @@ namespace PlayerOwnedStates
         public override void Exit(Player entity)
         {
             Time.timeScale = 1;
+            entity.gameObject.layer = 8;
         }
     }
 }

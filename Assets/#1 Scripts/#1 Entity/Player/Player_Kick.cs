@@ -17,7 +17,7 @@ public class Player_Kick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.K))
+        if(Input.GetKeyDown(KeyCode.K) && !_player.IsContainState(PlayerStates.IsKicking))
         {
             if(_player.IsContainState(PlayerStates.Cankick))
             {
@@ -48,7 +48,7 @@ public class Player_Kick : MonoBehaviour
     private IEnumerator KickingCoroutine()
     {
         _player.AddState(PlayerStates.IsKicking);
-
+        
         yield return new WaitForSeconds(0.1f);
 
         _player.RemoveState(PlayerStates.IsKicking);
