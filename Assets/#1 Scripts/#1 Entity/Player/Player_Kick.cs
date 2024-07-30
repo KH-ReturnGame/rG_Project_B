@@ -20,6 +20,9 @@ public class Player_Kick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("킥!");
+        }
     }
 }
