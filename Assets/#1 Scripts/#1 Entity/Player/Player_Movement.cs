@@ -12,6 +12,7 @@ public class Player_Movement : MonoBehaviour
     private Player _player;
     private SpriteRenderer spriteRenderer;
     private Collider2D _playerCollider;
+    public Collider2D _playerKickCollider;
     
     //기본 좌우, 점프
     private float _recentDirection = 1;
@@ -61,6 +62,7 @@ public class Player_Movement : MonoBehaviour
         if (_recentDirection != 0)
         {
             spriteRenderer.flipX = _recentDirection != 1;
+            _playerKickCollider.offset = new Vector2 (_recentDirection * 0.5f, -0.25f);
         }
 
 
