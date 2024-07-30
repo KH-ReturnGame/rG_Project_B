@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PlayerOwnedStates
@@ -126,7 +128,7 @@ namespace PlayerOwnedStates
     {
         public override void Enter(Player entity)
         {
-            
+            Time.timeScale = 0.1f;
         }
         public override void Execute(Player entity)
         {
@@ -134,7 +136,7 @@ namespace PlayerOwnedStates
         }
         public override void Exit(Player entity)
         {
-            
+            Time.timeScale = 1;
         }
     }
 }
