@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4975993657011957926}
   - component: {fileID: 5527108368449254637}
+  - component: {fileID: 6829942510056746336}
   m_Layer: 7
   m_Name: kcik_collider
   m_TagString: Untagged
@@ -58,6 +59,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &6829942510056746336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2367979919346220267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5c108f317e01641839cd81d6368d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 3170946791866149607}
 --- !u!1 &2798399964433333812
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +161,6 @@ GameObject:
   - component: {fileID: 3170946791866149625}
   - component: {fileID: 3170946791866149607}
   - component: {fileID: 239621460788207833}
-  - component: {fileID: 1300123248867646158}
   - component: {fileID: 576055015557389213}
   - component: {fileID: 2048986376942135593}
   - component: {fileID: 8604187387022277946}
@@ -282,19 +295,6 @@ MonoBehaviour:
   wallSlideSpeed: 2
   isWallJump: 0
   fallImpactParticleSystem: {fileID: 0}
---- !u!114 &1300123248867646158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3170946791866149626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d5c108f317e01641839cd81d6368d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerKickCollider: {fileID: 5527108368449254637}
 --- !u!96 &576055015557389213
 TrailRenderer:
   serializedVersion: 2

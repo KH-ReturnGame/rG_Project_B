@@ -124,6 +124,21 @@ namespace PlayerOwnedStates
             
         }
     }
+    public class Cankick : State<Player>
+    {
+        public override void Enter(Player entity)
+        {
+
+        }
+        public override void Execute(Player entity)
+        {
+            
+        }
+        public override void Exit(Player entity)
+        {
+
+        }
+    }
     public class IsKicking : State<Player>
     {
         public override void Enter(Player entity)
