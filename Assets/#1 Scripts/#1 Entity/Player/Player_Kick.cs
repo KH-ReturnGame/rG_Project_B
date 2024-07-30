@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Player_Kick : MonoBehaviour
 {
-    // private Rigidbody2D _playerRigidbody;
     [SerializeField]
     private Player _player;
-    // private SpriteRenderer spriteRenderer;
 
     private Collider2D _playerKickCollider;
     // Start is called before the first frame update
     void Start()
     {
-        // _playerRigidbody = GetComponent<Rigidbody2D>();
-        // spriteRenderer = GetComponent<SpriteRenderer>();
         _playerKickCollider = GetComponent<Collider2D>();
     }
 
@@ -26,6 +22,7 @@ public class Player_Kick : MonoBehaviour
             if(_player.IsContainState(PlayerStates.Cankick))
             {
                 Debug.Log("진순락찔캣맘독도킥!");
+                StartCoroutine(KickingCoroutine());
             }
             else if(!_player.IsContainState(PlayerStates.Cankick))
             {
@@ -47,5 +44,13 @@ public class Player_Kick : MonoBehaviour
         {
             _player.RemoveState(PlayerStates.Cankick);
         }
+    }
+    private IEnumerator KickingCoroutine()
+    {
+        _player.AddState(PlayerStates.IsKicking);
+
+        yield return new WaitForSeconds(0.1f);
+
+        _player.RemoveState(PlayerStates.IsKicking);
     }
 }
