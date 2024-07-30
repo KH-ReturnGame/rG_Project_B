@@ -36,6 +36,11 @@ public class Player_Kick : MonoBehaviour
         if(collision.CompareTag("enemy"))
         {
             _player.AddState(PlayerStates.Cankick);
+            if(_player.IsContainState(PlayerStates.IsKicking))
+            {
+                Rigidbody2D rb = collision.GameObject.GetComponent
+                // collision.GameObject.Rigidbody2D.AddForce(_player.spriteRenderer.flipX * 300, ForceMode.Impulse);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D collision)
