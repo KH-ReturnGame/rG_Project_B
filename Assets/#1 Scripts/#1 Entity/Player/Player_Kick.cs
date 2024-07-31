@@ -21,7 +21,7 @@ public class Player_Kick : MonoBehaviour
         {
             if(_player.IsContainState(PlayerStates.Cankick))
             {
-                Debug.Log("진순락찔캣맘독도킥!");
+                Debug.Log("독도킥!");
                 StartCoroutine(KickingCoroutine());
             }
             else if(!_player.IsContainState(PlayerStates.Cankick))
@@ -39,7 +39,10 @@ public class Player_Kick : MonoBehaviour
             if(_player.IsContainState(PlayerStates.IsKicking))
             {
                 Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
-                rb.AddForce(new Vector2(0,0), ForceMode2D.Impulse);
+                Transform tf = collision.gameObject.GetComponent<Transform>();
+                rb.AddForce(tf.forward * 300, ForceMode2D.Impulse);
+                Debug.Log("진순락찔캣맘독도킥");
+                _player.RemoveState(PlayerStates.IsKicking);
             }
         }
     }
@@ -56,6 +59,9 @@ public class Player_Kick : MonoBehaviour
         
         yield return new WaitForSeconds(0.1f);
 
-        _player.RemoveState(PlayerStates.IsKicking);
+        if(_player.IsContainState(PlayerStates.IsKicking))
+        {
+            _player.RemoveState(PlayerStates.IsKicking);
+        }
     }
 }
