@@ -27,7 +27,7 @@ public class Enemy_Dead : MonoBehaviour
         {
             testEnemy.AddState(EnemyStates.IsDie);
         }
-        else
+        else if(testEnemy.GetHp() > 0 && !testEnemy.IsContainState(EnemyStates.IsKicked))
         {
             testEnemy.RemoveState(EnemyStates.IsDie);
             rigid.velocity = new Vector2(-3, rigid.velocity.y);
@@ -41,7 +41,6 @@ public class Enemy_Dead : MonoBehaviour
             Debug.Log("Collison");
             testEnemy.TakeDamage(10);
             rigid.AddForce(new Vector2(10,5), ForceMode2D.Impulse);
-
         }
     }
 
