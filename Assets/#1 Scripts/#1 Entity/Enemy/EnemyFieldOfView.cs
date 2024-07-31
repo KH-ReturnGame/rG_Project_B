@@ -78,7 +78,7 @@ public class EnemyFieldOfView : MonoBehaviour {
                     Debug.Log("감지!");
                     hitedTargetContainer.Add(hitedTarget);
                     Debug.DrawLine(originPos, targetPos, Color.red);
-                    // testEnemy.AddState(testEnemy._states[(int)EnemyStates.IsDetect]);
+                    testEnemy.AddState(EnemyStates.IsDetect);
                 }
             }
         }
@@ -88,9 +88,13 @@ public class EnemyFieldOfView : MonoBehaviour {
             testEnemy.AddState(EnemyStates.IsDetect);
             return hitedTargetContainer.ToArray();
         }
+        else if(hitedTargetContainer.Count <= 0 && testEnemy.IsContainState(EnemyStates.IsDetect))
+        {
+            testEnemy.RemoveState(EnemyStates.IsDetect);
+            return null;
+        }
         else
         {
-            // testEnemy.RemoveState(EnemyStates.IsDetect);
             return null;
         }
     }

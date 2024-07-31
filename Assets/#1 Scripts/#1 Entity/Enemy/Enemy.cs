@@ -19,7 +19,6 @@ public enum EnemyStates
     IsDetect,
     IsDie,
     IsCool,
-    // stun은 유니크 몹과 일반 몹을 나눠서 할것
     // 플레이어가 원거리 몹 근처에 얼마나 있었는지를 상태에 구별해서 추가할 것
 }
 

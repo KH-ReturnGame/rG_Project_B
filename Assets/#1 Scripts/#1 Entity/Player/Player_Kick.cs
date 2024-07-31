@@ -38,8 +38,8 @@ public class Player_Kick : MonoBehaviour
             _player.AddState(PlayerStates.Cankick);
             if(_player.IsContainState(PlayerStates.IsKicking))
             {
-                Rigidbody2D rb = collision.GameObject.GetComponent
-                // collision.GameObject.Rigidbody2D.AddForce(_player.spriteRenderer.flipX * 300, ForceMode.Impulse);
+                Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+                rb.AddForce(new Vector2(0,0), ForceMode2D.Impulse);
             }
         }
     }
