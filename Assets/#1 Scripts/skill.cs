@@ -11,7 +11,7 @@ public class skill : move
     {
         if (knuck)
         {
-            transform.Translate(vec);
+            transform.position = vec;
         }
     }
 

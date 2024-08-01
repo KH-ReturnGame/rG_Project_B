@@ -16,27 +16,35 @@ public class move : MonoBehaviour
     }
     void Update()
     {
-        inputVec.x = Input.GetAxisRaw("Horizontal");
-        inputVec.y = Input.GetAxisRaw("Vertical");
         skilluse();
     }
     void FixedUpdate()
     {
-        if (knuck)
+        inputVec.x = Input.GetAxisRaw("Horizontal");
+        inputVec.y = Input.GetAxisRaw("Vertical");
+        Vector2 HorizontalVec = new Vector2(rigid.position.x + inputVec.x, rigid.position.y);
+        Debug.DrawRay(HorizontalVec, Vector2.down, new Color(0, 1, 0));
+        RaycastHit2D HrayHit = Physics2D.Raycast(HorizontalVec, Vector2.down, 1, LayerMask.GetMask("platform"));
+        Vector2 VerticalVec = new Vector2(rigid.position.x , rigid.position.y + inputVec.y);
+        Debug.DrawRay(VerticalVec, Vector2.left, new Color(0, 1, 0));
+        RaycastHit2D VrayHit = Physics2D.Raycast(VerticalVec, Vector2.left, 1, LayerMask.GetMask("platform"));
+        if (HrayHit.collider == null)
         {
-            Invoke("movement", 2);
+            inputVec.x = 0;
         }
-        else
+        if (VrayHit.collider == null)
         {
-            movement();
+            inputVec.y = 0;
         }
-        
+        Vector2 nextvec = inputVec.normalized * speed * Time.fixedDeltaTime;
+        rigid.MovePosition(rigid.position + nextvec);
+        Debug.Log(inputVec.x);
+        movement();
     }
 
     void movement()
     {
-        Vector2 nextvec = inputVec.normalized * speed * Time.fixedDeltaTime;
-        rigid.MovePosition(rigid.position + nextvec);
+        
     }
     void skilluse()
     {
