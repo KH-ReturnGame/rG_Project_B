@@ -1,3 +1,4 @@
+//리턴게임 B (땃쥐 + 대쉬)
 using System.Collections;
 using UnityEngine;
 
@@ -21,9 +22,9 @@ public class Player_Movement : MonoBehaviour
     public float _jumpForce = 12.00f;    
     
     //대시
-    private float _dashPower = 19.20f;     // 대시 힘 관리
+    private float _dashPower = 30f;     // 대시 힘 관리
     private float _dashTime = 0.2f;     // 대시 작동 시간 
-    private float _dashCooldown = 1f;   // 대시 쿨타임
+    private float _dashCooldown = 0.3f;   // 대시 쿨타임
     private float originalGravity;      // 플레이어 원래 중력
     [SerializeField] private TrailRenderer tr;
 
@@ -57,6 +58,7 @@ public class Player_Movement : MonoBehaviour
         {
             _recentDirection = _movementInputDirection;
         }
+    
         // 방향전환
         if (_recentDirection != 0)
         {
@@ -182,7 +184,6 @@ public class Player_Movement : MonoBehaviour
         _player.RemoveState(PlayerStates.CanDash);
         _player.AddState(PlayerStates.IsDashing);
         _playerRigidbody.gravityScale = 0f; // 중력 0으로 바꿔 대시중에 영향 없게 설정 
-        _playerRigidbody.velocity = Vector2.zero;
         _playerRigidbody.velocity = new Vector2(_recentDirection * _dashPower, 0);      // 대시 적용
         tr.emitting = true;     // 이펙트 적용
         yield return new WaitForSeconds(_dashTime);

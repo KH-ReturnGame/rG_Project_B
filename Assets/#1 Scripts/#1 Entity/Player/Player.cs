@@ -16,6 +16,7 @@ public enum PlayerStates
     //
     IsMove,
     IsFallAttacking,
+    
 
 }
 
@@ -25,6 +26,7 @@ public enum PlayerStates
 /// <returns></returns>
 public class Player : Entity
 {
+    float PlayerHP = 100f;
     //플레이어가 가질 수 있는 모든 상태 개수
     public static int state_count = Enum.GetValues(typeof(PlayerStates)).Length;
     //플레이어가 가질 수 있는 모든 상태들 배열
@@ -54,7 +56,9 @@ public class Player : Entity
         _stateManager = new StateManager<Player>();
         _stateManager.Setup(this,state_count,_states);
     }
-    
+    private void Awake () {
+        Invoke("hp", 0.01f);
+    }
     //부모의 추상 메소드를 구현, Entity_Manager의 Update에서 반복함
     public override void Updated()
     {
@@ -79,5 +83,15 @@ public class Player : Entity
     public bool IsContainState(PlayerStates ps)
     {
         return _stateManager._currentState.Contains(_states[(int)ps]);
+    }
+    //체력 감소
+    public void hp() {
+        if(PlayerHP <= 0){
+            PlayerHP = 0;
+        }
+        
+        Invoke("hp", 0.01f);
+        PlayerHP = PlayerHP - 0.1f;
+        Debug.Log(PlayerHP);
     }
 }
