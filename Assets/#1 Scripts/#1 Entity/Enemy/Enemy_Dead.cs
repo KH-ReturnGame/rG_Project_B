@@ -36,8 +36,10 @@ public class Enemy_Dead : MonoBehaviour
     {
         if(collision.tag == "trap")
         {
-            testEnemy.TakeDamage(10);
-            rigid.AddForce(new Vector2(10,5), ForceMode2D.Impulse);
+            // testEnemy.TakeDamage(10);
+            // 죽음 사운드 재생
+            // 스프라이트 변경
+            rigid.velocity = new Vector2(0, 0);
         }
     }
 
