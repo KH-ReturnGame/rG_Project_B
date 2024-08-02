@@ -43,7 +43,7 @@ public class Player_Kick : MonoBehaviour
                 Enemy _enemy = collision.gameObject.GetComponent<Enemy>();
                 Vector2 direction = (tf.position - transform.position).normalized;
 
-                rb.AddForce(direction * 300, ForceMode2D.Impulse);
+                rb.AddForce(direction * 30, ForceMode2D.Impulse);
                 Debug.Log("진순락찔캣맘독도킥");
                 _enemy.AddState(EnemyStates.IsKicked);
                 _player.RemoveState(PlayerStates.IsKicking);
