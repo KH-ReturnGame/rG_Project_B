@@ -40,6 +40,7 @@ public class Enemy_Dead : MonoBehaviour
             // 죽음 사운드 재생
             // 스프라이트 변경
             rigid.velocity = new Vector2(0, 0);
+            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 
