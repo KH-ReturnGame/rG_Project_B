@@ -10,12 +10,10 @@ public class Enemy_Dead : MonoBehaviour
     private Enemy testEnemy;
     void Awake()
     {
-
         testEnemy = GetComponent<Enemy>();
         rigid = GetComponent<Rigidbody2D>();
 
         testEnemy.Setup(testEnemy._maxHp);
-
     }
 
 
@@ -34,11 +32,10 @@ public class Enemy_Dead : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.name == "Triangle")
+        if(collision.tag == "trap")
         {
-            Debug.Log("Collison");
             testEnemy.TakeDamage(10);
             rigid.AddForce(new Vector2(10,5), ForceMode2D.Impulse);
         }
