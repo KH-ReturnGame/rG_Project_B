@@ -9,6 +9,7 @@ public class move : MonoBehaviour
     float speed = 3;
     Rigidbody2D rigid;
     public bool knuck = false;
+    public float x, y;
 
     void Awake()
     {
@@ -17,15 +18,23 @@ public class move : MonoBehaviour
     void Update()
     {
         skilluse();
+        x = rigid.position.x;
+        y = rigid.position.y;
     }
     void FixedUpdate()
+    {
+        
+        movement();
+    }
+
+    void movement()
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
         Vector2 HorizontalVec = new Vector2(rigid.position.x + inputVec.x, rigid.position.y);
         Debug.DrawRay(HorizontalVec, Vector2.down, new Color(0, 1, 0));
         RaycastHit2D HrayHit = Physics2D.Raycast(HorizontalVec, Vector2.down, 1, LayerMask.GetMask("platform"));
-        Vector2 VerticalVec = new Vector2(rigid.position.x , rigid.position.y + inputVec.y);
+        Vector2 VerticalVec = new Vector2(rigid.position.x, rigid.position.y + inputVec.y);
         Debug.DrawRay(VerticalVec, Vector2.left, new Color(0, 1, 0));
         RaycastHit2D VrayHit = Physics2D.Raycast(VerticalVec, Vector2.left, 1, LayerMask.GetMask("platform"));
         if (HrayHit.collider == null)
@@ -39,12 +48,6 @@ public class move : MonoBehaviour
         Vector2 nextvec = inputVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextvec);
         Debug.Log(inputVec.x);
-        movement();
-    }
-
-    void movement()
-    {
-        
     }
     void skilluse()
     {

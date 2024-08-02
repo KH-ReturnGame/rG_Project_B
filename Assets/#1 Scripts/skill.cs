@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class skill : move
+public class skill : MonoBehaviour
 {
-    Vector2 vec = new Vector2(0, 2);
+    public Vector2 vec = new Vector2(0, 2);
+    public GameObject player;
 
     // Update is called once per frame
     void Update()
     {
-        if (knuck)
-        {
-            transform.position = vec;
-        }
     }
-
+    void FixedUpdate()
+    {
+        transform.position = player.GetComponent<Transform>().position;
+    }
 
 }
