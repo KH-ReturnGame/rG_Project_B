@@ -32,15 +32,16 @@ public class Enemy_Dead : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.tag == "trap")
+        if(collision.gameObject.tag == "trap")
         {
             // testEnemy.TakeDamage(10);
             // 죽음 사운드 재생
             // 스프라이트 변경
             rigid.velocity = new Vector2(0, 0);
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+            Debug.Log("으악 시발 원통하다");
         }
     }
 
