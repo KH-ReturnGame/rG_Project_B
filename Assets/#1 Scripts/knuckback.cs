@@ -9,7 +9,7 @@ public class knuckback : MonoBehaviour
     float MyX, MyY;
     float OtherX, OtherY;
     float X, Y;
-    int knuckbackpower = 10;
+    float knuckbackpower = 100;
     int dashdirection;//1위2왼3아래4오른
     void Awake()
     {
@@ -40,12 +40,32 @@ public class knuckback : MonoBehaviour
             dashdirection = 1;
         }
         //Debug.Log("direction: " + dashdirection);
+        Debug.Log(dashdirection);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "ground")
         {
-            Debug.Log("what the");
+            if (dashdirection == 1)
+            {
+                rigid.AddForce(Vector2.down * knuckbackpower, ForceMode2D.Impulse);
+                Debug.Log("asdf");
+            }
+            else if (dashdirection == 2)
+            {
+                rigid.AddForce(Vector2.right * knuckbackpower, ForceMode2D.Impulse);
+                Debug.Log("asdf");
+            }
+            else if (dashdirection == 3)
+            {
+                rigid.AddForce(Vector2.up * knuckbackpower, ForceMode2D.Impulse);
+                Debug.Log("asdf");
+            }
+            else if (dashdirection == 4)
+            {
+                rigid.AddForce(Vector2.left * knuckbackpower, ForceMode2D.Impulse);
+                Debug.Log("asdf");
+            }
         }
     }
 }

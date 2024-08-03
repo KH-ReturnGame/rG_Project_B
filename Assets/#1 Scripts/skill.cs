@@ -10,9 +10,13 @@ public class skill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(Keycode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
-            
+            transform.localScale = new Vector2(2, 2);
+        }
+        else
+        {
+            transform.localScale = new Vector2(0.1f, 0.1f);
         }
     }
     void FixedUpdate()
