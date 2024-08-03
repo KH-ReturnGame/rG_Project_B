@@ -10,6 +10,10 @@ public class skill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(Keycode.Q))
+        {
+            
+        }
     }
     void FixedUpdate()
     {

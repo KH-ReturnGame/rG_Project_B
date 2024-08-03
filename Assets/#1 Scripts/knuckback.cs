@@ -5,8 +5,10 @@ using UnityEngine;
 public class knuckback : MonoBehaviour
 {
     Rigidbody2D rigid;
-    int MyX, MyY;
-    int OtherX, OtherY;
+    public GameObject player;
+    float MyX, MyY;
+    float OtherX, OtherY;
+    float X, Y;
     int knuckbackpower = 10;
     int dashdirection;//1À§2¿Þ3¾Æ·¡4¿À¸¥
     void Awake()
@@ -19,17 +21,31 @@ public class knuckback : MonoBehaviour
         MyY = rigid.position.y;
         OtherX = player.GetComponent<Transform>().position.x;
         OtherY = player.GetComponent<Transform>().position.y;
-        
-        if ((OtherX - MyX)-(OtherX - MyY)>=0)
+        X = MyX - OtherX;
+        Y = MyY - OtherY;
+        if (Mathf.Abs(X) - Mathf.Abs(Y) >= 0 && X >= 0)
         {
             dashdirection = 2;
         }
+        else if (Mathf.Abs(X) - Mathf.Abs(Y) >= 0 && X < 0)
+        {
+            dashdirection = 4;
+        }
+        else if (Mathf.Abs(X) - Mathf.Abs(Y) < 0 && Y >= 0)
+        {
+            dashdirection = 3;
+        }
+        else if (Mathf.Abs(X) - Mathf.Abs(Y) < 0 && Y < 0)
+        {
+            dashdirection = 1;
+        }
+        //Debug.Log("direction: " + dashdirection);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "ground")
         {
-            Debug.Log("³Ë¹é!");
+            Debug.Log("what the");
         }
     }
 }
