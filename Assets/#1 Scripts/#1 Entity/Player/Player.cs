@@ -18,6 +18,7 @@ public enum PlayerStates
     IsFallAttacking,
     Cankick,
     IsKicking,
+    IsDie,
 
 }
 
@@ -54,6 +55,7 @@ public class Player : Entity
         _states[(int)PlayerStates.IsFallAttacking] = new PlayerOwnedStates.IsFallAttacking();
         _states[(int)PlayerStates.Cankick] = new PlayerOwnedStates.Cankick();
         _states[(int)PlayerStates.IsKicking] = new PlayerOwnedStates.IsKicking();
+        _states[(int)PlayerStates.IsDie] = new PlayerOwnedStates.IsDie();
 
         _stateManager = new StateManager<Player>();
         _stateManager.Setup(this,state_count,_states);

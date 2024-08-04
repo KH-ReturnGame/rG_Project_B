@@ -41,7 +41,18 @@ public class Enemy_Dead : MonoBehaviour
             // 스프라이트 변경
             rigid.velocity = new Vector2(0, 0);
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+            testEnemy.AddState(EnemyStates.IsDie);
             Debug.Log("으악 시발 원통하다");
+        }
+        else if(collision.gameObject.tag == "wall")
+        {
+            // testEnemy.TakeDamage(10);
+            // 죽음 사운드 재생
+            // 스프라이트 변경
+            rigid.velocity = new Vector2(0, rigid.velocity.y);
+            rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+            testEnemy.AddState(EnemyStates.IsStun);
+            Debug.Log("으악 시발 벽이다");
         }
     }
 

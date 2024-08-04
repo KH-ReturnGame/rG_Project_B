@@ -156,5 +156,20 @@ namespace PlayerOwnedStates
             entity.gameObject.layer = 8;
         }
     }
+    public class IsDie : State<Player>
+    {
+        public override void Enter(Player entity)
+        {
+
+        }
+        public override void Execute(Player entity)
+        {
+            
+        }
+        public override void Exit(Player entity)
+        {
+
+        }
+    }
 }
 

@@ -23,6 +23,11 @@ public class Player_Collide : MonoBehaviour
             _player.AddState(PlayerStates.IsGround);
             Debug.Log("바닥 닿음");
         }
+        if (other.CompareTag("trap")&&name == "ground_check") 
+        {
+            _player.AddState(PlayerStates.IsDie);
+            Debug.Log("플레이어 사망");
+        }
         else if (other.CompareTag("wall")&&name == "wall_check")
         {
             _player.AddState(PlayerStates.IsWall);
