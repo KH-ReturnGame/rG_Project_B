@@ -142,7 +142,6 @@ namespace EnemyOwnedStates
         public override void Enter(Enemy entity)
         {
             Debug.Log("IsDie Enter");
-            //��ü ��ȣ�ۿ� �����Ÿ� ����� �־�� �� ��
 
         }
         public override void Execute(Enemy entity)

@@ -27,7 +27,7 @@ public class Enemy_Dead : MonoBehaviour
         }
         else if(testEnemy.GetHp() > 0 && !testEnemy.IsContainState(EnemyStates.IsKicked))
         {
-            testEnemy.RemoveState(EnemyStates.IsDie);
+            // testEnemy.RemoveState(EnemyStates.IsDie);
             rigid.velocity = new Vector2(-3, rigid.velocity.y);
         }
     }
@@ -39,6 +39,7 @@ public class Enemy_Dead : MonoBehaviour
             // testEnemy.TakeDamage(10);
             // 죽음 사운드 재생
             // 스프라이트 변경
+            testEnemy.Setup(0);
             rigid.velocity = new Vector2(0, 0);
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;
             testEnemy.AddState(EnemyStates.IsDie);
