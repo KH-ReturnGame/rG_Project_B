@@ -32,7 +32,7 @@ public class Enemy_Dead : MonoBehaviour
         else
         {
             testEnemy.RemoveState(EnemyStates.IsDie);
-            rigid.velocity = new Vector2(-3, rigid.velocity.y);
+            //rigid.velocity = new Vector2(-3, rigid.velocity.y);
             // ����ٰ� ���ʹ� �ٸ� �Լ� ���� ���Ѿ� ���� ������
         }
     }
