@@ -16,6 +16,7 @@ public enum PlayerStates
     //
     IsMove,
     IsFallAttacking,
+    IsDragon,
 
 }
 
@@ -50,6 +51,7 @@ public class Player : Entity
         _states[(int)PlayerStates.IsWall] = new PlayerOwnedStates.IsWall();
         _states[(int)PlayerStates.IsMove] = new PlayerOwnedStates.IsMove();
         _states[(int)PlayerStates.IsFallAttacking] = new PlayerOwnedStates.IsFallAttacking();
+        _states[(int)PlayerStates.IsDragon] = new PlayerOwnedStates.IsDragon();
 
         _stateManager = new StateManager<Player>();
         _stateManager.Setup(this,state_count,_states);

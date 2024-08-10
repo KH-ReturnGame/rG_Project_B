@@ -71,7 +71,6 @@ public class Player_Movement : MonoBehaviour
             Jump();
         }
         
-        
         // 대시 실행 --------------------------------------------------------------------------------
         if (!_player.IsContainState(PlayerStates.IsDashing) && 
             Input.GetKeyDown(KeyCode.LeftShift) && 
@@ -112,7 +111,7 @@ public class Player_Movement : MonoBehaviour
         {
             StartCoroutine(DownJump());
             _playerRigidbody.AddForce(Vector2.down * _jumpForce, ForceMode2D.Impulse);
-            Debug.Log("HojinByulGok");
+            Debug.Log("호진별곡");
         }
         // 낙하 공격 실행 ------------------------------------------------------------------------------
         if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.Mouse0) && !_player.IsContainState(PlayerStates.IsFallAttacking) && _playerCollider.enabled)
