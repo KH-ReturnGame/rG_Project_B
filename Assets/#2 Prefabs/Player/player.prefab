@@ -90,9 +90,9 @@ GameObject:
   - component: {fileID: 3170946791866149625}
   - component: {fileID: 3170946791866149607}
   - component: {fileID: 239621460788207833}
+  - component: {fileID: 3117824538777206150}
   - component: {fileID: 576055015557389213}
   - component: {fileID: 2048986376942135593}
-  - component: {fileID: 3117824538777206150}
   m_Layer: 7
   m_Name: player
   m_TagString: Player
@@ -248,6 +248,18 @@ MonoBehaviour:
   wallSlideSpeed: 2
   isWallJump: 0
   fallImpactParticleSystem: {fileID: 0}
+--- !u!114 &3117824538777206150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170946791866149626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326229acc1bc4a74f90706a47a849174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!96 &576055015557389213
 TrailRenderer:
   serializedVersion: 2
@@ -403,18 +415,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3117824538777206150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3170946791866149626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326229acc1bc4a74f90706a47a849174, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3848058987831996890
 GameObject:
   m_ObjectHideFlags: 0
