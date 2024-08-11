@@ -127,7 +127,6 @@ namespace PlayerOwnedStates
         public override void Enter(Player entity)
         {
             Time.timeScale = 0.1f;
-            Debug.Log("DragonEnter");
         }
         public override void Execute(Player entity)
         {
@@ -136,7 +135,6 @@ namespace PlayerOwnedStates
         public override void Exit(Player entity)
         {
             Time.timeScale = 1;
-            Debug.Log("DragonExit");
         }
     }
 }

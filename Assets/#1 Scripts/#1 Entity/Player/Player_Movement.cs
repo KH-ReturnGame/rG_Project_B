@@ -36,6 +36,8 @@ public class Player_Movement : MonoBehaviour
     private float _fallAttackSpeed = 30f; // 낙하 공격 
     public ParticleSystem fallImpactParticleSystem;
     
+    //공격 대쉬
+    public GameObject WhereToDash;
 
     //제일 처음 호출
     void Start()
@@ -147,10 +149,12 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl) && !_player.IsContainState(PlayerStates.IsDragon))
         {
             _player.AddState(PlayerStates.IsDragon);
+            WhereToDash.SetActive(true);
         }
         else if(Input.GetKeyUp(KeyCode.LeftControl) && _player.IsContainState(PlayerStates.IsDragon))
         {
             _player.RemoveState(PlayerStates.IsDragon);
+            WhereToDash.SetActive(false);
         }
     }
 

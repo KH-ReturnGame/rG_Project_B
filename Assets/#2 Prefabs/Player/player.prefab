@@ -249,6 +249,7 @@ MonoBehaviour:
   wallSlideSpeed: 2
   isWallJump: 0
   fallImpactParticleSystem: {fileID: 0}
+  WhereToDash: {fileID: 5411471800460030621}
 --- !u!114 &3117824538777206150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6280438131326635800
 Transform:
   m_ObjectHideFlags: 0
