@@ -143,6 +143,15 @@ public class Player_Movement : MonoBehaviour
                 //TriggerImpactEffect();
             }
         }
+
+        if (Input.GetKey(KeyCode.LeftControl) && !_player.IsContainState(PlayerStates.IsDragon))
+        {
+            _player.AddState(PlayerStates.IsDragon);
+        }
+        else if(Input.GetKeyUp(KeyCode.LeftControl) && _player.IsContainState(PlayerStates.IsDragon))
+        {
+            _player.RemoveState(PlayerStates.IsDragon);
+        }
     }
 
     
