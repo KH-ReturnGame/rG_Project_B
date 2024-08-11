@@ -661,6 +661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerfilp: {fileID: 3170946791866149627}
+  _playerTransform: {fileID: 3170946791866149624}
+  radius: 3
 --- !u!1 &7087423049322124485
 GameObject:
   m_ObjectHideFlags: 0
