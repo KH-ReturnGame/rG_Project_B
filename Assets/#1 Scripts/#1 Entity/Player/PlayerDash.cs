@@ -10,17 +10,20 @@ public class PlayerDash : MonoBehaviour
     private LineRenderer lineRenderer;
     public Player_Movement _playerMovement;
     public float radius;
+    private bool isCanDash;
     void Start()
     {
         spriteRenderer = this.GetComponent<SpriteRenderer>();
 
         lineRenderer = this.GetComponent<LineRenderer>();
-        lineRenderer.startWidth = 0.05f; // 선의 시작 두께
-        lineRenderer.endWidth = 0.05f; // 선의 끝 두께
+        lineRenderer.startWidth = 0.1f; // 선의 시작 두께
+        lineRenderer.endWidth = 0.1f; // 선의 끝 두께
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.startColor = Color.cyan; // 선의 시작 색상
         lineRenderer.endColor = Color.cyan; // 선의 끝 색상
         lineRenderer.positionCount = 2; // 두 점을 연결
+
+        isCanDash = true;
     }
     void Update()
     {
@@ -53,7 +56,23 @@ public class PlayerDash : MonoBehaviour
         lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
         lineRenderer.SetPosition(1, transform.position); // 두 번째 점 (팔로우 오브젝트 위치)
 
-        if(Input.GetMouseButtonDown(0))
+        RaycastHit2D hit = Physics2D.Raycast(_playerTransform.position, transform.position, distance);
+        Debug.DrawLine(_playerTransform.position, transform.position, Color.red);
+        if (hit.collider.CompareTag("ground"))
+        {
+            isCanDash = false;
+            spriteRenderer.enabled = false;
+            lineRenderer.enabled = false;
+            Debug.Log("Tlqkfffffffff");
+        }
+        else
+        {
+            isCanDash = true;
+            spriteRenderer.enabled = true;
+            lineRenderer.enabled = true;
+        }
+
+        if(Input.GetMouseButtonDown(0) && isCanDash)
         {
             _playerMovement.DragonDash();
         }
