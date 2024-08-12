@@ -4,22 +4,57 @@ using UnityEngine;
 
 public class PlayerDash : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private Rigidbody2D _playerRigidbody;
-    private Player _player;
+    public SpriteRenderer _playerfilp;
+    public Transform _playerTransform;
     private SpriteRenderer spriteRenderer;
-    private Collider2D _playerCollider;
+    private LineRenderer lineRenderer;
+    public float radius;
     void Start()
     {
-        _playerRigidbody = GetComponent<Rigidbody2D>();
-        _player = GetComponent<Player>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        _playerCollider = GetComponent<Collider2D>();
-    }
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
 
-    // Update is called once per frame
+        lineRenderer = this.GetComponent<LineRenderer>();
+        lineRenderer.startWidth = 0.05f; // 선의 시작 두께
+        lineRenderer.endWidth = 0.05f; // 선의 끝 두께
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.startColor = Color.cyan; // 선의 시작 색상
+        lineRenderer.endColor = Color.cyan; // 선의 끝 색상
+        lineRenderer.positionCount = 2; // 두 점을 연결
+    }
     void Update()
     {
-        
+        // 마우스의 월드 좌표를 얻어옵니다.
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        // Z 축의 값을 고정합니다. 2D이기 때문에 Z 축은 0으로 설정합니다.
+        mousePosition.z = 0;
+
+        // 플레이어 플립이랑 방향 똑같이
+        spriteRenderer.flipX = _playerfilp.flipX;
+
+         // 플레이어와의 거리 계산
+        Vector3 direction = mousePosition - _playerTransform.position;
+        float distance = direction.magnitude;
+
+        // 최대 거리를 초과할 경우
+        if (distance > radius)
+        {
+            // 최대 거리 내에서 마우스를 따라가도록 위치를 조정
+            direction = direction.normalized; // 방향 벡터를 정규화
+            transform.position = _playerTransform.position + direction * radius;
+        }
+        else
+        {
+            // 최대 거리를 초과하지 않으면 마우스를 그대로 따라갑니다.
+            transform.position = mousePosition;
+        }
+
+        lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
+        lineRenderer.SetPosition(1, transform.position); // 두 번째 점 (팔로우 오브젝트 위치)
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("내 드릴은 하늘을 뚫는 드릴이다");
+        }
     }
 }
