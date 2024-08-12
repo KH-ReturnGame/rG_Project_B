@@ -56,9 +56,18 @@ public class PlayerDash : MonoBehaviour
         lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
         lineRenderer.SetPosition(1, transform.position); // 두 번째 점 (팔로우 오브젝트 위치)
 
-        RaycastHit2D hit = Physics2D.Raycast(_playerTransform.position, transform.position, distance);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(_playerTransform.position, transform.position, distance);
         Debug.DrawLine(_playerTransform.position, transform.position, Color.red);
-        if (hit.collider.CompareTag("ground"))
+        
+        List<GameObject> hitObjects = new List<GameObject>();
+        foreach (var hit in hits)
+        {
+            hitObjects.Add(hit.collider.gameObject);
+        }
+
+        // 리스트에 ground 태그를 가진 오브젝트가 있는지 확인
+        bool groundHit = hitObjects.Exists(obj => obj.CompareTag("ground"));
+        if (groundHit)
         {
             isCanDash = false;
             spriteRenderer.enabled = false;
