@@ -8,6 +8,7 @@ public class PlayerDash : MonoBehaviour
     public Transform _playerTransform;
     private SpriteRenderer spriteRenderer;
     private LineRenderer lineRenderer;
+    public Player_Movement _playerMovement;
     public float radius;
     void Start()
     {
@@ -54,7 +55,7 @@ public class PlayerDash : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("내 드릴은 하늘을 뚫는 드릴이다");
+            _playerMovement.DragonDash();
         }
     }
 }

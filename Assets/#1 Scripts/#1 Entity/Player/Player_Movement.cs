@@ -232,5 +232,10 @@ public class Player_Movement : MonoBehaviour
         yield return new WaitForSeconds(delay);
         particleSystem.Stop();
     }
+
+    public void DragonDash() // 대쉬하는거
+    {
+        transform.position = new Vector2(WhereToDash.transform.position.x, WhereToDash.transform.position.y);
+    }
 }
 

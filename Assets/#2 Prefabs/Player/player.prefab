@@ -750,6 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerfilp: {fileID: 3170946791866149627}
   _playerTransform: {fileID: 3170946791866149624}
+  _playerMovement: {fileID: 239621460788207833}
   radius: 3.5
 --- !u!1 &7087423049322124485
 GameObject:
