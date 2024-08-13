@@ -562,7 +562,6 @@ GameObject:
   - component: {fileID: 6280438131326635800}
   - component: {fileID: 2551392442240400700}
   - component: {fileID: 2577073229909666896}
-  - component: {fileID: 4823033820615740673}
   - component: {fileID: 5124290567767539192}
   m_Layer: 0
   m_Name: player_where_to_dash
@@ -737,32 +736,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!61 &4823033820615740673
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411471800460030621}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6136364, y: 1.3863636}
-    newSize: {x: 1.6136364, y: 1.3863636}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6136364, y: 1.3863636}
-  m_EdgeRadius: 0
 --- !u!114 &5124290567767539192
 MonoBehaviour:
   m_ObjectHideFlags: 0
