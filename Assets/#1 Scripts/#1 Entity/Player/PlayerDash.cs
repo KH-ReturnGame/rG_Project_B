@@ -56,7 +56,7 @@ public class PlayerDash : MonoBehaviour
         lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
         lineRenderer.SetPosition(1, transform.position); // 두 번째 점 (팔로우 오브젝트 위치)
 
-        RaycastHit2D[] hits = Physics2D.RaycastAll(_playerTransform.position, (transform.position - _playerTransform.position).normalized, distance);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(_playerTransform.position, (transform.position - _playerTransform.position).normalized, distance * 1.25f);
         Debug.DrawLine(_playerTransform.position, transform.position, Color.red);
         
         List<GameObject> hitObjects = new List<GameObject>();
