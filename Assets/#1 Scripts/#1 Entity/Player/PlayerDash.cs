@@ -67,10 +67,8 @@ public class PlayerDash : MonoBehaviour
 
         // 리스트에 ground 태그를 가진 오브젝트가 있는지 확인
         bool groundHit = hitObjects.Exists(obj => obj.CompareTag("ground"));
-        if(distance <= radius)
+        if (groundHit)
         {
-            if (groundHit)
-            {
                 RaycastHit2D groundRaycast = Array.Find(hits, hit => hit.collider != null && hit.collider.CompareTag("ground"));
 
                 // ground 오브젝트와 충돌한 경우, transform의 위치를 조정하여 땅을 넘지 않도록 한다.
@@ -81,15 +79,8 @@ public class PlayerDash : MonoBehaviour
                 Vector3 fromPlayerToHit = hitPoint - _playerTransform.position;
 
                 // 땅을 넘지 않도록 충돌 지점 바로 앞에 위치를 설정
-                transform.position = hitPoint - normal * 0.1f; // 땅을 넘지 않게 약간 떨어진 위치로 설정
+                transform.position = hitPoint - normal * 0.15f; // 땅을 넘지 않게 약간 떨어진 위치로 설정
                 Debug.Log("1");
-            }
-            else
-            {
-                isCanDash = true;
-                spriteRenderer.enabled = true;
-                lineRenderer.enabled = true;
-            }
         }
 
         lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
