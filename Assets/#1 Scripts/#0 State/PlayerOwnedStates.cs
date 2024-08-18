@@ -66,7 +66,7 @@ namespace PlayerOwnedStates
     {
         public override void Enter(Player entity)
         {
-            
+            Debug.Log("WALL");
         }
         public override void Execute(Player entity)
         {
@@ -93,21 +93,6 @@ namespace PlayerOwnedStates
         }
     }
     public class IsMove : State<Player>
-    {
-        public override void Enter(Player entity)
-        {
-            
-        }
-        public override void Execute(Player entity)
-        {
-            
-        }
-        public override void Exit(Player entity)
-        {
-            
-        }
-    }
-    public class IsFallAttacking : State<Player>
     {
         public override void Enter(Player entity)
         {

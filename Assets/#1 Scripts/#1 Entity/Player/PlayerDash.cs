@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerDash : MonoBehaviour
 {
+    Player _player;
     public SpriteRenderer _playerfilp;
     public Transform _playerTransform;
     private SpriteRenderer spriteRenderer;
@@ -13,7 +15,8 @@ public class PlayerDash : MonoBehaviour
     private bool isCanDash;
     void Start()
     {
-        spriteRenderer = this.GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        _player = this.transform.parent.GetComponent<Player>();
 
         lineRenderer = this.GetComponent<LineRenderer>();
         lineRenderer.startWidth = 0.1f; // 선의 시작 두께
@@ -53,10 +56,7 @@ public class PlayerDash : MonoBehaviour
             transform.position = mousePosition;
         }
 
-        lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
-        lineRenderer.SetPosition(1, transform.position); // 두 번째 점 (팔로우 오브젝트 위치)
-
-        RaycastHit2D[] hits = Physics2D.RaycastAll(_playerTransform.position, (transform.position - _playerTransform.position).normalized, distance * 1.25f);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(_playerTransform.position, (transform.position - _playerTransform.position).normalized, distance);
         Debug.DrawLine(_playerTransform.position, transform.position, Color.red);
         
         List<GameObject> hitObjects = new List<GameObject>();
@@ -67,21 +67,40 @@ public class PlayerDash : MonoBehaviour
 
         // 리스트에 ground 태그를 가진 오브젝트가 있는지 확인
         bool groundHit = hitObjects.Exists(obj => obj.CompareTag("ground"));
-        if (groundHit)
+        if(distance <= radius)
         {
-            isCanDash = false;
-            spriteRenderer.enabled = false;
-            lineRenderer.enabled = false;
+            if (groundHit)
+            {
+                RaycastHit2D groundRaycast = Array.Find(hits, hit => hit.collider != null && hit.collider.CompareTag("ground"));
+
+                // ground 오브젝트와 충돌한 경우, transform의 위치를 조정하여 땅을 넘지 않도록 한다.
+                Vector3 hitPoint = groundRaycast.point; // 충돌한 지점
+                Vector3 normal = groundRaycast.normal; // 충돌한 표면의 법선 벡터
+
+                // 충돌 지점과 플레이어 위치 사이의 벡터 계산
+                Vector3 fromPlayerToHit = hitPoint - _playerTransform.position;
+
+                // 땅을 넘지 않도록 충돌 지점 바로 앞에 위치를 설정
+                transform.position = hitPoint - normal * 0.1f; // 땅을 넘지 않게 약간 떨어진 위치로 설정
+                Debug.Log("1");
+            }
+            else
+            {
+                isCanDash = true;
+                spriteRenderer.enabled = true;
+                lineRenderer.enabled = true;
+            }
         }
-        else
-        {
-            isCanDash = true;
-            spriteRenderer.enabled = true;
-            lineRenderer.enabled = true;
-        }
+
+        lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
+        lineRenderer.SetPosition(1, transform.position); // 두 번째 점 (팔로우 오브젝트 위치)
 
         if(Input.GetMouseButtonDown(0) && isCanDash)
         {
+            if(groundHit)
+            {
+                _player.AddState(PlayerStates.IsWall);
+            }
             _playerMovement.DragonDash();
         }
     }

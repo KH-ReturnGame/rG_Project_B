@@ -44,7 +44,5 @@ public class Player_Collide : MonoBehaviour
             _player.RemoveState(PlayerStates.IsWall);
             Debug.Log("벽 안붙음");
         }
-
-        
     }
 }
