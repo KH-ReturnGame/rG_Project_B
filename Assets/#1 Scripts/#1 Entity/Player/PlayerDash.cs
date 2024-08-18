@@ -88,11 +88,12 @@ public class PlayerDash : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && isCanDash)
         {
+            _playerMovement.DragonDash();
             if(groundHit)
             {
                 _player.AddState(PlayerStates.IsWall);
+                _playerMovement._playerRigidbody.gravityScale = 0;
             }
-            _playerMovement.DragonDash();
         }
     }
 }

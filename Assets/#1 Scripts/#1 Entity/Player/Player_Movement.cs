@@ -8,7 +8,7 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     //플레이어
-    private Rigidbody2D _playerRigidbody;
+    public Rigidbody2D _playerRigidbody;
     private Player _player;
     private SpriteRenderer spriteRenderer;
     private Collider2D _playerCollider;
