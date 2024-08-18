@@ -99,7 +99,7 @@ public class Player_Movement : MonoBehaviour
             _player.RemoveState(PlayerStates.CanJump);
         }
 
-        if (Input.GetKey(KeyCode.LeftControl) && !_player.IsContainState(PlayerStates.IsDragon))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !_player.IsContainState(PlayerStates.IsDragon))
         {
             _player.AddState(PlayerStates.IsDragon);
             WhereToDash.SetActive(true);
@@ -144,6 +144,9 @@ public class Player_Movement : MonoBehaviour
     public void DragonDash() // 대쉬하는거
     {
         transform.position = new Vector2(WhereToDash.transform.position.x, WhereToDash.transform.position.y);
+        _playerRigidbody.velocity = Vector2.zero;
+        _player.RemoveState(PlayerStates.IsDragon);
+        WhereToDash.SetActive(false);
     }
 }
 
