@@ -79,7 +79,7 @@ public class PlayerDash : MonoBehaviour
                 Vector3 fromPlayerToHit = hitPoint - _playerTransform.position;
 
                 // 땅을 넘지 않도록 충돌 지점 바로 앞에 위치를 설정
-                transform.position = hitPoint; // 땅을 넘지 않게 약간 떨어진 위치로 설정
+                transform.position = hitPoint + normal * 0.25f; // 땅을 넘지 않게 약간 떨어진 위치로 설정
                 Debug.Log("1");
         }
 

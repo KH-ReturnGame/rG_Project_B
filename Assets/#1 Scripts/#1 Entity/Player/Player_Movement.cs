@@ -24,7 +24,6 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private TrailRenderer tr;
 
     // 벽타기 관련 변수
-    public float wallSlideSpeed = 2f;
     public bool isWallJump;
     
     //공격 대쉬
@@ -59,39 +58,39 @@ public class Player_Movement : MonoBehaviour
 
         //점프 코드 --------------------------------------------------------------------------------
         //땅에 있을때, 벽에 있을때
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && _player.IsContainState(PlayerStates.CanJump))
         {
             Jump();
         }   
 
         // 벽슬라이드, 벽 점프 --------------------------------------------------------------------------------
-        if (_player.IsContainState(PlayerStates.IsWall) && !_player.IsContainState(PlayerStates.IsGround)  && _movementInputDirection != 0)
+        if (_player.IsContainState(PlayerStates.IsWall) && _movementInputDirection != 0)
         {
             if(!isWallJump)
             {
-                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, -wallSlideSpeed);
-            }
-            if(Input.GetButtonDown("Jump") ) 
-            {
-                _player.RemoveState(PlayerStates.IsWall);
-                isWallJump = true;
-                // Debug.Log("벽점프 함");
-                if(isWallJump)
+                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
+                if(Input.GetButtonDown("Jump")) 
                 {
-                    Jump();
+                    _player.RemoveState(PlayerStates.IsWall);
+                    isWallJump = true;
+                    Debug.Log("벽점프 함");
+                    if(isWallJump)
+                    {
+                        Jump();
+                    }
+                }
+                // 벽타기 취소
+                else
+                {  
+                    _player.RemoveState(PlayerStates.IsWall);
+                    isWallJump = false;
                 }
             }
         }
-        // 벽타기 취소
-        else
-        {  
-            _player.RemoveState(PlayerStates.IsWall);
-            isWallJump = false;
-        }
 
         // CanJump 상태 관리 ------------------------------------------------------------------------------
-        if (_player.IsContainState(PlayerStates.IsGround) || 
-            _player.IsContainState(PlayerStates.IsWall)) { // 나중에 점프 막는 상태 필요할 때 추가
+        if (_player.IsContainState(PlayerStates.IsGround) || _player.IsContainState(PlayerStates.IsWall)) 
+        {
             _player.AddState(PlayerStates.CanJump);
         }
         else
@@ -129,14 +128,24 @@ public class Player_Movement : MonoBehaviour
 
     private void Jump()
     {
-        if (_player.IsContainState(PlayerStates.CanJump))
+        if (_player.IsContainState(PlayerStates.IsGround))
         {
-            if (_player.IsContainState(PlayerStates.IsDashing))
-            {
-                _playerRigidbody.gravityScale = originalGravity;    // 중력 값 되돌림
-            }
             _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
             _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, _jumpForce);
+        }
+        else if (_player.IsContainState(PlayerStates.IsWall))
+        {
+            if(spriteRenderer.flipX)
+            {
+                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
+                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, _jumpForce);
+            }
+            else
+            {
+                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
+                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, _jumpForce);
+
+            }
         }
         
     }

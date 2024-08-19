@@ -66,11 +66,11 @@ namespace PlayerOwnedStates
     {
         public override void Enter(Player entity)
         {
-            Debug.Log("WALL");
+
         }
         public override void Execute(Player entity)
         {
-            
+            Debug.Log("WALL");
         }
         public override void Exit(Player entity)
         {
