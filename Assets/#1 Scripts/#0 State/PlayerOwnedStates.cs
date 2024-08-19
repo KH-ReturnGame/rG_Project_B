@@ -74,7 +74,7 @@ namespace PlayerOwnedStates
         }
         public override void Exit(Player entity)
         {
-            
+            Debug.Log("WALL EXIT");
         }
     }
     public class IsSlope : State<Player>

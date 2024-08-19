@@ -83,6 +83,7 @@ public class Player_Movement : MonoBehaviour
                 else
                 {  
                     _player.RemoveState(PlayerStates.IsWall);
+                    Debug.Log("여기냐");
                     isWallJump = false;
                 }
             }
