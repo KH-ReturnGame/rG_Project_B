@@ -42,14 +42,17 @@ public class Player_Movement : MonoBehaviour
     {
         //가로 입력 체크하기 --------------------------------------------------------------------------------
         _movementInputDirection = Input.GetAxisRaw("Horizontal");
-        if (_movementInputDirection != 0)
+        if(!_player.IsContainState(PlayerStates.IsWall))
         {
-            _recentDirection = _movementInputDirection;
-        }
-        // 방향전환
-        if (_recentDirection != 0)
-        {
-            spriteRenderer.flipX = _recentDirection != 1;
+            if (_movementInputDirection != 0)
+            {
+                _recentDirection = _movementInputDirection;
+            }
+            // 방향전환
+            if (_recentDirection != 0)
+            {
+                spriteRenderer.flipX = _recentDirection != 1;
+            }
         }
 
         //점프 코드 --------------------------------------------------------------------------------
@@ -132,8 +135,6 @@ public class Player_Movement : MonoBehaviour
     {
         if (_player.IsContainState(PlayerStates.IsWall))
         {
-            Debug.Log(_recentDirection);
-
             // 위로 점프
             _playerRigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
 
