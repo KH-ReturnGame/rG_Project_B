@@ -24,9 +24,7 @@ public class Player_Collide : MonoBehaviour
         if (other.CompareTag("ground") && name == "wall_check")
         {
             _player.AddState(PlayerStates.IsWall);
-            _playerMovement._playerRigidbody.gravityScale = 0;
-            _playerMovement._playerRigidbody.velocity = new Vector2 (0,0);
-            Debug.Log("벽 붙은 상태임");
+            _playerMovement._playerRigidbody.gravityScale = 0.25f;
         }
     }
 

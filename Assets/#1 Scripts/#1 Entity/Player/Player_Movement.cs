@@ -22,9 +22,6 @@ public class Player_Movement : MonoBehaviour
     
     private float originalGravity;      // 플레이어 원래 중력
     [SerializeField] private TrailRenderer tr;
-
-    // 벽타기 관련 변수
-    public bool isWallJump;
     
     //공격 대쉬
     public GameObject WhereToDash;
@@ -55,37 +52,24 @@ public class Player_Movement : MonoBehaviour
             spriteRenderer.flipX = _recentDirection != 1;
         }
 
-
         //점프 코드 --------------------------------------------------------------------------------
         //땅에 있을때, 벽에 있을때
-        if (Input.GetButtonDown("Jump") && _player.IsContainState(PlayerStates.CanJump))
+        if (Input.GetButtonDown("Jump") 
+        && _player.IsContainState(PlayerStates.CanJump) 
+        && !_player.IsContainState(PlayerStates.IsWall))
         {
+            Debug.Log("그냥 점프!!!!!");
             Jump();
         }   
 
         // 벽슬라이드, 벽 점프 --------------------------------------------------------------------------------
-        if (_player.IsContainState(PlayerStates.IsWall) && _movementInputDirection != 0)
+        if (_player.IsContainState(PlayerStates.IsWall))
         {
-            if(!isWallJump)
+            _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
+            if(Input.GetButtonDown("Jump")) 
             {
-                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
-                if(Input.GetButtonDown("Jump")) 
-                {
-                    _player.RemoveState(PlayerStates.IsWall);
-                    isWallJump = true;
-                    Debug.Log("벽점프 함");
-                    if(isWallJump)
-                    {
-                        Jump();
-                    }
-                }
-                // 벽타기 취소
-                else
-                {  
-                    _player.RemoveState(PlayerStates.IsWall);
-                    Debug.Log("여기냐");
-                    isWallJump = false;
-                }
+                Debug.Log("벽점프!!!!!");
+                WallJump();
             }
         }
 
@@ -99,6 +83,7 @@ public class Player_Movement : MonoBehaviour
             _player.RemoveState(PlayerStates.CanJump);
         }
 
+        // 대쉬 상태 관리 ------------------------------------------------------------------------------
         if (Input.GetKeyDown(KeyCode.LeftControl) && !_player.IsContainState(PlayerStates.IsDragon))
         {
             _player.AddState(PlayerStates.IsDragon);
@@ -116,7 +101,7 @@ public class Player_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         //움직임 적용
-        if (!_player.IsContainState(PlayerStates.IsDashing))
+        if (!_player.IsContainState(PlayerStates.IsDashing) && !_player.IsContainState(PlayerStates.IsWall))
         {
             ApplyMovement();
         }
@@ -134,21 +119,17 @@ public class Player_Movement : MonoBehaviour
             _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
             _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, _jumpForce);
         }
-        else if (_player.IsContainState(PlayerStates.IsWall))
-        {
-            if(spriteRenderer.flipX)
-            {
-                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
-                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, _jumpForce);
-            }
-            else
-            {
-                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
-                _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, _jumpForce);
+    }
 
-            }
+    private void WallJump()
+    {
+        if (_player.IsContainState(PlayerStates.IsWall))
+        {
+            Debug.Log(_recentDirection);
+            _playerRigidbody.AddForce(Vector3.up * 10, ForceMode2D.Impulse);
+            _playerRigidbody.AddForce(Vector3.right * 10, ForceMode2D.Impulse);
+            _player.RemoveState(PlayerStates.IsWall);
         }
-        
     }
 
     public void DragonDash() // 대쉬하는거

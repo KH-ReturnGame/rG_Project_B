@@ -169,7 +169,6 @@ MonoBehaviour:
   _movementSpeed: 10
   _jumpForce: 15
   tr: {fileID: 576055015557389213}
-  isWallJump: 0
   WhereToDash: {fileID: 5411471800460030621}
 --- !u!96 &576055015557389213
 TrailRenderer:
@@ -655,7 +654,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 2.3}
+  m_Size: {x: 0.9, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &716640079115588565
 MonoBehaviour:
