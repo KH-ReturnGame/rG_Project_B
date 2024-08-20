@@ -80,7 +80,6 @@ public class PlayerDash : MonoBehaviour
 
                 // 땅을 넘지 않도록 충돌 지점 바로 앞에 위치를 설정
                 transform.position = hitPoint + normal * 0.25f; // 땅을 넘지 않게 약간 떨어진 위치로 설정
-                Debug.Log("1");
         }
 
         lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)

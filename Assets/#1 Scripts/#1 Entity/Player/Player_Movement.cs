@@ -101,15 +101,22 @@ public class Player_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         //움직임 적용
-        if (!_player.IsContainState(PlayerStates.IsDashing) && !_player.IsContainState(PlayerStates.IsWall))
+        if (_movementInputDirection != 0)
         {
             ApplyMovement();
+        }
+        else if(!_player.IsContainState(PlayerStates.IsWallJumping))
+        {
+            _playerRigidbody.velocity = new Vector2(_movementInputDirection * _movementSpeed, _playerRigidbody.velocity.y);
         }
     }
 
     private void ApplyMovement()
     {
-        _playerRigidbody.velocity = new Vector2(_movementInputDirection * _movementSpeed, _playerRigidbody.velocity.y);
+        if (!_player.IsContainState(PlayerStates.IsDashing) && !_player.IsContainState(PlayerStates.IsWall) && !_player.IsContainState(PlayerStates.IsWallJumping))
+        {
+            _playerRigidbody.velocity = new Vector2(_movementInputDirection * _movementSpeed, _playerRigidbody.velocity.y);
+        }
     }
 
     private void Jump()
@@ -126,10 +133,26 @@ public class Player_Movement : MonoBehaviour
         if (_player.IsContainState(PlayerStates.IsWall))
         {
             Debug.Log(_recentDirection);
-            _playerRigidbody.AddForce(Vector3.up * 10, ForceMode2D.Impulse);
-            _playerRigidbody.AddForce(Vector3.right * 10, ForceMode2D.Impulse);
+
+            // 위로 점프
+            _playerRigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+
+            // 벽에서 반대 방향으로 힘을 줌
+            _playerRigidbody.AddForce(new Vector2(-_recentDirection * 5, 0), ForceMode2D.Impulse);
+
+            // 방향 전환
+            _recentDirection = -_recentDirection;  // 최근 방향을 반대로 설정
+            spriteRenderer.flipX = _recentDirection != 1;  // 스프라이트의 방향을 전환
+
             _player.RemoveState(PlayerStates.IsWall);
+            StartCoroutine(DisableMovementForSeconds(0.2f));
         }
+    }
+    private IEnumerator DisableMovementForSeconds(float seconds)
+    {
+        _player.AddState(PlayerStates.IsWallJumping); // 움직임 비활성화
+        yield return new WaitForSeconds(seconds); // 지정된 시간 동안 대기
+        _player.RemoveState(PlayerStates.IsWallJumping); // 다시 움직일 수 있도록 활성화
     }
 
     public void DragonDash() // 대쉬하는거
