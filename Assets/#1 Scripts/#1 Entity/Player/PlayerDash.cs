@@ -91,7 +91,7 @@ public class PlayerDash : MonoBehaviour
             if(groundHit)
             {
                 _player.AddState(PlayerStates.IsWall);
-                _playerMovement._playerRigidbody.gravityScale = 0.25f;
+                _playerMovement._playerRigidbody.gravityScale = 0f;
             }
         }
     }

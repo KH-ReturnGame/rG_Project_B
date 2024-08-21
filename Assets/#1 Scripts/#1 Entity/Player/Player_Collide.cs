@@ -24,7 +24,7 @@ public class Player_Collide : MonoBehaviour
         if (other.CompareTag("ground") && name == "wall_check")
         {
             _player.AddState(PlayerStates.IsWall);
-            _playerMovement._playerRigidbody.gravityScale = 0.25f;
+            _playerMovement._playerRigidbody.gravityScale = 0f;
         }
     }
 

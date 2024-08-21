@@ -18,9 +18,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField]
     private float _movementSpeed = 8.00f;
     private float _movementInputDirection;
-    public float _jumpForce = 12.00f;    
-    
-    private float originalGravity;      // 플레이어 원래 중력
+    public float _jumpForce = 12.00f;
     [SerializeField] private TrailRenderer tr;
     
     //공격 대쉬
@@ -34,7 +32,6 @@ public class Player_Movement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         _player.AddState(PlayerStates.CanDash);
         _playerCollider = GetComponent<Collider2D>();
-        originalGravity = _playerRigidbody.gravityScale;
     }
 
     //매 프레임 실행
@@ -61,17 +58,15 @@ public class Player_Movement : MonoBehaviour
         && _player.IsContainState(PlayerStates.CanJump) 
         && !_player.IsContainState(PlayerStates.IsWall))
         {
-            Debug.Log("그냥 점프!!!!!");
             Jump();
         }   
 
         // 벽슬라이드, 벽 점프 --------------------------------------------------------------------------------
         if (_player.IsContainState(PlayerStates.IsWall))
         {
-            _playerRigidbody.velocity = new Vector2(_playerRigidbody.velocity.x, 0);
+            _playerRigidbody.velocity = new Vector2(0, 0);
             if(Input.GetButtonDown("Jump")) 
             {
-                Debug.Log("벽점프!!!!!");
                 WallJump();
             }
         }
@@ -135,18 +130,36 @@ public class Player_Movement : MonoBehaviour
     {
         if (_player.IsContainState(PlayerStates.IsWall))
         {
-            // 위로 점프
-            _playerRigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+            Vector2 rayDirection = Vector3.up;// Ray 방향 (위쪽 방향)
+            int layerMask = 1 << 6;
+            RaycastHit2D hit;
 
-            // 벽에서 반대 방향으로 힘을 줌
-            _playerRigidbody.AddForce(new Vector2(-_recentDirection * 5, 0), ForceMode2D.Impulse);
+            Debug.DrawRay(transform.position, rayDirection * 1f, Color.green);
 
-            // 방향 전환
-            _recentDirection = -_recentDirection;  // 최근 방향을 반대로 설정
-            spriteRenderer.flipX = _recentDirection != 1;  // 스프라이트의 방향을 전환
+            hit = Physics2D.Raycast(transform.position, rayDirection, 1f, layerMask);
+            if(hit.collider != null)
+            {
+                // 위로 점프
+                _playerRigidbody.AddForce(Vector2.down * 7.5f, ForceMode2D.Impulse);
 
-            _player.RemoveState(PlayerStates.IsWall);
-            StartCoroutine(DisableMovementForSeconds(0.2f));
+                _player.RemoveState(PlayerStates.IsWall);
+                StartCoroutine(DisableMovementForSeconds(0.1f));
+            }  
+            else
+            {
+                // 위로 점프
+                _playerRigidbody.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+
+                // 벽에서 반대 방향으로 힘을 줌
+                _playerRigidbody.AddForce(new Vector2(-_recentDirection * 5, 0), ForceMode2D.Impulse);
+
+                // 방향 전환
+                _recentDirection = -_recentDirection;  // 최근 방향을 반대로 설정
+                spriteRenderer.flipX = _recentDirection != 1;  // 스프라이트의 방향을 전환
+
+                _player.RemoveState(PlayerStates.IsWall);
+                StartCoroutine(DisableMovementForSeconds(0.15f));
+            }
         }
     }
     private IEnumerator DisableMovementForSeconds(float seconds)
