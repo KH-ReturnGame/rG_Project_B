@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 4709975163243856630}
   - component: {fileID: 4709975163243856631}
   - component: {fileID: 4709975163243856626}
-  - component: {fileID: 7284545308162951697}
-  - component: {fileID: 3724586329513560590}
+  - component: {fileID: -106978145644555613}
+  - component: {fileID: -5536688534020305217}
   m_Layer: 7
-  m_Name: Test_Enemy
+  m_Name: Test_Enemy_Melee
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_viewObstacleMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &7284545308162951697
+--- !u!114 &-106978145644555613
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca13550ca65fa194fbc800eced061421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3724586329513560590
+--- !u!114 &-5536688534020305217
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,6 +182,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4709975163243856628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b96bcc7a6dccd468002a76821af078, type: 3}
+  m_Script: {fileID: 11500000, guid: ebbb1f9f923c004418f0b4d17051c365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

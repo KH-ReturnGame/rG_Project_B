@@ -8,6 +8,8 @@ TagManager:
   - ground
   - wall
   - enemy
+  - enemy_melee
+  - enemy_ranged
   layers:
   - Default
   - TransparentFX

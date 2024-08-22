@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_PlayerChase : MonoBehaviour
+public class Enemy_MeleePlayerChase : MonoBehaviour
 {
     private float speed = 3f; // 이동속도
 
