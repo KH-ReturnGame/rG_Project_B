@@ -66,15 +66,15 @@ namespace PlayerOwnedStates
     {
         public override void Enter(Player entity)
         {
-            
+
         }
         public override void Execute(Player entity)
         {
-            
+            Debug.Log("WALL");
         }
         public override void Exit(Player entity)
         {
-            
+            Debug.Log("WALL EXIT");
         }
     }
     public class IsSlope : State<Player>
@@ -92,6 +92,21 @@ namespace PlayerOwnedStates
 
         }
     }
+    public class IsWallJumping  : State<Player>
+    {
+        public override void Enter(Player entity)
+        {
+            
+        }
+        public override void Execute(Player entity)
+        {
+            
+        }
+        public override void Exit(Player entity)
+        {
+            
+        }
+    }
     public class IsMove : State<Player>
     {
         public override void Enter(Player entity)
@@ -107,11 +122,11 @@ namespace PlayerOwnedStates
             
         }
     }
-    public class IsFallAttacking : State<Player>
+    public class IsDragon : State<Player>
     {
         public override void Enter(Player entity)
         {
-            
+            Time.timeScale = 0.1f;
         }
         public override void Execute(Player entity)
         {
@@ -119,7 +134,7 @@ namespace PlayerOwnedStates
         }
         public override void Exit(Player entity)
         {
-            
+            Time.timeScale = 1;
         }
     }
 }
