@@ -10,12 +10,12 @@ public class CheckEnemy : MonoBehaviour
     
    	 private void Start()
    	 {
-   	     target = transform.position;
+   	     target = transform.parent.position;
    	 }
    	 private void Update()
    	 {
    	     mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-   	     angle = Mathf.Atan2(mouse.y - target.y, mouse.x - target.x) * Mathf.Rad2Deg;
+   	     angle = Mathf.Atan2(mouse.y - target.y+1.4f, mouse.x - target.x) * Mathf.Rad2Deg;
    	     this.transform.parent.transform.rotation = Quaternion.AngleAxis(angle+90, Vector3.forward);
   	  }
      private void OnTriggerEnter2D(Collider2D other)

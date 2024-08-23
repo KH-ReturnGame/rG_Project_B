@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 8523253409257125381}
   - component: {fileID: 826423447707642263}
   - component: {fileID: 8196518570531318362}
-  - component: {fileID: 8805759371200094558}
+  - component: {fileID: 1052625459820057633}
   m_Layer: 0
   m_Name: CheckEnemy
   m_TagString: Untagged
@@ -390,8 +390,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6810298835053482159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.85, z: 0}
-  m_LocalScale: {x: 1, y: 8, z: 0.3}
+  m_LocalPosition: {x: 0, y: -1.21, z: 0}
+  m_LocalScale: {x: 2, y: 4, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2510885909713133800}
@@ -477,7 +477,7 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5773587}
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
---- !u!114 &8805759371200094558
+--- !u!114 &1052625459820057633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -489,6 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8790bd7046fa742886130f8d4a617d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dash_Enemy: []
 --- !u!1 &7341301570535230410
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,7 +578,7 @@ GameObject:
   m_Layer: 7
   m_Name: CheckEnemyCenter
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -699,7 +700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8339777150173832434}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67, y: -1.84, z: 0}
+  m_LocalPosition: {x: 0.67, y: -1.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
