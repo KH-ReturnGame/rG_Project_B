@@ -8,12 +8,12 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     public float distance; // 거리
 
     private Transform enemy; // 에너미 위치변수
-    private Transform player; // 플레이어 위치변수
+    public Transform player; // 플레이어 위치변수
 
     void Start()
     {
-        enemy = this.gameObject.GetComponent<Transform>();
-        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        enemy = this.transform;
+        player = GameObject.FindWithTag("Player").transform;
     }
 
     

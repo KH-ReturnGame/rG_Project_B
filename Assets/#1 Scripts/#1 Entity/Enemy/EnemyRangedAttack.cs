@@ -6,6 +6,10 @@ public class EnemyRangedAttack : MonoBehaviour
 {
     private float distance;
 
+    [SerializeField]
+    private GameObject bulletPrefab;
+
+
     void Start()
     {
         distance = gameObject.GetComponent<Enemy_RangedPlayerChase>().distance;
@@ -16,12 +20,15 @@ public class EnemyRangedAttack : MonoBehaviour
     {
         if (distance <= 3)
         {
+            
+
             Fire();
         }
     }
 
     private void Fire()
     {
-
+        // ÃÑ¾Ë »ý¼º
+        
     }
 }
