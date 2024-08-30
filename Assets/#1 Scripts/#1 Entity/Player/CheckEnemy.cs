@@ -27,12 +27,12 @@ public class CheckEnemy : MonoBehaviour
                 for (int i = 0; i < Dash_Enemy.Count; i++)
                 {
                     // 각 적 오브젝트의 Enemy 컴포넌트를 가져옴
-                     Enemy enemy = Dash_Enemy[i].GetComponent<Enemy>();
+                    Enemy enemy = Dash_Enemy[i].GetComponent<Enemy>();
 
                     // 해당 Enemy가 존재한다면 (null 체크)
-                        if (enemy != null)
+                    if (enemy != null)
                     {
-                    // 데미지를 가함
+                        // 데미지를 가함
                         enemy.TakeDamage(1);
                     }
                     else
@@ -59,8 +59,7 @@ public class CheckEnemy : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemy");
         {
-            GameObject _enemy = List_Enemy.Find(obj => obj.tag == "Enemy");
-            Dash_Enemy.Remove(_enemy);
+            Dash_Enemy.RemoveAt(List_Enemy.Count-1);
             IsChecked = false;
         }
         List_Enemy.Remove(other.gameObject);
