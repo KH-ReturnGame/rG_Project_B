@@ -47,9 +47,11 @@ public class CheckEnemy : MonoBehaviour
   	  }
      private void OnTriggerEnter2D(Collider2D other)
      {
+        List<GameObject> List_Enemy = new List<GameObject.other>();
         if(other.gameObject.tag == "Enemy");
         {
-            Dash_Enemy.Add(other.gameObject);
+            GameObject _enemy = List_Enemy.Find(obj => obj.tag == "Enemy");
+            Dash_Enemy.Add(_enemy);
             IsChecked = true;
         }
      }
@@ -57,7 +59,8 @@ public class CheckEnemy : MonoBehaviour
      {
         if(other.gameObject.tag == "Enemy");
         {
-            Dash_Enemy.Remove(other.gameObject);
+            GameObject _enemy = List_Enemy.Find(obj => obj.tag == "Enemy");
+            Dash_Enemy.Remove(_enemy);
             IsChecked = false;
         }
      }
