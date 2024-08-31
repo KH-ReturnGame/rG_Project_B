@@ -70,14 +70,23 @@ public abstract class Entity : MonoBehaviour
     /// <returns>
     /// Null
     /// </returns>
-    public void TakeDamage(float damage)
+    public void TakeDamage()
     {
-        //만약 피해를 입었을때 체력이 0이하라면 -> 죽음처리
-        if (_currentHp - damage <= 0 && _currentHp != 0)
-        {
-            Debug.Log(_currentHp+","+damage);
-            _currentHp = 0;
+        float _currentHp;
+        float Player maxHp;
+        maxHp = GetComponent<Player>();
+        IEnumerator DecreaseHPOverTime()
+        {        
+            _currentHp = maxHp;
+            _currentHp -= 0.02f;
+            Debug.Log(_currentHp);
+            Debug.Log("tlqkf");
+            if (_currentHp < 0)
+            {
+                _currentHp = 0f; 
+            }
+                
+            yield return new WaitForSeconds(0.02f); 
         }
-        _currentHp -= damage;
     }
 }

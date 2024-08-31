@@ -82,4 +82,26 @@ public class Player : Entity
     {
         return _stateManager._currentState.Contains(_states[(int)ps]);
     }
+    
+    public void TakeDamag(float damage)
+    {
+        float _currentHp;
+        IEnumerator DecreaseHPOverTime()
+        {        
+            
+            _currentHp = player.Getcomponent<Player>().maxHP;
+            _currentHp -= 0.02f; 
+            Debug.Log(_currentHp);
+            if (_currentHp < 0)
+            {
+                _currentHp = 0; 
+                Debug.Log(_currentHp+","+damage);
+            }
+                
+            _currentHp -= damage;
+                
+            yield return new WaitForSeconds(0.02f); 
+        }
+           
+    }
 }

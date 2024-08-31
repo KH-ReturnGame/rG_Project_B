@@ -39,7 +39,7 @@ public class Enemy_Dead : MonoBehaviour
 
 
     //�Լ� �۵��ϴ��� ���� ���� ��� ������. ���߿� ���� ��
-    private void OnTriggerEnter2D(Collider2D other)
+    /*private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.name == "Triangle")
         {
@@ -48,7 +48,7 @@ public class Enemy_Dead : MonoBehaviour
             rigid.AddForce(new Vector2(10,5), ForceMode2D.Impulse);
 
         }
-    }
+    }*/
 
    
 }
