@@ -13,7 +13,7 @@ public abstract class Entity : MonoBehaviour
     public float _maxHp;
 
     //현재 체력
-    private float _currentHp;
+    public float _currentHp;
 
     /// <summary>
     /// Entity 클래스 기초 설정을 위한 Setup메소드, 매개변수로 최대체력을 받음
@@ -70,23 +70,14 @@ public abstract class Entity : MonoBehaviour
     /// <returns>
     /// Null
     /// </returns>
-    public void TakeDamage()
+    public void TakeDamage(float damage)
     {
-        float _currentHp;
-        float Player maxHp;
-        maxHp = GetComponent<Player>();
-        IEnumerator DecreaseHPOverTime()
-        {        
-            _currentHp = maxHp;
-            _currentHp -= 0.02f;
-            Debug.Log(_currentHp);
-            Debug.Log("tlqkf");
-            if (_currentHp < 0)
-            {
-                _currentHp = 0f; 
-            }
-                
-            yield return new WaitForSeconds(0.02f); 
+        //만약 피해를 입었을때 체력이 0이하라면 -> 죽음처리
+        if (_currentHp - damage <= 0 && _currentHp != 0)
+        {
+            Debug.Log(_currentHp+","+damage);
+            _currentHp = 0;
         }
+        _currentHp -= damage;
     }
 }

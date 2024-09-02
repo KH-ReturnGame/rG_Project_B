@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3170946791866149625}
   - component: {fileID: 3170946791866149607}
   - component: {fileID: 239621460788207833}
+  - component: {fileID: 592549546434199323}
   - component: {fileID: 576055015557389213}
   - component: {fileID: 2048986376942135593}
   m_Layer: 7
@@ -153,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 0
+  _currentHp: 0
 --- !u!114 &239621460788207833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +172,19 @@ MonoBehaviour:
   _jumpForce: 15
   tr: {fileID: 576055015557389213}
   WhereToDash: {fileID: 5411471800460030621}
+--- !u!114 &592549546434199323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170946791866149626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5192abc0f2134714194d0ceb5ba72b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _PlayerHpUI: {fileID: 9100867227501642991, guid: 70ed7160df29766488fd9eb3822edd66, type: 3}
 --- !u!96 &576055015557389213
 TrailRenderer:
   serializedVersion: 2
