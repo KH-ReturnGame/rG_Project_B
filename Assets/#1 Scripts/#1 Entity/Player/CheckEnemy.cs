@@ -6,62 +6,51 @@ public class CheckEnemy : MonoBehaviour
 {
     float angle;
     Vector2 target, mouse;
-    public List<GameObject> Dash_Enemy = new List<GameObject>();
-    private List<GameObject> List_Enemy = new List<GameObject>();
-    public bool IsChecked;
+    [SerializeField] private List<GameObject> enemiesInRange = new List<GameObject>();  
+    // 범위 내 에너미 리스트
    	void Start()
    	{
    	    target = transform.parent.position;
-        IsChecked = false;
    	}
    	void Update()
    	{
    	    mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
    	    angle = Mathf.Atan2(mouse.y - target.y+1.4f, mouse.x - target.x) * Mathf.Rad2Deg;
    	    this.transform.parent.transform.rotation = Quaternion.AngleAxis(angle+90, Vector3.forward);
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && enemiesInRange.Count > 0)
         {
-            if (IsChecked)
+            // 리스트에 있는 모든 적에게 데미지를 줌
+            foreach (GameObject _enemyobj in enemiesInRange)
             {
-    // 리스트에 있는 모든 적에게 데미지를 줌
-                for (int i = 0; i < Dash_Enemy.Count; i++)
+                // 각 적 오브젝트의 Enemy 컴포넌트를 가져옴
+                Enemy enemy = _enemyobj.GetComponent<Enemy>();
+                // 데미지를 가함
+                enemy.TakeDamage(1);
+                if(enemy == null)
                 {
-                    // 각 적 오브젝트의 Enemy 컴포넌트를 가져옴
-                    Enemy enemy = Dash_Enemy[i].GetComponent<Enemy>();
-
-                    // 해당 Enemy가 존재한다면 (null 체크)
-                    if (enemy != null)
-                    {
-                        // 데미지를 가함
-                        enemy.TakeDamage(1);
-                    }
-                    else
-                    {
-                        IsChecked = false;
-                    }
+                    Debug.Log("null임 ㅅㄱ");
                 }
             }
-            // for문으로 ischecked상태 수정하기, chat gpt에 Dash_Enemy에 아예 오브젝트가 없을 때 IsChecked를 false로 바꿔야됨
         }
-
-  	}
-    void OnTriggerEnter2D(Collider2D other)
+    }
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        List_Enemy.Add(other.gameObject);
-        if(other.gameObject.tag == "Enemy");
+        if (other != null && other.CompareTag("Enemy"))
         {
-            GameObject _enemy = List_Enemy.Find(obj => obj.tag == "Enemy");
-            Dash_Enemy.Add(_enemy);
-            IsChecked = true;
+            if (!enemiesInRange.Contains(other.gameObject))
+            {
+                enemiesInRange.Add(other.gameObject);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Enemy");
+        if (other != null && other.CompareTag("Enemy"))
         {
-            Dash_Enemy.RemoveAt(List_Enemy.Count-1);
-            IsChecked = false;
+            if (enemiesInRange.Contains(other.gameObject))
+            {
+                enemiesInRange.Remove(other.gameObject);
+            }
         }
-        List_Enemy.Remove(other.gameObject);
     }
 }
