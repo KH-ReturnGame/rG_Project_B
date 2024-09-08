@@ -109,6 +109,7 @@ public class PlayerDash : MonoBehaviour
                     if (_enemy != null)
                     {
                         _enemy.TakeDamage(50); // 예시로 적에게 데미지를 주는 메서드 호출
+                        _player.RecoveryHp(15);
                     }
                 }
             }

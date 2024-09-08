@@ -50,7 +50,7 @@ public abstract class Entity : MonoBehaviour
     /// <returns>
     /// Null
     /// </returns>
-    protected void RecoveryHp(float hp)
+    public void RecoveryHp(float hp)
     {
         //만약 체력을 회복했을때 최대체력을 넘어간다면 -> 회복 못하게
         if (_currentHp + hp > _maxHp)
