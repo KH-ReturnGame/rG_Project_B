@@ -22,8 +22,8 @@ public class PlayerDash : MonoBehaviour
         lineRenderer.startWidth = 0.1f; // 선의 시작 두께
         lineRenderer.endWidth = 0.1f; // 선의 끝 두께
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.startColor = Color.cyan; // 선의 시작 색상
-        lineRenderer.endColor = Color.cyan; // 선의 끝 색상
+        lineRenderer.startColor = Color.red; // 선의 시작 색상
+        lineRenderer.endColor = Color.red; // 선의 끝 색상
         lineRenderer.positionCount = 2; // 두 점을 연결
 
         isCanDash = true;
@@ -92,6 +92,25 @@ public class PlayerDash : MonoBehaviour
             {
                 _player.AddState(PlayerStates.IsWall);
                 _playerMovement._playerRigidbody.gravityScale = 0f;
+            }
+
+            bool enemyHit = hitObjects.Exists(obj => obj.CompareTag("enemy"));
+            if (enemyHit)
+            {
+                // 여기에 적과 충돌한 경우 처리할 로직 추가
+                Debug.Log("적이 히트되었습니다!");
+
+                // 예시: 적에게 데미지를 주는 메서드 호출 (적 오브젝트와의 상호작용)
+                RaycastHit2D enemyRaycast = Array.Find(hits, hit => hit.collider != null && hit.collider.CompareTag("enemy"));
+                if (enemyRaycast.collider != null)
+                {
+                    // 여기서 적과의 상호작용을 처리할 수 있습니다.
+                    Enemy _enemy = enemyRaycast.collider.GetComponent<Enemy>();
+                    if (_enemy != null)
+                    {
+                        _enemy.TakeDamage(50); // 예시로 적에게 데미지를 주는 메서드 호출
+                    }
+                }
             }
         }
     }
