@@ -23,8 +23,6 @@ public class Enemy_Dead : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       
-
         if(testEnemy.GetHp() <= 0)
         {
             testEnemy.AddState(EnemyStates.IsDie);
@@ -33,22 +31,17 @@ public class Enemy_Dead : MonoBehaviour
         {
             testEnemy.RemoveState(EnemyStates.IsDie);
             rigid.velocity = new Vector2(-3, rigid.velocity.y);
-            // ����ٰ� ���ʹ� �ٸ� �Լ� ���� ���Ѿ� ���� ������
         }
     }
 
 
-    //�Լ� �۵��ϴ��� ���� ���� ��� ������. ���߿� ���� ��
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "Triangle")
-        {
-            Debug.Log("Collison");
-            testEnemy.TakeDamage(10);
-            rigid.AddForce(new Vector2(10,5), ForceMode2D.Impulse);
-
-        }
-    }
-
-   
+        // if(other.name == "Triangle")
+        // {
+        //     Debug.Log("Collison");
+        //     testEnemy.TakeDamage(10);
+        //     rigid.AddForce(new Vector2(10,5), ForceMode2D.Impulse);
+        // }
+    }   
 }
