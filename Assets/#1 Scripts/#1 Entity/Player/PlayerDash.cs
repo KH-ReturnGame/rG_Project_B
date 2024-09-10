@@ -94,14 +94,14 @@ public class PlayerDash : MonoBehaviour
                 _playerMovement._playerRigidbody.gravityScale = 0f;
             }
 
-            bool enemyHit = hitObjects.Exists(obj => obj.CompareTag("enemy"));
+            bool enemyHit = hitObjects.Exists(obj => obj.CompareTag("Enemy"));
             if (enemyHit)
             {
                 // 여기에 적과 충돌한 경우 처리할 로직 추가
                 Debug.Log("적이 히트되었습니다!");
 
                 // 예시: 적에게 데미지를 주는 메서드 호출 (적 오브젝트와의 상호작용)
-                RaycastHit2D enemyRaycast = Array.Find(hits, hit => hit.collider != null && hit.collider.CompareTag("enemy"));
+                RaycastHit2D enemyRaycast = Array.Find(hits, hit => hit.collider != null && hit.collider.CompareTag("Enemy"));
                 if (enemyRaycast.collider != null)
                 {
                     // 여기서 적과의 상호작용을 처리할 수 있습니다.

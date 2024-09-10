@@ -7,7 +7,7 @@ TagManager:
   - player_test
   - ground
   - wall
-  - enemy
+  - Enemy
   layers:
   - Default
   - TransparentFX
