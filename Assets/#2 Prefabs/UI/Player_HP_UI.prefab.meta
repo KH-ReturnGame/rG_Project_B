@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/#2 Prefabs/UI/Player_HP_UI.prefab.meta
 guid: 70ed7160df29766488fd9eb3822edd66
+========
+guid: 42ee4caf9ec5a1b4ab1c8b2bc34f7a07
+>>>>>>>> develop_cs_dash:Assets/#2 Prefabs/Player/player1.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0b5958a0357404cac41ab3f9c70ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab1: {fileID: 3170946791866149626, guid: ecb1a187bbb952b48a49d430ba57c200, type: 3}
+  playerPrefab1: {fileID: 8339777150173832434, guid: 9c00b4d2e1c20da40abfe1745eb3d8f6, type: 3}
   enemyPrefab: {fileID: 4709975163243856628, guid: ba0a90da0be77314d95fa1179459d8a3, type: 3}
 --- !u!4 &151387235
 Transform:
