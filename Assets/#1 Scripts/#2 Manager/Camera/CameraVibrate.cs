@@ -24,7 +24,7 @@ public class CameraVibrate : MonoBehaviour
                 StartCoroutine(Shake(AmpGain, FreGain, waitsec));
                 break;
             default:
-                Debug.Log("그런 카메라 쉐이크는 없다");
+                Debug.Log("그런 카메라 쉐이크는 없다 The Camera Is Lie");
                 break;
         }
     }
