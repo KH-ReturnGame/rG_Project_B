@@ -10,6 +10,10 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     public Transform enemy; // 에너미 위치변수
     public Transform player; // 플레이어 위치변수
 
+    private Enemy _enemy;
+
+    public bool isMoving = false;
+    private bool isAttacking;
     void Start()
     {
         enemy = transform;
@@ -24,7 +28,7 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
 
         distance = Vector2.Distance(player.position, enemy.position); // 플레이어와의 거리 측정
 
-        if (distance > 3)
+        if (distance > 5)
         {
             ChasingPlayer();
         }
@@ -32,6 +36,11 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
 
     private void ChasingPlayer()
     {
-        transform.position = Vector2.MoveTowards(enemy.position, player.position, speed * Time.deltaTime); // 플레이어한테 이동
+        if(!_enemy.IsContainState(EnemyStates.IsAttacking))
+        {
+            isMoving = true;
+            transform.position = Vector2.MoveTowards(enemy.position, player.position, speed * Time.deltaTime); // 플레이어한테 이동
+            isMoving = false;
+        }
     }
 }

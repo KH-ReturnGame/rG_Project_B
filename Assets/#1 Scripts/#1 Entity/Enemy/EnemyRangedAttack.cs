@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class EnemyRangedAttack : MonoBehaviour
 {
+    private Transform enemy;
+    public Transform player;
+
     private float distance;
-    private Transform enemy; 
-    public Transform player; 
     public float enemyx; // 에너미 x좌표
     public float playerx; // 플레이어 x좌표
+
+    private Enemy _enemy;
 
     [SerializeField]
     private GameObject bulletPrefab;
 
-    private bool isFiring = false;
+    public bool isAttacking = false;
 
     void Start()
     {
@@ -30,15 +33,15 @@ public class EnemyRangedAttack : MonoBehaviour
         playerx = player.position.x;
         enemyx = enemy.position.x;
 
-        if (distance <= 3 && !isFiring)
+        if (distance <= 5 && !_enemy.IsContainState(EnemyStates.IsMove))
         {
             InvokeRepeating("Fire", 1f, 3f);
-            isFiring = true;
         }
     }
 
     private void Fire()
     {
+        isAttacking = true;
         if (enemyx < playerx)
         {
          GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x + 1.2f, transform.position.y, transform.position.z) , transform.rotation);
@@ -49,6 +52,7 @@ public class EnemyRangedAttack : MonoBehaviour
         }
         Debug.Log("Fire");
         // 총알 생성
+        isAttacking = false;
 
     }
 }

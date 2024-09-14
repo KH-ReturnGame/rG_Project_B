@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4709975163243856626}
   - component: {fileID: 388215791949652899}
   - component: {fileID: 8939685820143668202}
+  - component: {fileID: 5806302487507041805}
   m_Layer: 7
   m_Name: Test_Enemy_Ranged
   m_TagString: enemy
@@ -176,6 +177,7 @@ MonoBehaviour:
   distance: 0
   enemy: {fileID: 0}
   player: {fileID: 0}
+  isMoving: 0
 --- !u!114 &8939685820143668202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,3 +194,16 @@ MonoBehaviour:
   enemyx: 0
   playerx: 0
   bulletPrefab: {fileID: 9001450230958901993, guid: a75c7bb1fc0d5204c911c711ac338a2c, type: 3}
+  isAttacking: 0
+--- !u!114 &5806302487507041805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a2274b364bdd849873af24d9fb6f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

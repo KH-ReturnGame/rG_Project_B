@@ -7,12 +7,13 @@ public class Player_Collide : MonoBehaviour
     private Player _player;
     private Tilemap tilemap;
     private Player_Movement _playerMovement;
-
+    private float maxHp;
     public void Start()
     {
         _player = this.GetComponentInParent<Player>();
         tilemap = GameObject.FindGameObjectWithTag("ground").GetComponent<Tilemap>();
         _playerMovement = this.GetComponentInParent<Player_Movement>();
+        maxHp = gameObject.GetComponent<Player>()._maxHp;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -40,6 +41,14 @@ public class Player_Collide : MonoBehaviour
             _player.RemoveState(PlayerStates.IsWall);
             _playerMovement._playerRigidbody.gravityScale = 3;
             Debug.Log("벽 안붙음");
+        }
+    }
+
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Test_Bullet(Clone)"))
+        {
+            maxHp -= 10;
         }
     }
 }
