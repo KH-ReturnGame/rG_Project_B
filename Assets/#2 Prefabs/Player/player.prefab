@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 239621460788207833}
   - component: {fileID: 576055015557389213}
   - component: {fileID: 2048986376942135593}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3170946791866149626}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.066, y: -0.116, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 2551392442240400700}
   - component: {fileID: 2577073229909666896}
   - component: {fileID: 5124290567767539192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: player_where_to_dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}

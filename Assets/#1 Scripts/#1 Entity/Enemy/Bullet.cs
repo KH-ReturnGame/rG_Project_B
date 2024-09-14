@@ -5,18 +5,32 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Rigidbody2D bulletrigid;
-    private Transform player;
-    private float speed = 5f;
+    public Transform player;
+    private float speed = 2f;
 
     void Start()
     {
         bulletrigid = GetComponent<Rigidbody2D>();
-        player = gameObject.GetComponent<Enemy_RangedPlayerChase>().player;
+        player = GameObject.Find("player(Clone)").transform;
     }
 
     void Update()
     {
-        bulletrigid.AddForce(player.position * speed);
-        Destroy(gameObject, 3f);
+        Vector2 direction = (player.position - transform.position).normalized;
+
+        bulletrigid.AddForce(direction * speed, ForceMode2D.Force);
+        Destroy(gameObject, 15f);
+
+
+    }
+    void OnTriggerEnter(Collider other)
+
+    {
+
+        if (other.gameObject.tag == "ground" || other.gameObject.tag == "Player")
+        { 
+            Destroy(gameObject);
+            Debug.Log("Die");
+        }
     }
 }
