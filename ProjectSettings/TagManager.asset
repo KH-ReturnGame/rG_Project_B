@@ -8,6 +8,7 @@ TagManager:
   - ground
   - wall
   - Enemy
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - enemy
   - player
   - Wall
-  - 
+  - trap
   - 
   - 
   - 
