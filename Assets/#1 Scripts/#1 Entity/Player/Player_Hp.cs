@@ -37,6 +37,8 @@ public class Player_Hp : MonoBehaviour
         if(collision.gameObject.CompareTag("trap"))
         {
             _player.TakeDamage(2.5f);
+            _player.RemoveState(PlayerStates.IsWall);
+            _player.RemoveState(PlayerStates.IsDragon);
         }
     }
 
@@ -45,6 +47,8 @@ public class Player_Hp : MonoBehaviour
         if(other.gameObject.CompareTag("trap"))
         {
             _player.TakeDamage(2.5f);
+            _player.RemoveState(PlayerStates.IsWall);
+            _player.RemoveState(PlayerStates.IsDragon);
         }
     }
 }
