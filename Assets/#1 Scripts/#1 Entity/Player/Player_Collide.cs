@@ -7,13 +7,12 @@ public class Player_Collide : MonoBehaviour
     private Player _player;
     private Tilemap tilemap;
     private Player_Movement _playerMovement;
-    private float maxHp;
+
     public void Start()
     {
         _player = this.GetComponentInParent<Player>();
         tilemap = GameObject.FindGameObjectWithTag("ground").GetComponent<Tilemap>();
         _playerMovement = this.GetComponentInParent<Player_Movement>();
-        maxHp = gameObject.GetComponent<Player>()._maxHp;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -46,9 +45,9 @@ public class Player_Collide : MonoBehaviour
 
      void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Test_Bullet(Clone)"))
+        if (other.gameObject.tag == "Test_Bullet(Clone)")
         {
-            maxHp -= 10;
+            _player.TakeDamage(10);
         }
     }
 }
