@@ -31,4 +31,24 @@ public class Player_Hp : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("trap"))
+        {
+            _player.TakeDamage(2.5f);
+            _player.RemoveState(PlayerStates.IsWall);
+            _player.RemoveState(PlayerStates.IsDragon);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("trap"))
+        {
+            _player.TakeDamage(2.5f);
+            _player.RemoveState(PlayerStates.IsWall);
+            _player.RemoveState(PlayerStates.IsDragon);
+        }
+    }
 }
