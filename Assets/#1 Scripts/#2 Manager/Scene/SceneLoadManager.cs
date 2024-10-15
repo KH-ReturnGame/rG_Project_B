@@ -6,7 +6,8 @@ using System.Collections;
 public class SceneLoadManager : MonoBehaviour
 {
     public static SceneLoadManager Instance;
-    public GameObject loadingScreen; // 로딩 화면 오브젝트 (UI)
+    public GameObject loadingScreenPrefab; // 로딩 화면 프리팹
+    private GameObject loadingScreenInstance; // 로딩 화면 인스턴스
     public Slider progressBar;       // 진행률 슬라이더
     public Text progressText;        // 진행률 텍스트
 
@@ -23,6 +24,7 @@ public class SceneLoadManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
 
@@ -31,6 +33,7 @@ public class SceneLoadManager : MonoBehaviour
     {
         targetSceneName = sceneName;
         SceneManager.LoadScene("LoadingScene"); // 로딩 씬으로 이동
+        StartCoroutine(LoadLoadingSceneAsync());
     }
 
     // 로딩 씬에서 호출되는 코루틴
@@ -46,26 +49,67 @@ public class SceneLoadManager : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(targetSceneName);
         operation.allowSceneActivation = false;
 
-        loadingScreen.SetActive(true); // 로딩 화면 활성화
+        if (loadingScreenInstance == null && loadingScreenPrefab != null)
+        {
+            loadingScreenInstance = Instantiate(loadingScreenPrefab);
+            progressBar = loadingScreenInstance.transform.Find("ProgressBar").GetComponent<Slider>();
+            progressText = loadingScreenInstance.transform.Find("ProgressText").GetComponent<Text>();
+            Debug.Log("chlwnsgk qudtls");
+        }
+
+        if (loadingScreenInstance != null)
+        {
+            Debug.Log("최준하 병신");
+            loadingScreenInstance.SetActive(true); // 로딩 화면 활성화
+        }
 
         while (!operation.isDone)
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
-            progressBar.value = progress; // 슬라이더 진행률 업데이트
-            progressText.text = (progress * 100).ToString("F0") + "%"; // 진행률 텍스트 업데이트
+            if (progressBar != null)
+            {
+                progressBar.value = progress; // 슬라이더 진행률 업데이트
+            }
+            if (progressText != null)
+            {
+                progressText.text = (progress * 100).ToString("F0") + "%"; // 진행률 텍스트 업데이트
+            }
 
             // 로딩이 거의 완료되었을 때 씬 활성화
             if (operation.progress >= 0.9f)
             {
-                progressBar.value = 1f;
-                progressText.text = "100%";
+                if (progressBar != null)
+                {
+                    progressBar.value = 1f;
+                }
+                if (progressText != null)
+                {
+                    progressText.text = "100%";
+                }
                 operation.allowSceneActivation = true;
             }
 
             yield return null;
         }
 
-        loadingScreen.SetActive(false); // 로딩 화면 비활성화
+        if (loadingScreenInstance != null)
+        {
+            loadingScreenInstance.SetActive(false); // 로딩 화면 비활성화
+        }
+    }
+
+    private IEnumerator LoadLoadingSceneAsync()
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync("LoadingScene");
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        if (Instance != null)
+        {
+            Instance.StartLoadingTargetScene();
+        }
     }
 }
 
@@ -78,6 +122,8 @@ public class LoadingSceneInitializer : MonoBehaviour
         if (SceneLoadManager.Instance != null)
         {
             SceneLoadManager.Instance.StartLoadingTargetScene();
+            Debug.Log("나와라 ㅅㅂ");
         }
+        Debug.Log("나와라 ㅅㅂ");
     }
 }
