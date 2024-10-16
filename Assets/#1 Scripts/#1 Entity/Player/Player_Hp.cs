@@ -18,6 +18,13 @@ public class Player_Hp : MonoBehaviour
         StartCoroutine(DecreaseHPOverTime());
         Retry_UI.gameObject.SetActive(false);
         Retry_UI.onClick.AddListener(RetryGame);
+
+        if (_PlayerHpUI.fillAmount == 0)
+        {
+            Retry_UI.gameObject.SetActive(true); 
+            RetryGame();
+        }
+            
             
     }
 
@@ -26,8 +33,7 @@ public class Player_Hp : MonoBehaviour
     {
         _PlayerHpUI.fillAmount = _player._currentHp / _player._maxHp;
 
-        if (_PlayerHpUI.fillAmount == 0)
-            Retry_UI.gameObject.SetActive(true);
+       
     }
 
     IEnumerator DecreaseHPOverTime()

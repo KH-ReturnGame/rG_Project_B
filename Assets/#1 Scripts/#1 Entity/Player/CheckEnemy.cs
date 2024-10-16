@@ -15,7 +15,7 @@ public class CheckEnemy : MonoBehaviour
    	void Update()
    	{
    	    mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-   	    angle = Mathf.Atan2(mouse.y - target.y+1.4f, mouse.x - target.x) * Mathf.Rad2Deg;
+   	    angle = Mathf.Atan2(mouse.y - target.y+3.1f, mouse.x - target.x+0.7f) * Mathf.Rad2Deg;
    	    this.transform.parent.transform.rotation = Quaternion.AngleAxis(angle+90, Vector3.forward);
         if (Input.GetMouseButtonDown(0) && enemiesInRange.Count > 0)
         {
