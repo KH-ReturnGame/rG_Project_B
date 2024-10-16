@@ -44,30 +44,30 @@ public class SceneLoadManager : MonoBehaviour
 
     private IEnumerator LoadTargetSceneAsync()
     {
-        float minimumLoadingTime = 1.0f; // 최소 로딩 시간 (1초)
+        float minimumLoadingTime = 0.75f; // 최소 로딩 시간 (1초)
         float elapsedTime = 0f;
-    
+
         yield return null; // 한 프레임 대기 (로딩 씬이 완전히 로드될 때까지 대기)
-    
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(targetSceneName);
         operation.allowSceneActivation = false;
-    
+
         if (loadingScreenInstance == null && loadingScreenPrefab != null)
         {
             loadingScreenInstance = Instantiate(loadingScreenPrefab);
             progressBar = loadingScreenInstance.transform.Find("ProgressBar").GetComponent<Slider>();
             progressText = loadingScreenInstance.transform.Find("ProgressText").GetComponent<Text>();
         }
-    
+
         if (loadingScreenInstance != null)
         {
             loadingScreenInstance.SetActive(true); // 로딩 화면 활성화
         }
-    
+
         while (!operation.isDone)
         {
             elapsedTime += Time.deltaTime;
-    
+
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
             if (progressBar != null)
             {
@@ -77,7 +77,7 @@ public class SceneLoadManager : MonoBehaviour
             {
                 progressText.text = (progress * 100).ToString("F0") + "%"; // 진행률 텍스트 업데이트
             }
-    
+
             // 최소 로딩 시간 동안 대기
             if (operation.progress >= 0.9f && elapsedTime >= minimumLoadingTime)
             {
@@ -91,16 +91,16 @@ public class SceneLoadManager : MonoBehaviour
                 }
                 operation.allowSceneActivation = true;
             }
-    
+
             yield return null;
         }
-    
+
         if (loadingScreenInstance != null)
         {
             loadingScreenInstance.SetActive(false); // 로딩 화면 비활성화
         }
     }
-    
+
 
     private IEnumerator LoadLoadingSceneAsync()
     {
