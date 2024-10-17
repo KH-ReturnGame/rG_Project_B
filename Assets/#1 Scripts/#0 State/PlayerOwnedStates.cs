@@ -122,6 +122,21 @@ namespace PlayerOwnedStates
             
         }
     }
+    public class IsDie : State<Player>
+    {
+        public override void Enter(Player entity)
+        {
+            Debug.Log("죽었어 ㅜㅜ");
+        }
+        public override void Execute(Player entity)
+        {
+            
+        }
+        public override void Exit(Player entity)
+        {
+            
+        }
+    }
     public class IsDragon : State<Player>
     {
         public override void Enter(Player entity)

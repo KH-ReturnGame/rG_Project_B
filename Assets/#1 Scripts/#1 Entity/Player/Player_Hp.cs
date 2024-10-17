@@ -38,11 +38,17 @@ public class Player_Hp : MonoBehaviour
 
     IEnumerator DecreaseHPOverTime()
     {
-        while(true)
+        if(_player._currentHp > 0)
         {
             _player.TakeDamage(0.25f);
             yield return null;
             yield return new WaitForSeconds(0.02f);
+            StartCoroutine(DecreaseHPOverTime());
+        }
+        else if(_player._currentHp <= 0)
+        {
+            _player.AddState(PlayerStates.IsDie);
+            yield return null;// 채훈아 39~51까지 수정해놨어 비교해봐
         }
     }
     
