@@ -10,12 +10,13 @@ public class CheckEnemy : MonoBehaviour
     // 범위 내 에너미 리스트
    	void Start()
    	{
-   	    target = transform.parent.position;
+   	   
    	}
    	void Update()
    	{
+        target = transform.parent.position;
    	    mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-   	    angle = Mathf.Atan2(mouse.y - target.y+3.1f, mouse.x - target.x+0.7f) * Mathf.Rad2Deg;
+   	    angle = Mathf.Atan2(mouse.y - target.y+0.5f, mouse.x - target.x+0.7f) * Mathf.Rad2Deg;
    	    this.transform.parent.transform.rotation = Quaternion.AngleAxis(angle+90, Vector3.forward);
         if (Input.GetMouseButtonDown(0) && enemiesInRange.Count > 0)
         {

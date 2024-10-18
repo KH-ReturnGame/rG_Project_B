@@ -77,6 +77,7 @@ public abstract class Entity : MonoBehaviour
         {
             Debug.Log(_currentHp+","+damage);
             _currentHp = 0;
+            Debug.Log("죽음");
         }
         _currentHp -= damage;
         Debug.Log(_currentHp+","+damage);
