@@ -25,7 +25,8 @@ public class CheckEnemy : MonoBehaviour
                 // 각 적 오브젝트의 Enemy 컴포넌트를 가져옴
                 Enemy enemy = _enemyobj.GetComponent<Enemy>();
                 // 데미지를 가함
-                enemy.TakeDamage(1);
+                enemy.TakeDamage(10);
+                AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Dash);
                 if(enemy == null)
                 {
                     Debug.Log("null임 ㅅㄱ");
