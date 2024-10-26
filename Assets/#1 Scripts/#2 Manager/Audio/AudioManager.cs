@@ -23,8 +23,16 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
-        Init();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            Init();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
