@@ -26,7 +26,6 @@ public class CheckEnemy : MonoBehaviour
                 Enemy enemy = _enemyobj.GetComponent<Enemy>();
                 // 데미지를 가함
                 enemy.TakeDamage(10);
-                AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Dash);
                 if(enemy == null)
                 {
                     Debug.Log("null임 ㅅㄱ");

@@ -16,20 +16,32 @@ public class SoundSliderUI : MonoBehaviour
         m_MusicMasterSlider.onValueChanged.AddListener(SetMasterVolume);
         m_MusicBGMSlider.onValueChanged.AddListener(SetMusicVolume);
         m_MusicEffectSlider.onValueChanged.AddListener(SetEffectVolume);
+        
+        m_MusicMasterSlider.value = AudioManager.instance.MasterVolume;
+        m_MusicBGMSlider.value = AudioManager.instance.bgmVolume;
+        m_MusicEffectSlider.value = AudioManager.instance.sfxVolume;
     }
  
     public void SetMasterVolume(float volume)
     {
-        m_AudioMixer.SetFloat("Master", Mathf.Log10(volume) * 20);
+        AudioManager.instance.MasterVolume = volume;
     }
  
     public void SetMusicVolume(float volume)
     {
-     	m_AudioMixer.SetFloat("BGM", Mathf.Log10(volume) * 20);
+        if(volume < 0.05)
+        {
+            volume = 0;
+        }
+        AudioManager.instance.bgmVolume = volume / AudioManager.instance.MasterVolume;
     }
  
     public void SetEffectVolume(float volume)
     {
-        m_AudioMixer.SetFloat("SoundEffect", Mathf.Log10(volume) * 20);
+        if(volume < 0.05)
+        {
+            volume = 0;
+        }
+        AudioManager.instance.sfxVolume = volume / AudioManager.instance.MasterVolume;
     }  
 }
