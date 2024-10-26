@@ -16,11 +16,9 @@ public class EnemyRangedAttack : MonoBehaviour
     [SerializeField]
     private GameObject bulletPrefab;
 
-    public bool isAttacking = false;
-
     void Start()
     {
-      
+        _enemy = GetComponent<Enemy>();
     }
 
     // Update is called once per frame
@@ -33,15 +31,21 @@ public class EnemyRangedAttack : MonoBehaviour
         playerx = player.position.x;
         enemyx = enemy.position.x;
 
-        if (distance <= 5 && !_enemy.IsContainState(EnemyStates.IsMove))
+        if (distance <= 5 && !_enemy.IsContainState(EnemyStates.IsMove) && !_enemy.IsContainState(EnemyStates.IsAttacking))
         {
             InvokeRepeating("Fire", 1f, 3f);
+        }
+        else if (distance > 5 || _enemy.IsContainState(EnemyStates.IsMove) || _enemy.IsContainState(EnemyStates.IsAttacking))
+        {
+            // 조건이 만족하지 않으면 반복 호출을 취소하고 플래그를 초기화
+            CancelInvoke("Fire");
+            _enemy.RemoveState(EnemyStates.IsAttacking);
         }
     }
 
     private void Fire()
     {
-        isAttacking = true;
+        _enemy.AddState(EnemyStates.IsAttacking);
         if (enemyx < playerx)
         {
          GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x + 1.2f, transform.position.y, transform.position.z) , transform.rotation);
@@ -52,7 +56,7 @@ public class EnemyRangedAttack : MonoBehaviour
         }
         Debug.Log("Fire");
         // 총알 생성
-        isAttacking = false;
+        
 
     }
 }

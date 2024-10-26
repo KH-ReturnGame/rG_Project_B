@@ -12,13 +12,11 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
 
     private Enemy _enemy;
 
-    public bool isMoving = false;
-    private bool isAttacking;
     void Start()
     {
         enemy = transform;
         player = GameObject.Find("player(Clone)").transform;
-
+        _enemy = GetComponent<Enemy>();
     }
 
     
@@ -38,9 +36,9 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     {
         if(!_enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            isMoving = true;
+            _enemy.AddState(EnemyStates.IsMove);
             transform.position = Vector2.MoveTowards(enemy.position, player.position, speed * Time.deltaTime); // 플레이어한테 이동
-            isMoving = false;
+            _enemy.RemoveState(EnemyStates.IsMove);
         }
     }
 }

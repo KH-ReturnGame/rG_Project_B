@@ -6,38 +6,27 @@ public class EnemyState : MonoBehaviour
 {
     private Enemy _enemy;
 
-    private bool isMoving;
-    private bool isAttacking;
-    private bool isAttacked;
-
-    public void Start()
+    private void Start()
     {
-        isMoving = gameObject.GetComponent<Enemy_RangedPlayerChase>().isMoving;
-        isAttacking = gameObject.GetComponent<EnemyRangedAttack>().isAttacking;
-        isAttacked = false;
+        _enemy = GetComponent<Enemy>();
     }
-
     void Update()
     {
-        if (isMoving)
+        if (_enemy.IsContainState(EnemyStates.IsMove))
         {
-            _enemy.AddState(EnemyStates.IsMove);
             Debug.Log("움직임");
         }
-        if(!isMoving)
+        if(!_enemy.IsContainState(EnemyStates.IsMove))
         {
-            _enemy.RemoveState(EnemyStates.IsMove);
             Debug.Log("안움직임");
         }
 
-        if (isAttacking)
+        if (_enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            _enemy.AddState(EnemyStates.IsAttacking);
             Debug.Log("공격중");
         }
-        if(!isAttacking)
+        if(!_enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            _enemy.RemoveState(EnemyStates.IsAttacking);
             Debug.Log("공격중 아님");
         }
     }
