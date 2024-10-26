@@ -2428,6 +2428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d03e3c7a0031be440b0638c1e4ab67e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MasterVolume: 0
   bgmClip: {fileID: 0}
   bgmVolume: 0.2
   sfxClips:
@@ -2445,7 +2446,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3df9bbbc130ccb344af5f3fc793a630f, type: 3}
   - {fileID: 8300000, guid: 7cbd6cd765888ff418d01d98bd1ce9c2, type: 3}
   sfxVolume: 1
-  channels: 2
+  channels: 5
 --- !u!4 &1609885046
 Transform:
   m_ObjectHideFlags: 0
