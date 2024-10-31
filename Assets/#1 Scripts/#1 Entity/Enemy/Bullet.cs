@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private Rigidbody2D bulletrigid;
     public Transform player;
-    private float speed = 7f;
+    private float speed = 7.5f;
     public Vector3 copiedPlayer;
 
     void Start()
@@ -15,25 +15,21 @@ public class Bullet : MonoBehaviour
         player = GameObject.Find("player(Clone)").transform;
         copiedPlayer = player.transform.position;
 
-        Vector2 direction = (copiedPlayer - transform.position).normalized; // ÃÑ¾Ë ÇâÇÏ´Â ¹æÇâ Á¤ÇÏ±â
+        Vector2 direction = (copiedPlayer - transform.position).normalized; // ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï±ï¿½
 
         bulletrigid.AddForce(direction * speed, ForceMode2D.Impulse);
-        Destroy(gameObject, 3f); // 3ÃÊ µÚ »ç¶óÁü
+        Destroy(gameObject, 3f); // 3ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 
     void Update()
     {
-       
-
 
     }
     void OnTriggerEnter2D(Collider2D other)
-
     {
-        if (other.gameObject.tag == "ground" || other.gameObject.tag == "Player") // Å¸ÀÏ¸ÊÀÌ³ª ÇÃ·¹ÀÌ¾î¶û Ãæµ¹ÇÏ¸é »ç¶óÁü
+        if (other.gameObject.tag == "ground" || other.gameObject.tag == "Player" || other.gameObject.tag == "trap") // Å¸ï¿½Ï¸ï¿½ï¿½Ì³ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½æµ¹ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
         { 
-            Destroy(gameObject);
-            Debug.Log("Die");
+            Destroy(this.gameObject);
         }
     }
 }

@@ -6,13 +6,9 @@ public class EnemyRangedAttack : MonoBehaviour
 {
     private Transform enemy;
     public Transform player;
-
     private float distance;
-    public float enemyx; // ¿¡³Ê¹Ì xÁÂÇ¥
-    public float playerx; // ÇÃ·¹ÀÌ¾î xÁÂÇ¥
-
     private Enemy _enemy;
-
+    
     [SerializeField]
     private GameObject bulletPrefab;
 
@@ -26,10 +22,7 @@ public class EnemyRangedAttack : MonoBehaviour
     {
         distance = gameObject.GetComponent<Enemy_RangedPlayerChase>().distance;
         player = gameObject.GetComponent<Enemy_RangedPlayerChase>().player;
-        enemy = gameObject.GetComponent<Enemy_RangedPlayerChase>().enemy;
-
-        playerx = player.position.x;
-        enemyx = enemy.position.x;
+        enemy = gameObject.GetComponent<Enemy_RangedPlayerChase>().transform;
 
         if (distance <= 5 && !_enemy.IsContainState(EnemyStates.IsMove) && !_enemy.IsContainState(EnemyStates.IsAttacking))
         {
@@ -37,7 +30,7 @@ public class EnemyRangedAttack : MonoBehaviour
         }
         else if (distance > 5 || _enemy.IsContainState(EnemyStates.IsMove) || _enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            // Á¶°ÇÀÌ ¸¸Á·ÇÏÁö ¾ÊÀ¸¸é ¹Ýº¹ È£ÃâÀ» Ãë¼ÒÇÏ°í ÇÃ·¡±×¸¦ ÃÊ±âÈ­
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½ È£ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½Ã·ï¿½ï¿½×¸ï¿½ ï¿½Ê±ï¿½È­
             CancelInvoke("Fire");
             _enemy.RemoveState(EnemyStates.IsAttacking);
         }
@@ -46,17 +39,15 @@ public class EnemyRangedAttack : MonoBehaviour
     private void Fire()
     {
         _enemy.AddState(EnemyStates.IsAttacking);
-        if (enemyx < playerx)
+        if (enemy.position.x < player.position.x)
         {
-         GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x + 1.2f, transform.position.y, transform.position.z) , transform.rotation);
+            GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x + 1.2f, transform.position.y, transform.position.z) , transform.rotation);
         }
-        else if(enemyx > playerx)
+        else if(enemy.position.x > player.position.x)
         {
-         GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x -  1.2f, transform.position.y, transform.position.z), transform.rotation);
+            GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x -  1.2f, transform.position.y, transform.position.z), transform.rotation);
         }
         Debug.Log("Fire");
-        // ÃÑ¾Ë »ý¼º
-        
-
+        // ï¿½Ñ¾ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
 }

@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class Enemy_RangedPlayerChase : MonoBehaviour
 {
-    private float speed = 3f; // ÀÌµ¿¼Óµµ
-    public float distance; // °Å¸®
-
-    public Transform enemy; // ¿¡³Ê¹Ì À§Ä¡º¯¼ö
-    public Transform player; // ÇÃ·¹ÀÌ¾î À§Ä¡º¯¼ö
-
+    private float speed = 3f; // ï¿½Ìµï¿½ï¿½Óµï¿½
+    public float distance; // ï¿½Å¸ï¿½
+    public float limit_distance;
+    public Transform player; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½
     private Enemy _enemy;
 
     void Start()
     {
-        enemy = transform;
+        limit_distance = 5f;
         player = GameObject.Find("player(Clone)").transform;
         _enemy = GetComponent<Enemy>();
     }
@@ -22,23 +20,22 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     
     void Update()
     {
-      
+        distance = Vector2.Distance(player.position, transform.position); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        distance = Vector2.Distance(player.position, enemy.position); // ÇÃ·¹ÀÌ¾î¿ÍÀÇ °Å¸® ÃøÁ¤
-
-        if (distance > 5)
+        if (distance > limit_distance && !_enemy.IsContainState(EnemyStates.IsAttacking) && !_enemy.IsContainState(EnemyStates.IsMove))
         {
-            ChasingPlayer();
+            StartCoroutine(ChasingPlayer());
         }
     }
 
-    private void ChasingPlayer()
+    IEnumerator ChasingPlayer()
     {
-        if(!_enemy.IsContainState(EnemyStates.IsAttacking))
-        {
-            _enemy.AddState(EnemyStates.IsMove);
-            transform.position = Vector2.MoveTowards(enemy.position, player.position, speed * Time.deltaTime); // ÇÃ·¹ÀÌ¾îÇÑÅ× ÀÌµ¿
-            _enemy.RemoveState(EnemyStates.IsMove);
-        }
+        yield return new WaitForSeconds(0.5f);
+
+        _enemy.AddState(EnemyStates.IsMove);
+        transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
+        _enemy.RemoveState(EnemyStates.IsMove);
+
+        yield return null;
     }
 }
