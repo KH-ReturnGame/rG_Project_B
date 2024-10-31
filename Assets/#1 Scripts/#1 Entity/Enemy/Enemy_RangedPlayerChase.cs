@@ -22,7 +22,7 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     {
         distance = Vector2.Distance(player.position, transform.position); // �÷��̾���� �Ÿ� ����
 
-        if (distance > limit_distance && !_enemy.IsContainState(EnemyStates.IsAttacking) && !_enemy.IsContainState(EnemyStates.IsMove))
+        if (distance > limit_distance && !_enemy.IsContainState(EnemyStates.IsMove))
         {
             StartCoroutine(ChasingPlayer());
         }
