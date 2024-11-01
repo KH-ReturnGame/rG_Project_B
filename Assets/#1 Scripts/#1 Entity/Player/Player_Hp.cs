@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class Player_Hp : MonoBehaviour
 {
     Player _player;
@@ -18,12 +17,10 @@ public class Player_Hp : MonoBehaviour
         StartCoroutine(DecreaseHPOverTime());
         Retry_UI.gameObject.SetActive(false);
         Retry_UI.onClick.AddListener(RetryGame);
-        
-        if (_PlayerHpUI.fillAmount == 0)
-        {
-            Retry_UI.gameObject.SetActive(true); 
-            RetryGame();
-        }  
+    }
+    public float GetHp()
+    {
+        return _player._currentHp;
     }
 
     // Update is called once per frame
@@ -31,7 +28,12 @@ public class Player_Hp : MonoBehaviour
     {
         _PlayerHpUI.fillAmount = _player._currentHp / _player._maxHp;
 
-        
+        if (_player._currentHp <= 0)
+        {
+            Retry_UI.gameObject.SetActive(true); 
+            Debug.Log("끝");
+            RetryGame();
+        }  
 
     }
 
