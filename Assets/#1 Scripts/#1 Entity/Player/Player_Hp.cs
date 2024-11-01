@@ -30,12 +30,17 @@ public class Player_Hp : MonoBehaviour
 
         if (_player._currentHp <= 0)
         {
-            Retry_UI.gameObject.SetActive(true); 
-            Debug.Log("끝");
-            RetryGame();
+            Retry_UI.gameObject.SetActive(true);
         }  
 
     }
+    public void RetryGame()
+    {
+        // 현재 씬을 다시 로드
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    
 
     IEnumerator DecreaseHPOverTime()
     {
@@ -49,13 +54,8 @@ public class Player_Hp : MonoBehaviour
         else if(_player._currentHp <= 0)
         {
             _player.AddState(PlayerStates.IsDie);
-            yield return null;// 채훈아 39~51까지 수정해놨어 비교해봐
+            yield return null;
         }
     }
     
-    void RetryGame()
-    {
-        // 현재 씬을 다시 로드
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
 }
