@@ -75,11 +75,11 @@ public abstract class Entity : MonoBehaviour
         //만약 피해를 입었을때 체력이 0이하라면 -> 죽음처리
         if (_currentHp - damage <= 0 && _currentHp != 0)
         {
-            Debug.Log(_currentHp+","+damage);
             _currentHp = 0;
             Debug.Log("죽음");
         }
         _currentHp -= damage;
-        Debug.Log(_currentHp+","+damage);
     }
+
+   
 }
