@@ -7194,7 +7194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957008cdd43ced54baebf7eae6962bb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextScene: MapTest1-2
+  NextScene: dash
 --- !u!1001 &248276623390146954
 PrefabInstance:
   m_ObjectHideFlags: 0
