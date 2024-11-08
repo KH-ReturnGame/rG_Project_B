@@ -22,18 +22,31 @@ public class Safezone : MonoBehaviour
        
     }
     
-    void OnTriggerEnter2D(Collider2D coll) //충돌 발생
-    {
-        Debug.Log("Test");
-    }
+   void OnTriggerEnter2D(Collider2D coll)
+       {
+           // 플레이어가 안전지대에 들어왔을 때만 로그 출력
+           if (coll.CompareTag("Player"))
+           {
+               Debug.Log("Player entered Safezone.");
+           }
+       }
+   
     void OnTriggerStay2D(Collider2D coll)
-    {
-        Debug.Log("켜저 있음");
-        _player.RecoveryHp(0.25f);
-    }
-
-    void OnTriggerExit2D(Collider2D coll)
-    {
-       
-    }
+       {
+           // Player 태그가 붙은 객체와만 상호작용하도록 설정
+           if (coll.CompareTag("Player") && _player != null)
+           {
+               Debug.Log("Player is in Safezone. Recovering health.");
+               _player.RecoveryHp(0.25f * Time.deltaTime * 10); // 체력 회복
+           }
+       }
+   
+       void OnTriggerExit2D(Collider2D coll)
+       {
+           // 안전지대에서 나갈 때 메시지 출력
+           if (coll.CompareTag("Player"))
+           {
+               Debug.Log("Player exited Safezone.");
+           }
+       }
 }

@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca0ca97b-9b65-4891-9e7c-94a8bb53fa6a" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/#0 Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#0 Scenes/main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/#1 Scripts/#0 State/Safezone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#1 Scripts/#0 State/Safezone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Entity.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ca0ca97b-9b65-4891-9e7c-94a8bb53fa6a" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,7 +58,7 @@
       <updated>1729226413847</updated>
       <workItem from="1729226417128" duration="165000" />
       <workItem from="1730240376728" duration="6548000" />
-      <workItem from="1730438107220" duration="7364000" />
+      <workItem from="1730438107220" duration="8225000" />
     </task>
     <servers />
   </component>
