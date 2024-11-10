@@ -173,6 +173,7 @@ public class Player_Movement : MonoBehaviour
     {
         transform.position = new Vector2(WhereToDash.transform.position.x, WhereToDash.transform.position.y);
         _playerRigidbody.velocity = Vector2.zero;
+        AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Dash);
         _player.RemoveState(PlayerStates.IsDragon);
         WhereToDash.SetActive(false);
     }
