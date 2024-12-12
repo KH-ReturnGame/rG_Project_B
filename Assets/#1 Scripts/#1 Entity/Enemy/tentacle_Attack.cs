@@ -5,9 +5,7 @@ using UnityEngine;
 public class tentacle_Attack : MonoBehaviour
 {    
     private tentacle_Detect playerDetect;
-
     private tentacle_Mid playerMid;
-
     public GameObject Attack_tentacle;
     void Awake()
     {
@@ -27,6 +25,9 @@ public class tentacle_Attack : MonoBehaviour
         if (playerDetect.GetAttackox() == 1)
         {
             Debug.Log("공격성공");
+            Destroy(gameObject,1f);
         }
+        
     }
+    
 }
