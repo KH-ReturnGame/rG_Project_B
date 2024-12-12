@@ -17,7 +17,6 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
         _enemy = GetComponent<Enemy>();
     }
 
-    
     void Update()
     {
         distance = Vector2.Distance(player.position, transform.position); // 거리 측정
@@ -26,9 +25,10 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
         {
             StartCoroutine(ChasingPlayer());
         }
-        if (distance <= limit_distance && _enemy.IsContainState(EnemyStates.IsAttacking) || _enemy.IsContainState(EnemyStates.IsDie))
+        if (distance <= limit_distance || _enemy.IsContainState(EnemyStates.IsDie))
         {
-            StopCoroutine(ChasingPlayer());
+            //StopCoroutine(ChasingPlayer()); 불안해서 일단 작동중인거 다 멈추는걸로 해놨어 준혁아
+            StopAllCoroutines();
             _enemy.RemoveState(EnemyStates.IsMove);
         }
     }
@@ -37,6 +37,7 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
+        Debug.Log("?????????????????");
         _enemy.AddState(EnemyStates.IsMove);
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime); // �÷��̾����� �̵�
         
