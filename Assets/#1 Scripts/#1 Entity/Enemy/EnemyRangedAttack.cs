@@ -7,6 +7,8 @@ public class EnemyRangedAttack : MonoBehaviour
     public Transform player;
     private float distance;
     private Enemy _enemy;
+    private Coroutine fireCoroutine; // 실행 중인 Fire 코루틴의 참조
+
     
     [SerializeField]
     private GameObject bulletPrefab;
@@ -14,44 +16,55 @@ public class EnemyRangedAttack : MonoBehaviour
     void Start()
     {
         _enemy = GetComponent<Enemy>();        
-        distance = gameObject.GetComponent<Enemy_RangedPlayerChase>().distance;
         player = gameObject.GetComponent<Enemy_RangedPlayerChase>().player;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (distance <= 5 && !_enemy.IsContainState(EnemyStates.IsMove) && !_enemy.IsContainState(EnemyStates.IsAttacking))
+        if (distance <= 5f && !_enemy.IsContainState(EnemyStates.IsDie) 
+        && !_enemy.IsContainState(EnemyStates.IsMove) && !_enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            StartCoroutine(Fire());
-            _enemy.AddState(EnemyStates.IsAttacking);
+            // 플레이어와 거리가 5 이하면 발사, Fire 코루틴이 실행 중이지 않다면 시작
+            if (fireCoroutine == null)
+            {
+                fireCoroutine = StartCoroutine(Fire());
+                _enemy.AddState(EnemyStates.IsAttacking);
+            }
         }
-        
-        if (distance > 5 || _enemy.IsContainState(EnemyStates.IsMove))
+        else if (distance > 5f || _enemy.IsContainState(EnemyStates.IsMove) || _enemy.IsContainState(EnemyStates.IsDie))
         {
-            // ������ �������� ������ �ݺ� ȣ���� ����ϰ� �÷��׸� �ʱ�ȭ
-            StopCoroutine(Fire());
-            _enemy.RemoveState(EnemyStates.IsAttacking);
+            // Fire 코루틴이 실행 중이라면 멈춤
+            if (fireCoroutine != null)
+            {
+                StopCoroutine(fireCoroutine);
+                fireCoroutine = null; // 참조 초기화
+                _enemy.RemoveState(EnemyStates.IsAttacking);
+            }
         }
     }
 
-    IEnumerator Fire()
+   IEnumerator Fire()
+{
+    while (true) // 무한 반복 루프
     {
+        if (_enemy.IsContainState(EnemyStates.IsDie)) // 적이 사망했는지 확인
+        {
+            yield break; // 코루틴 종료
+        }
+
+        // 총알 발사
         if (transform.position.x < player.position.x)
         {
-            GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x + 1.2f, transform.position.y, transform.position.z) , transform.rotation);
+            Instantiate(bulletPrefab, new Vector3(transform.position.x + 1.2f, transform.position.y, transform.position.z), transform.rotation);
         }
-        else if(transform.position.x > player.position.x)
+        else
         {
-            GameObject clone_bullet = Instantiate(bulletPrefab, new Vector3(transform.position.x -  1.2f, transform.position.y, transform.position.z), transform.rotation);
+            Instantiate(bulletPrefab, new Vector3(transform.position.x - 1.2f, transform.position.y, transform.position.z), transform.rotation);
         }
         Debug.Log("Fire");
 
-        yield return new WaitForSeconds(1.5f);
-
-        StartCoroutine(Fire());
-
-        yield return null;
-        // �Ѿ� ����
+        yield return new WaitForSeconds(1.5f); // 1.5초 대기 후 반복
     }
+}
 }

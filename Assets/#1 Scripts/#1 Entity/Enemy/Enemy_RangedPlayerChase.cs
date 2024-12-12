@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Enemy_RangedPlayerChase : MonoBehaviour
 {
-    private float speed = 3f; // �̵��ӵ�
-    public float distance; // �Ÿ�
+    private float speed = 3f; // 이동 속도
+    public float distance; // 플레이어와의 거리
     public float limit_distance;
-    public Transform player; // �÷��̾� ��ġ����
+    public Transform player; // 플레이어 위치 가져오기
     private Enemy _enemy;
 
     void Start()
@@ -20,11 +20,16 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     
     void Update()
     {
-        distance = Vector2.Distance(player.position, transform.position); // �÷��̾���� �Ÿ� ����
+        distance = Vector2.Distance(player.position, transform.position); // 거리 측정
 
-        if (distance > limit_distance && !_enemy.IsContainState(EnemyStates.IsMove))
+        if (distance > limit_distance && !_enemy.IsContainState(EnemyStates.IsDie))
         {
             StartCoroutine(ChasingPlayer());
+        }
+        if (distance <= limit_distance && _enemy.IsContainState(EnemyStates.IsAttacking) || _enemy.IsContainState(EnemyStates.IsDie))
+        {
+            StopCoroutine(ChasingPlayer());
+            _enemy.RemoveState(EnemyStates.IsMove);
         }
     }
 
@@ -34,8 +39,7 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
 
         _enemy.AddState(EnemyStates.IsMove);
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime); // �÷��̾����� �̵�
-        _enemy.RemoveState(EnemyStates.IsMove);
-
+        
         yield return null;
     }
 }

@@ -14,20 +14,28 @@ public class EnemyState : MonoBehaviour
     {
         if (_enemy.IsContainState(EnemyStates.IsMove))
         {
-            Debug.Log("¿òÁ÷ÀÓ");
+            Debug.Log("ì  ì´ë™ì¤‘");
         }
         if(!_enemy.IsContainState(EnemyStates.IsMove))
         {
-            Debug.Log("¾È¿òÁ÷ÀÓ");
+            Debug.Log("ì  ì´ë™ ì•ˆí•¨");
         }
 
         if (_enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            Debug.Log("°ø°İÁß");
+            Debug.Log("ì  ê³µê²©ì¤‘");
         }
         if(!_enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            Debug.Log("°ø°İÁß ¾Æ´Ô");
+            Debug.Log("ì  ê³µê²© ì•ˆí•¨");
+        }
+        if (_enemy.IsContainState(EnemyStates.IsDie))
+        {
+            Debug.Log("ì  ì‚¬ë§");
+        }
+        if(!_enemy.IsContainState(EnemyStates.IsDie))
+        {
+            Debug.Log("ì  ì‚¬ë§ ì•ˆí•¨");
         }
     }
 }

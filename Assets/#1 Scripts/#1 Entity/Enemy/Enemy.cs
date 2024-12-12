@@ -19,6 +19,7 @@ public enum EnemyStates
     IsDetect,
     IsDie,
     IsCool,
+    IsFly
     // stun은 유니크 몹과 일반 몹을 나눠서 할것
     // 플레이어가 원거리 몹 근처에 얼마나 있었는지를 상태에 구별해서 추가할 것
 }
@@ -26,7 +27,7 @@ public enum EnemyStates
 public class Enemy : Entity
 {
     //에너미가 가질 수 있는 모든 상태 개수
-    public static int state_count = 11;
+    public static int state_count = 12;
     //에너미가 가질 수 있는 모든 상태들
     public State<Enemy>[] _states;
     public StateManager<Enemy> _stateManager;
@@ -54,6 +55,7 @@ public class Enemy : Entity
         _states[(int)EnemyStates.IsDetect] = new EnemyOwnedStates.IsDetect();
         _states[(int)EnemyStates.IsDie] = new EnemyOwnedStates.IsDie();
         _states[(int)EnemyStates.IsCool] = new EnemyOwnedStates.IsCool();
+        _states[(int)EnemyStates.IsFly] = new EnemyOwnedStates.IsFly();
         
         _stateManager = new StateManager<Enemy>();
         _stateManager.Setup(this,state_count,_states);

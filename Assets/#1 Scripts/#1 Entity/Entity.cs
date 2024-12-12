@@ -13,7 +13,7 @@ public abstract class Entity : MonoBehaviour
     public float _maxHp;
 
     //현재 체력
-    private float _currentHp;
+   [SerializeField]private float _currentHp;
 
     /// <summary>
     /// Entity 클래스 기초 설정을 위한 Setup메소드, 매개변수로 최대체력을 받음

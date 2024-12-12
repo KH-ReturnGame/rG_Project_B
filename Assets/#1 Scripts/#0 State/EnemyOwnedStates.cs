@@ -142,7 +142,7 @@ namespace EnemyOwnedStates
         public override void Enter(Enemy entity)
         {
             Debug.Log("IsDie Enter");
-            //½ÃÃ¼ »óÈ£ÀÛ¿ë ³ÖÀ»°Å¸é ¿©±â´Ù ³Ö¾î¾ß µÉ µí
+            //ï¿½ï¿½Ã¼ ï¿½ï¿½È£ï¿½Û¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½
 
         }
         public override void Execute(Enemy entity)
@@ -155,6 +155,21 @@ namespace EnemyOwnedStates
         }
     }
     public class IsCool : State<Enemy>
+    {
+        public override void Enter(Enemy entity)
+        {
+            
+        }
+        public override void Execute(Enemy entity)
+        {
+            
+        }
+        public override void Exit(Enemy entity)
+        {
+            
+        }
+    }
+    public class IsFly : State<Enemy>
     {
         public override void Enter(Enemy entity)
         {
