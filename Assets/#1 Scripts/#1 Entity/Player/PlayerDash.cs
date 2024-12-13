@@ -13,8 +13,10 @@ public class PlayerDash : MonoBehaviour
     public Player_Movement _playerMovement;
     public float radius;
     private bool isCanDash;
+    public GhostEffect ghost;
     void Start()
     {
+        ghost = GetComponent<GhostEffect>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         _player = this.transform.parent.GetComponent<Player>();
 
@@ -30,6 +32,7 @@ public class PlayerDash : MonoBehaviour
     }
     void Update()
     {
+       
         // 마우스의 월드 좌표를 얻어옵니다.
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -88,6 +91,7 @@ public class PlayerDash : MonoBehaviour
         if(Input.GetMouseButtonDown(0) && isCanDash)
         {
             _playerMovement.DragonDash();
+            ghost.makeGhost = true;
             if(groundHit)
             {
                 _player.AddState(PlayerStates.IsWall);
@@ -98,7 +102,6 @@ public class PlayerDash : MonoBehaviour
             if (enemyHit)
             {
                 // 여기에 적과 충돌한 경우 처리할 로직 추가
-                Debug.Log("적이 히트되었습니다!");
 
                 // 예시: 적에게 데미지를 주는 메서드 호출 (적 오브젝트와의 상호작용)
                 RaycastHit2D enemyRaycast = Array.Find(hits, hit => hit.collider != null && hit.collider.CompareTag("Enemy"));
@@ -116,3 +119,4 @@ public class PlayerDash : MonoBehaviour
         }
     }
 }
+

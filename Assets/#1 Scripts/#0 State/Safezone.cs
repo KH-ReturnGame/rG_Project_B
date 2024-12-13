@@ -37,7 +37,7 @@ public class Safezone : MonoBehaviour
            if (coll.CompareTag("Player") && _player != null)
            {
                Debug.Log("Player is in Safezone. Recovering health.");
-               _player.RecoveryHp(0.25f * Time.deltaTime * 10); // 체력 회복
+               _player.RecoveryHp(0.25f * Time.deltaTime * 10   ); // 체력 회복
            }
        }
    

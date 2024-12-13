@@ -201,6 +201,7 @@ MonoBehaviour:
   _playerTransform: {fileID: 8339777150173832432}
   _playerMovement: {fileID: 6696551507321958097}
   radius: 3.5
+  ghost: {fileID: 0}
 --- !u!1 &1357462538229563363
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +935,8 @@ GameObject:
   - component: {fileID: 6117929494119648847}
   - component: {fileID: 6359978308909536661}
   - component: {fileID: 4887204046217111329}
+  - component: {fileID: 6927251865099011034}
+  - component: {fileID: -4981765981557173104}
   m_Layer: 8
   m_Name: player
   m_TagString: Player
@@ -1008,7 +1011,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.1590909, y: 1.3863636}
+  m_Size: {x: 1.6136364, y: 1.3863636}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1032,7 +1035,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.6136364, y: 1.3863636}
-    newSize: {x: 1.1590909, y: 1.3863636}
+    newSize: {x: 1.6136364, y: 1.3863636}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1126,6 +1129,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -1260,3 +1264,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &6927251865099011034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339777150173832434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae79f00127eeca541a8c17d8ec143904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostDelay: 0
+  ghost: {fileID: 1292526187962828414, guid: da8d8d9929e71d742ba8e74b287fa87f, type: 3}
+  makeGhost: 0
+--- !u!114 &-4981765981557173104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339777150173832434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051e7d2129027ff4d8d431077ddccecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerfilp: {fileID: 0}
+  _playerTransform: {fileID: 0}
+  _playerMovement: {fileID: 0}
+  radius: 0
+  ghost: {fileID: 6927251865099011034}

@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca0ca97b-9b65-4891-9e7c-94a8bb53fa6a" name="변경" comment="" />
+    <list default="true" id="ca0ca97b-9b65-4891-9e7c-94a8bb53fa6a" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/#0 Scenes/main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#0 Scenes/main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/#1 Scripts/#0 State/Safezone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#1 Scripts/#0 State/Safezone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/PlayerDash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/PlayerDash.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/#2 Prefabs/Player/player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#2 Prefabs/Player/player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/#5 animation/animation/test_idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/#5 animation/animation/test_idle.anim" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +31,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Entity_Manager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/CheckEnemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/PlayerDash.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/Player_Collide.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/Player_Hp.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/#1 Scripts/#1 Entity/Player/Player_Movement.cs" root0="SKIP_HIGHLIGHTING" />
@@ -59,6 +67,9 @@
       <workItem from="1729226417128" duration="165000" />
       <workItem from="1730240376728" duration="6548000" />
       <workItem from="1730438107220" duration="8225000" />
+      <workItem from="1731038469496" duration="2958000" />
+      <workItem from="1731643321068" duration="4623000" />
+      <workItem from="1732247841884" duration="424000" />
     </task>
     <servers />
   </component>
