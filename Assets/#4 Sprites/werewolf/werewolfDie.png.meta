@@ -115,7 +115,154 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: werewolfDie_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 35
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f4541e5f4aa7943b94478b1a7a75bd
+      internalID: 1374304233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolfDie_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 35
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78576d81c19cdd34aa113888bf362cdf
+      internalID: -571445882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolfDie_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 43
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc4a34699d8bf540b8d8c9671f6e42e
+      internalID: -1975615453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolfDie_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 43
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7174cb88e5976641817abe5ca6e8d84
+      internalID: 30559182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolfDie_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 14
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd38ddc59176ff4d9ce0b11fd025ab6
+      internalID: -544041347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolfDie_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 11
+        width: 23
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b124023a1fe049499788f7f2d8b744d
+      internalID: 1187355750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: werewolfDie_6
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 5
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3655e4dc882cd249bf7fae335070c8c
+      internalID: 1131130203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +273,14 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      werewolfDie_0: 1374304233
+      werewolfDie_2: -1975615453
+      werewolfDie_5: 1187355750
+      werewolfDie_1: -571445882
+      werewolfDie_3: 30559182
+      werewolfDie_4: -544041347
+      werewolfDie_6: 1131130203
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

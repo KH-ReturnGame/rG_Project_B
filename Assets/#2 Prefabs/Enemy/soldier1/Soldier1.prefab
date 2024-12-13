@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 4636851102549030832}
   - component: {fileID: 7681124357648093954}
   m_Layer: 7
-  m_Name: Enemy_BOOM_TEST
+  m_Name: Soldier1
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

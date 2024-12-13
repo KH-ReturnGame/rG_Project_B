@@ -115,7 +115,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TENTACLE_Die_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 50
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17a0d2652cf45f4e817421ede30e5d8
+      internalID: 846424082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TENTACLE_Die_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 32
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05d9d1cf3e146443a5297e56a61291d
+      internalID: 908529599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TENTACLE_Die_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 42
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b58da4065c14b4fb8e6d5c8312c235
+      internalID: 2128980075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TENTACLE_Die_3
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 17
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121ab8e8c0ebc8848b64cc50c3954815
+      internalID: -1113963731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TENTACLE_Die_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 10
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 061f746c7d804794683b6802950ca3a6
+      internalID: -1475784016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TENTACLE_Die_5
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 22
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f5a2cba1229c644adda2e73dfe5d64
+      internalID: 1646835106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TENTACLE_Die_6
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc89d6d992ef7ce4899bc4581acc3cdf
+      internalID: -552930273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TENTACLE_Die_7
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1db5075e683e4c046acfbfba40b13e93
+      internalID: -6847199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +294,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TENTACLE_Die_7: -6847199
+      TENTACLE_Die_4: -1475784016
+      TENTACLE_Die_6: -552930273
+      TENTACLE_Die_3: -1113963731
+      TENTACLE_Die_1: 908529599
+      TENTACLE_Die_2: 2128980075
+      TENTACLE_Die_5: 1646835106
+      TENTACLE_Die_0: 846424082
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
