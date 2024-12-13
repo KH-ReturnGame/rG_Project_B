@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 2921602512069193630}
   m_Layer: 0
   m_Name: Attack_tentacle
-  m_TagString: Untagged
+  m_TagString: trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

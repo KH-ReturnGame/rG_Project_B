@@ -13,7 +13,7 @@ public abstract class Entity : MonoBehaviour
     public float _maxHp;
 
     //현재 체력
-    private float _currentHp;
+    public float _currentHp;
 
     /// <summary>
     /// Entity 클래스 기초 설정을 위한 Setup메소드, 매개변수로 최대체력을 받음
@@ -50,7 +50,7 @@ public abstract class Entity : MonoBehaviour
     /// <returns>
     /// Null
     /// </returns>
-    protected void RecoveryHp(float hp)
+    public void RecoveryHp(float hp)
     {
         //만약 체력을 회복했을때 최대체력을 넘어간다면 -> 회복 못하게
         if (_currentHp + hp > _maxHp)

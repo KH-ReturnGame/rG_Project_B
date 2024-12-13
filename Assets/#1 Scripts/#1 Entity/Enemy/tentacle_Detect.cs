@@ -8,7 +8,7 @@ public class tentacle_Detect : MonoBehaviour
     public float detectionRadius = 1f;
     public Transform player; 
     public LayerMask playerLayer;
-
+    
     public int GetAttackox()
     {
         return Attack_check;
@@ -18,12 +18,15 @@ public class tentacle_Detect : MonoBehaviour
     {
         
     }
+    //플레이어 인식하기
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("플레이어 감지");
             Attack_check = 1;
+            gameObject.SetActive(false);
+
         }
     }
 

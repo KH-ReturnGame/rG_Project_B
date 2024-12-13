@@ -18,7 +18,7 @@ public class tentacle_Mid : MonoBehaviour
             Debug.Log("tentacle_Detect 컴포넌트를 찾을 수 없습니다!");
         }
     }
-
+    //전달받고 삭제하기
     void Update()
     {
         if (playerDetect.GetAttackox() == 1)

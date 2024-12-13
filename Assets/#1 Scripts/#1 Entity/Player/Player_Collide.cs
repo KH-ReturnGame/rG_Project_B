@@ -39,15 +39,6 @@ public class Player_Collide : MonoBehaviour
         {
             _player.RemoveState(PlayerStates.IsWall);
             _playerMovement._playerRigidbody.gravityScale = 3;
-            Debug.Log("벽 안붙음");
-        }
-    }
-
-     void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Test_Bullet(Clone)")
-        {
-            _player.TakeDamage(10);
         }
     }
 }
