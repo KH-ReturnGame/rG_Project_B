@@ -9,12 +9,14 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     public float limit_distance;
     public Transform player; // 플레이어 위치 가져오기
     private Enemy _enemy;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
         limit_distance = 5f;
         player = GameObject.Find("player(Clone)").transform;
         _enemy = GetComponent<Enemy>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -30,6 +32,15 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
             //StopCoroutine(ChasingPlayer()); 불안해서 일단 작동중인거 다 멈추는걸로 해놨어 준혁아
             StopAllCoroutines();
             _enemy.RemoveState(EnemyStates.IsMove);
+        }
+
+        if (transform.position.x < player.position.x) // 에너미 플립
+        {
+            spriteRenderer.flipX = true;
+        }
+        else
+        {
+            spriteRenderer.flipX = false;
         }
     }
 

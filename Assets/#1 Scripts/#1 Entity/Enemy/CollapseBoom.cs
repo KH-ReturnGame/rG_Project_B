@@ -12,7 +12,6 @@ public class CollapseBoom : MonoBehaviour
     void Start()
     {
         enemy = GetComponent<Enemy>();
-        StartCoroutine(Boom()); // 테스트용 호출
     }
 
     // Update is called once per frame

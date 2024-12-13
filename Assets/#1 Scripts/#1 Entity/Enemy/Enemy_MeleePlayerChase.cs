@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Enemy_MeleePlayerChase : MonoBehaviour
 {
-    private float speed = 3f; // ÀÌµ¿¼Óµµ
+    private float speed = 3f; // ï¿½Ìµï¿½ï¿½Óµï¿½
 
-    private Transform enemy; //¿¡³Ê¹Ì À§Ä¡º¯¼ö
-    private Transform player; //ÇÃ·¹ÀÌ¾î À§Ä¡º¯¼ö
+    private Transform enemy; //ï¿½ï¿½ï¿½Ê¹ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½
+    private Transform player; //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ï¿½ï¿½
 
     void Start()
     {
@@ -18,13 +18,12 @@ public class Enemy_MeleePlayerChase : MonoBehaviour
     
     void Update()
     {
-       
         ChasingPlayer();
         Debug.Log(player.position);
     }
 
     private void ChasingPlayer()
     {
-        transform.position = Vector2.MoveTowards(enemy.position, player.position, speed * Time.deltaTime); //ÇÃ·¹ÀÌ¾îÇÑÅ× ÀÌµ¿
+        transform.position = Vector2.MoveTowards(enemy.position, player.position, speed * Time.deltaTime); //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
     }
 }
