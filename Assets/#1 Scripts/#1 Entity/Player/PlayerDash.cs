@@ -13,10 +13,10 @@ public class PlayerDash : MonoBehaviour
     public Player_Movement _playerMovement;
     public float radius;
     private bool isCanDash;
-    public GhostEffect ghost;
-    void Start()
+    public AfterImage ghost;
+    void Awake()
     {
-        ghost = GetComponent<GhostEffect>();
+        ghost = GetComponent<AfterImage>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         _player = this.transform.parent.GetComponent<Player>();
 
