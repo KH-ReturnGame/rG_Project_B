@@ -9,6 +9,9 @@ TagManager:
   - wall
   - Enemy
   - trap
+  - enemy
+  - missile
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -22,7 +25,6 @@ TagManager:
   - Wall
   - Collapse
   - trap
-  - 
   - 
   - 
   - 
