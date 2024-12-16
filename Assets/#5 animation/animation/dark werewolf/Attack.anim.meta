@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/#5 animation/animation/dark werewolf/Attack.anim.meta
 guid: 875058b1319a69f40a2e464b2465fbff
+========
+guid: 34ce04d36b97f11469b228835436d335
+>>>>>>>> develop_tentalcle:Assets/#6 Audio/Master.mixer.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 7400000
+  mainObjectFileID: 24100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

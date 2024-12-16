@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/#5 animation/animation/gt/Attack.anim.meta
 guid: b13f106fdd098f04db859a817efbcced
+========
+guid: 4ea9a112866ef194db899eb029294020
+>>>>>>>> develop_tentalcle:Assets/#4 Sprites/trap.asset.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 7400000
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/#5 animation/animation/dark werewolf/Walk.anim.meta
 guid: f1ca285da96cf324ca011dee1fc578d6
+========
+guid: e23d49a485cfe89458a7e37d4d7a6fd1
+>>>>>>>> develop_tentalcle:Assets/#8 ETC/TextMesh Pro/Fonts/WantedSans-Bold SDF.asset.meta
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 7400000
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

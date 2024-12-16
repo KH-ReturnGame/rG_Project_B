@@ -92,6 +92,18 @@ public class Player_Movement : MonoBehaviour
             _player.RemoveState(PlayerStates.IsDragon);
             WhereToDash.SetActive(false);
         }
+
+        //촉수 경직
+        /*if (playerDetect.GetAttackox() == 1)
+        {
+            IsDashing = true;
+            StartCoroutine(DelayAction(1f));
+            IsDashing = false;
+        }
+        IEnumerator DelayAction(float delayTime)
+        {
+            Debug.Log("야야야야");
+        }*/
     }
 
     
@@ -173,6 +185,7 @@ public class Player_Movement : MonoBehaviour
     {
         transform.position = new Vector2(WhereToDash.transform.position.x, WhereToDash.transform.position.y);
         _playerRigidbody.velocity = Vector2.zero;
+        AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Dash);
         _player.RemoveState(PlayerStates.IsDragon);
         WhereToDash.SetActive(false);
     }
