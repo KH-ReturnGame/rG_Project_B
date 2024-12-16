@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7805136689485025237}
   - component: {fileID: 4709975163243856631}
   m_Layer: 7
-  m_Name: turret
+  m_Name: flying turret
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 666159076, guid: 4ffff43a87e71c64fbbbb45f66a2eac6, type: 3}
+  m_Sprite: {fileID: -1797734001, guid: 1230530091901ec4fb280bf855584cb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,7 +135,7 @@ Animator:
   m_GameObject: {fileID: 4709975163243856628}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6cb6ae02d08a05745b5b9df9a0cb608f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3742bc69415c2b24b820044475cd361d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
