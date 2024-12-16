@@ -27,7 +27,6 @@ public class tentacle_Attack : MonoBehaviour
             Debug.Log("공격성공");
             Destroy(gameObject,1f);
         }
-        
     }
     
 }
