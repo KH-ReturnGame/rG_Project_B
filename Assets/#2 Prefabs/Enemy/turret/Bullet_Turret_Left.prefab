@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 348782293895457756}
   m_Layer: 7
   m_Name: Bullet_Turret_Left
-  m_TagString: enemy
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

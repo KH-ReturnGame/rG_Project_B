@@ -519,6 +519,7 @@ GameObject:
   - component: {fileID: 8339777150173832431}
   - component: {fileID: 6117929494119648847}
   - component: {fileID: 239621460788207833}
+  - component: {fileID: 6667239430377057043}
   m_Layer: 8
   m_Name: player
   m_TagString: Player
@@ -842,3 +843,15 @@ MonoBehaviour:
   _jumpForce: 15
   tr: {fileID: 6359978308909536661}
   WhereToDash: {fileID: 543489498112546667}
+--- !u!114 &6667239430377057043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339777150173832434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ee5496a680ccb4c808444a55732295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
