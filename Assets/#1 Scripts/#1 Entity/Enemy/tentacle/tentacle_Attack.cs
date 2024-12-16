@@ -6,10 +6,8 @@ public class tentacle_Attack : MonoBehaviour
 {    
     private tentacle_Detect playerDetect;
     private tentacle_Mid playerMid;
-    public GameObject Attack_tentacle;
     void Awake()
     {
-        
         playerDetect = GameObject.Find("Detect_tentacle").GetComponent<tentacle_Detect>();
         playerMid = GameObject.Find("Mid_tentacle").GetComponent<tentacle_Mid>();
 

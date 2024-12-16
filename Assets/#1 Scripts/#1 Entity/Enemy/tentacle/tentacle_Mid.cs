@@ -5,10 +5,8 @@ using UnityEngine;
 public class tentacle_Mid : MonoBehaviour
 {
     private tentacle_Detect playerDetect;
-    public GameObject Mid_tentacle;
     public GameObject playerAttack;
-
-
+    
     void Awake()
     {
         gameObject.SetActive(true);
