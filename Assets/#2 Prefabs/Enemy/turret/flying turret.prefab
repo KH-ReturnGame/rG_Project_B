@@ -130,6 +130,9 @@ GameObject:
   - component: {fileID: 4714834128676778180}
   - component: {fileID: 7805136689485025237}
   - component: {fileID: 4709975163243856631}
+  - component: {fileID: 1978263496552374914}
+  - component: {fileID: 2241334369362484679}
+  - component: {fileID: 9163390810116253496}
   - component: {fileID: -1336965274407143848}
   m_Layer: 7
   m_Name: flying turret
@@ -147,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 4709975163243856628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2300342309234156308}
@@ -277,6 +280,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 30
   _currentHp: 30
+--- !u!114 &1978263496552374914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 894d94913e341014db308c581cc762d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2241334369362484679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777877cbafb487644ad9efe143bce53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 0
+  limit_distance: 0
+  player: {fileID: 0}
+--- !u!114 &9163390810116253496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bad4298d6840d84eb02312a33fb070d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  bulletPrefab: {fileID: 9001450230958901993, guid: a75c7bb1fc0d5204c911c711ac338a2c, type: 3}
 --- !u!114 &-1336965274407143848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,5 +333,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acc0b184780a21499076b5be15b2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collapses: []
+  Collapses:
+  - {fileID: 5888008710895829393, guid: 0b828e3d7149dc041aaaa5c68b628bcf, type: 3}
+  - {fileID: 5888008710895829393, guid: 7e8aa8b493dc51d4f99c8883317f6a03, type: 3}
+  - {fileID: 5888008710895829393, guid: 5e9040bbc8289d648b1bbceffa1ba444, type: 3}
+  - {fileID: 5888008710895829393, guid: 731917fb8a29d3c45b5c5b18388da3f1, type: 3}
+  - {fileID: 5888008710895829393, guid: b989c6e9619611e4aa334248571d14ba, type: 3}
+  - {fileID: 5888008710895829393, guid: d6bbae81ba294e74b89fa6d7047dd9e1, type: 3}
+  - {fileID: 5888008710895829393, guid: a9cbbf1c9fc21d94c958d8d77262b27b, type: 3}
   spawnRange: 1

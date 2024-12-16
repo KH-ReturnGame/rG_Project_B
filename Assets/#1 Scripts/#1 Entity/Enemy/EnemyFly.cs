@@ -5,36 +5,30 @@ using UnityEngine;
 public class EnemyFly : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float FlyHeight = 2f; // 부양 거리
     private Enemy _enemy;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         _enemy = GetComponent<Enemy>();
+        Hover();
     }
 
     void Update()
     {
-        if (!_enemy.IsContainState(EnemyStates.IsDie) && !_enemy.IsContainState(EnemyStates.IsFly))
-        {
-            Hover();
-        }
-        else if (_enemy.IsContainState(EnemyStates.IsDie))
-        {
-            FallToGround();
-        }
+
     }
 
     void Hover()
     {
-        rb.gravityScale = 0f;
-       
+        rb.gravityScale = -0.25f;
+        Invoke("FallToGround", 0.5f);
     }
 
     void FallToGround()
     {
-        rb.gravityScale = 1f;
-         _enemy.RemoveState(EnemyStates.IsFly);
+        rb.gravityScale = 0.5f;
+        _enemy.RemoveState(EnemyStates.IsFly);
+        Invoke("Hover", 0.5f);
     }
 
 }

@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2229352196205323751}
   - component: {fileID: 426740621865680322}
-  - component: {fileID: 9075222497230729421}
   - component: {fileID: -5097592579412231353}
   - component: {fileID: -1325199185848717622}
   - component: {fileID: -3258951247195827819}
   - component: {fileID: 2800727095168690622}
-  - component: {fileID: 8662114260041577654}
+  - component: {fileID: -5902268905187734567}
   m_Layer: 0
   m_Name: Test_Enemy_Flying
   m_TagString: Untagged
@@ -31,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6139183067200547721}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.037925, y: -2.362585, z: 0}
+  m_LocalPosition: {x: -18.91, y: -2.362585, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90,27 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &9075222497230729421
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6139183067200547721}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!70 &-5097592579412231353
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -121,7 +99,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -168,7 +146,7 @@ MonoBehaviour:
   distance: 0
   limit_distance: 0
   player: {fileID: 0}
---- !u!114 &8662114260041577654
+--- !u!114 &-5902268905187734567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,6 +155,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6139183067200547721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afcbac1386300194f9b210e7d8bccce6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bad4298d6840d84eb02312a33fb070d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  bulletPrefab: {fileID: 9001450230958901993, guid: a75c7bb1fc0d5204c911c711ac338a2c, type: 3}
