@@ -202,7 +202,6 @@ MonoBehaviour:
   _playerTransform: {fileID: 8339777150173832432}
   _playerMovement: {fileID: 6696551507321958097}
   radius: 3.5
-  ghost: {fileID: 0}
 --- !u!114 &8941946339577815867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,7 +1221,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8339777150173832434}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9f6c859ac90625747a2e482a31eae98b, type: 2}
   m_CullingMode: 0

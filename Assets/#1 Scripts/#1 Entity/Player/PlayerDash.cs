@@ -13,7 +13,7 @@ public class PlayerDash : MonoBehaviour
     public Player_Movement _playerMovement;
     public float radius;
     private bool isCanDash;
-    public AfterImage ghost;
+    AfterImage ghost;
     void Awake()
     {
         ghost = GetComponent<AfterImage>();
