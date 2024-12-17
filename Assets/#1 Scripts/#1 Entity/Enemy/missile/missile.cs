@@ -53,7 +53,7 @@ public class missile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "ground" || other.gameObject.tag == "Player" || other.gameObject.tag == "trap")
+        if (other.gameObject.tag == "Player")
         { 
             Destroy(gameObject);
         }

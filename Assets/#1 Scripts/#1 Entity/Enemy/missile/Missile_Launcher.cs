@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Missile_Launcher : MonoBehaviour
 {
+    Enemy enemy;
     public GameObject missile_perfab;
     public float cool;
     public Vector3 summon_pos;
@@ -12,6 +13,7 @@ public class Missile_Launcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemy = GetComponent<Enemy>();
         _flip = GetComponent<SpriteRenderer>();
         StartCoroutine(Fire());
     }
@@ -24,21 +26,25 @@ public class Missile_Launcher : MonoBehaviour
 
     IEnumerator Fire()
     {
-        Vector3 direc = isFlip();
-        Quaternion _rotation = Rotate();
-
-        // 미사일 인스턴스 생성
-        GameObject missile = Instantiate(missile_perfab, direc, _rotation);
-
-        if (isGT)
+        if(!enemy.IsContainState(EnemyStates.IsDie))
         {
-            Rigidbody2D rb = missile.GetComponent<Rigidbody2D>();
-            rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
-        }
-        
-        yield return new WaitForSeconds(cool);
+            Vector3 direc = isFlip();
+            Quaternion _rotation = Rotate();
 
-        StartCoroutine(Fire());
+            // 미사일 인스턴스 생성
+            GameObject missile = Instantiate(missile_perfab, direc, _rotation);
+
+            if (isGT)
+            {
+                Rigidbody2D rb = missile.GetComponent<Rigidbody2D>();
+                rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+            }
+
+            yield return new WaitForSeconds(cool);
+
+            StartCoroutine(Fire());
+        }
+        yield return null;
     }
 
     Vector3 isFlip()
