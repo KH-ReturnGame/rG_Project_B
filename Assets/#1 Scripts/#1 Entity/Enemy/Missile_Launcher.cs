@@ -7,9 +7,12 @@ public class Missile_Launcher : MonoBehaviour
     public GameObject missile_perfab;
     public float cool;
     public Vector3 summon_pos;
+    private SpriteRenderer _flip;
+    public bool isGT;
     // Start is called before the first frame update
     void Start()
     {
+        _flip = GetComponent<SpriteRenderer>();
         StartCoroutine(Fire());
     }
 
@@ -21,10 +24,51 @@ public class Missile_Launcher : MonoBehaviour
 
     IEnumerator Fire()
     {
-        Instantiate(missile_perfab, summon_pos, transform.rotation);
+        Vector3 direc = isFlip();
+        Quaternion _rotation = Rotate();
+
+        // 미사일 인스턴스 생성
+        GameObject missile = Instantiate(missile_perfab, direc, _rotation);
+
+        if (isGT)
+        {
+            Rigidbody2D rb = missile.GetComponent<Rigidbody2D>();
+            rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+        }
         
         yield return new WaitForSeconds(cool);
 
         StartCoroutine(Fire());
+    }
+
+    Vector3 isFlip()
+    {
+        if(_flip.flipX != true || isGT)
+        {
+            return transform.position + summon_pos;
+        }
+        else
+        {
+            return transform.position - summon_pos;
+        }
+    }
+
+    Quaternion Rotate()
+    {
+        if(isGT)
+        {
+            return Quaternion.Euler(0, 0, 0);
+        }
+        else
+        {
+            if(_flip)
+            {
+                return Quaternion.Euler(0, 0, 90);
+            }
+            else
+            {
+                return Quaternion.Euler(0, 0, 270);
+            }
+        }
     }
 }

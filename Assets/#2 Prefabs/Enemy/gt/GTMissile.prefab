@@ -124,8 +124,9 @@ GameObject:
   - component: {fileID: 8453032593850830426}
   - component: {fileID: -4746194346623862154}
   - component: {fileID: 4623752073684503286}
+  - component: {fileID: 6659278420734117370}
   m_Layer: 0
-  m_Name: Missile
+  m_Name: GTMissile
   m_TagString: missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,10 +254,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9053691379455779787}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d83923bd70787f46a1165f752970883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   speed: 2.5
+--- !u!114 &6659278420734117370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9053691379455779787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25d6b8285892d342ac5597d421939c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

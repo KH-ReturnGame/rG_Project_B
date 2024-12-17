@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3972898312095596798}
   - component: {fileID: 7805136689485025237}
   - component: {fileID: 4709975163243856631}
+  - component: {fileID: -6564375549554753390}
+  - component: {fileID: 4300658718990885443}
   - component: {fileID: 2411418062472777554}
   - component: {fileID: 424355403627423316}
-  - component: {fileID: -6564375549554753390}
   m_Layer: 7
   m_Name: Soldier2
   m_TagString: enemy
@@ -162,6 +163,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 30
   _currentHp: 30
+--- !u!114 &-6564375549554753390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4300658718990885443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777877cbafb487644ad9efe143bce53f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 5
+  limit_distance: 2.5
+  player: {fileID: 0}
 --- !u!114 &2411418062472777554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,15 +227,3 @@ MonoBehaviour:
   - {fileID: 5888008710895829393, guid: 391317bb2cadb6d4fad505ae9633f19d, type: 3}
   - {fileID: 5888008710895829393, guid: df5123d2ecaafee47879376105caa487, type: 3}
   spawnRange: 1
---- !u!114 &-6564375549554753390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4709975163243856628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

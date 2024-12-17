@@ -175,7 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missile_perfab: {fileID: 9053691379455779787, guid: 4d6b82271ddcc004d8dda1e54f97e1a6, type: 3}
   cool: 3
-  summon_pos: {x: 0, y: 0.65, z: 0}
+  summon_pos: {x: 0, y: 1.25, z: 0}
+  isGT: 1
 --- !u!114 &-4578183498211387142
 MonoBehaviour:
   m_ObjectHideFlags: 0
