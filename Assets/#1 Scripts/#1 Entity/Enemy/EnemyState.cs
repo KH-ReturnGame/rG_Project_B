@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemyState : MonoBehaviour
 {
     private Enemy _enemy;
+    Animator animator;
 
     private void Start()
     {
         _enemy = GetComponent<Enemy>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -20,7 +22,6 @@ public class EnemyState : MonoBehaviour
         {
             Debug.Log("적 이동 안함");
         }
-
         if (_enemy.IsContainState(EnemyStates.IsAttacking))
         {
             Debug.Log("적 공격중");
