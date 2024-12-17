@@ -10,13 +10,11 @@ public class Missile_Launcher : MonoBehaviour
     public Vector3 summon_pos;
     private SpriteRenderer _flip;
     public bool isGT;
-    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         enemy = GetComponent<Enemy>();
         _flip = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
         StartCoroutine(Fire());
     }
 
@@ -30,7 +28,7 @@ public class Missile_Launcher : MonoBehaviour
     {
         if(!enemy.IsContainState(EnemyStates.IsDie))
         {
-            animator.SetTrigger("attack");
+            enemy.AddState(EnemyStates.IsAttacking);
             Vector3 direc = isFlip();
             Quaternion _rotation = Rotate();
 
