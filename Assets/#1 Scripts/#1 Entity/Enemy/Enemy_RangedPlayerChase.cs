@@ -49,7 +49,6 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        Debug.Log("?????????????????");
         _enemy.AddState(EnemyStates.IsMove);
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime); // �÷��̾����� �̵�
         

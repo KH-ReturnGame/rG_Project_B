@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3116819799267144040}
   - component: {fileID: -5058914181418909365}
   - component: {fileID: 5360056156131813219}
+  - component: {fileID: -221395123431595828}
   m_Layer: 10
   m_Name: collapse 8
-  m_TagString: Untagged
+  m_TagString: collapse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -136,3 +137,15 @@ PolygonCollider2D:
       - {x: -0.18484934, y: 0.062610075}
       - {x: -0.18710545, y: -0.096682966}
       - {x: 0.22393963, y: -0.10040611}
+--- !u!114 &-221395123431595828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888008710895829393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81066d776097424087860ed6eed7789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

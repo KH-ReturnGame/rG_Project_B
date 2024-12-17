@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3116819799267144040}
   - component: {fileID: -5058914181418909365}
   - component: {fileID: 600420390980719978}
+  - component: {fileID: 4710335925113980926}
   m_Layer: 10
   m_Name: collapse 2
-  m_TagString: Untagged
+  m_TagString: collapse
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5888008710895829393}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.049459875, w: 0.99877614}
   m_LocalPosition: {x: 11.007464, y: 18.842709, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -5.67}
 --- !u!212 &3116819799267144040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -136,9 +137,21 @@ PolygonCollider2D:
       - {x: -0.28125, y: 0.21153694}
       - {x: -0.28338352, y: -0.21015494}
       - {x: -0.13662355, y: -0.2551129}
-      - {x: -0.121363506, y: -0.35510907}
+      - {x: -0.12407465, y: -0.37764868}
       - {x: 0.15982309, y: -0.36334342}
       - {x: 0.19632594, y: -0.24192053}
       - {x: 0.276983, y: -0.218568}
       - {x: 0.27931684, y: 0.20480227}
       - {x: 0.125509, y: 0.35724205}
+--- !u!114 &4710335925113980926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5888008710895829393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81066d776097424087860ed6eed7789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

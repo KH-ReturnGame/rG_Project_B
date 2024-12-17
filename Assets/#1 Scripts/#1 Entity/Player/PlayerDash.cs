@@ -12,7 +12,6 @@ public class PlayerDash : MonoBehaviour
     private LineRenderer lineRenderer;
     public Player_Movement _playerMovement;
     public float radius;
-    private bool isCanDash;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -25,8 +24,6 @@ public class PlayerDash : MonoBehaviour
         lineRenderer.startColor = Color.red; // 선의 시작 색상
         lineRenderer.endColor = Color.red; // 선의 끝 색상
         lineRenderer.positionCount = 2; // 두 점을 연결
-
-        isCanDash = true;
     }
     void Update()
     {
@@ -85,7 +82,7 @@ public class PlayerDash : MonoBehaviour
         lineRenderer.SetPosition(0, _playerTransform.position); // 첫 번째 점 (플레이어 위치)
         lineRenderer.SetPosition(1, transform.position); // 두 번째 점 (팔로우 오브젝트 위치)
 
-        if(Input.GetMouseButtonDown(0) && isCanDash)
+        if(Input.GetMouseButtonDown(0) && _player.IsContainState(PlayerStates.CanDash))
         {
             _playerMovement.DragonDash();
             if(groundHit)
@@ -98,7 +95,6 @@ public class PlayerDash : MonoBehaviour
             if (enemyHit)
             {
                 // 여기에 적과 충돌한 경우 처리할 로직 추가
-
                 // 예시: 적에게 데미지를 주는 메서드 호출 (적 오브젝트와의 상호작용)
                 RaycastHit2D enemyRaycast = Array.Find(hits, hit => hit.collider != null && hit.collider.CompareTag("Enemy"));
                 if (enemyRaycast.collider != null)
@@ -109,6 +105,19 @@ public class PlayerDash : MonoBehaviour
                     {
                         _enemy.TakeDamage(50); // 예시로 적에게 데미지를 주는 메서드 호출
                         _player.RecoveryHp(15);
+                        _player.AddState(PlayerStates.CanDash);
+                    }
+                }
+            }
+
+            foreach (var hit in hits)
+            {
+                if (hit.collider != null && hit.collider.CompareTag("collapse"))
+                {
+                    Collapse _collapse = hit.collider.GetComponent<Collapse>();
+                    if (_collapse != null)
+                    {
+                        _collapse.ForceToCollapse();
                     }
                 }
             }

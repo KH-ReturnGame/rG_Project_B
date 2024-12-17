@@ -12,6 +12,7 @@ TagManager:
   - missile
   - bullet
   - enemy
+  - collapse
   layers:
   - Default
   - TransparentFX

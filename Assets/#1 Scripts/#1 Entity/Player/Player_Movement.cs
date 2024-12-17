@@ -188,6 +188,16 @@ public class Player_Movement : MonoBehaviour
         AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Dash);
         _player.RemoveState(PlayerStates.IsDragon);
         WhereToDash.SetActive(false);
+        StartCoroutine(CoolDown());
+    }
+
+    IEnumerator CoolDown()
+    {
+        _player.RemoveState(PlayerStates.CanDash);
+
+        yield return new WaitForSeconds(1.5f);
+
+        _player.AddState(PlayerStates.CanDash);
     }
 }
 

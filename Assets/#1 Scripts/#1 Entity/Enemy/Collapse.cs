@@ -9,6 +9,7 @@ public class Collapse : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        ForceToCollapse();
     }
 
     // Update is called once per frame
@@ -17,9 +18,9 @@ public class Collapse : MonoBehaviour
         
     }
 
-    void ForceToCollapse()
+    public void ForceToCollapse()
     {
-        // 대쉬에서 태그가 collapse일때 실행되어 타격감을 높임
-        // rigid 나 벡터로 힘을 주기(많이는 말고, 스컬처럼)
+        rigid.AddForce(transform.up * 5f, ForceMode2D.Impulse);
+        rigid.AddForce(transform.right * 0.5f, ForceMode2D.Impulse);
     }
 }
