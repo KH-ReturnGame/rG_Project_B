@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5080560799437055436}
   - component: {fileID: -145542966056250497}
   - component: {fileID: -2023810004048968232}
+  - component: {fileID: -3149192000934920419}
   m_Layer: 7
   m_Name: turret
   m_TagString: Enemy
@@ -198,5 +199,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77b96bcc7a6dccd468002a76821af078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3149192000934920419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 648f057e9175b7d45850b4ab45b801f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: -4597189142687789347}
   - component: {fileID: 2241334369362484679}
   - component: {fileID: 9163390810116253496}
+  - component: {fileID: 8427704426209843818}
   - component: {fileID: -1336965274407143848}
   m_Layer: 7
   m_Name: flying turret
@@ -349,6 +350,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
   bulletPrefab: {fileID: 9001450230958901993, guid: a75c7bb1fc0d5204c911c711ac338a2c, type: 3}
+--- !u!114 &8427704426209843818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98a3d67f7ec72714289b4478917f39a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-1336965274407143848
 MonoBehaviour:
   m_ObjectHideFlags: 0
