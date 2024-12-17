@@ -145,14 +145,14 @@ GameObject:
   - component: {fileID: 4714834128676778180}
   - component: {fileID: 7805136689485025237}
   - component: {fileID: 4709975163243856631}
-  - component: {fileID: 1978263496552374914}
+  - component: {fileID: -4412052653274110318}
+  - component: {fileID: -4597189142687789347}
   - component: {fileID: 2241334369362484679}
   - component: {fileID: 9163390810116253496}
   - component: {fileID: -1336965274407143848}
-  - component: {fileID: -4412052653274110318}
   m_Layer: 7
   m_Name: flying turret
-  m_TagString: enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 30
   _currentHp: 30
---- !u!114 &1978263496552374914
+--- !u!114 &-4412052653274110318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -305,7 +305,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4709975163243856628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 894d94913e341014db308c581cc762d8, type: 3}
+  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4597189142687789347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b96bcc7a6dccd468002a76821af078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2241334369362484679
@@ -320,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 777877cbafb487644ad9efe143bce53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0
-  limit_distance: 0
+  distance: 5
+  limit_distance: 4
   player: {fileID: 0}
 --- !u!114 &9163390810116253496
 MonoBehaviour:
@@ -335,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bad4298d6840d84eb02312a33fb070d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  _player: {fileID: 0}
   bulletPrefab: {fileID: 9001450230958901993, guid: a75c7bb1fc0d5204c911c711ac338a2c, type: 3}
 --- !u!114 &-1336965274407143848
 MonoBehaviour:
@@ -358,15 +370,3 @@ MonoBehaviour:
   - {fileID: 5888008710895829393, guid: d6bbae81ba294e74b89fa6d7047dd9e1, type: 3}
   - {fileID: 5888008710895829393, guid: a9cbbf1c9fc21d94c958d8d77262b27b, type: 3}
   spawnRange: 1
---- !u!114 &-4412052653274110318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4709975163243856628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

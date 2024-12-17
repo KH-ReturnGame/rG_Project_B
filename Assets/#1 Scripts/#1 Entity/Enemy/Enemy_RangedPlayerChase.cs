@@ -17,6 +17,7 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
         player = GameObject.Find("player(Clone)").transform;
         _enemy = GetComponent<Enemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Debug.Log("Tlqkff");
     }
 
     void Update()

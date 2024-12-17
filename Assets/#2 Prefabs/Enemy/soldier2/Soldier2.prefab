@@ -15,12 +15,13 @@ GameObject:
   - component: {fileID: 7805136689485025237}
   - component: {fileID: 4709975163243856631}
   - component: {fileID: -6564375549554753390}
+  - component: {fileID: -3292940820176263958}
   - component: {fileID: 4300658718990885443}
   - component: {fileID: 2411418062472777554}
   - component: {fileID: 424355403627423316}
   m_Layer: 7
   m_Name: Soldier2
-  m_TagString: enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,6 +176,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3292940820176263958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b96bcc7a6dccd468002a76821af078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4300658718990885443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +218,7 @@ MonoBehaviour:
   missile_perfab: {fileID: 9053691379455779787, guid: 06b8a853abfaaac44bcbcde8fdd3835d, type: 3}
   cool: 2.5
   summon_pos: {x: -0.75, y: 0.2, z: 0.2}
+  isGT: 0
 --- !u!114 &424355403627423316
 MonoBehaviour:
   m_ObjectHideFlags: 0

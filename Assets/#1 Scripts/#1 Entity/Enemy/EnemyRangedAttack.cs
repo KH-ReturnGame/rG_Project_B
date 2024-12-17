@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyRangedAttack : MonoBehaviour
 {
-    public Transform player;
+    public Transform _player;
     private float distance;
     private Enemy _enemy;
     private Coroutine fireCoroutine; // 실행 중인 Fire 코루틴의 참조
@@ -14,7 +14,8 @@ public class EnemyRangedAttack : MonoBehaviour
     void Start()
     {
         _enemy = GetComponent<Enemy>();        
-        player = gameObject.GetComponent<Enemy_RangedPlayerChase>().player;
+        _player = GetComponent<Enemy_RangedPlayerChase>().player;
+        Debug.Log("Tlqkf");
     }
 
     // Update is called once per frame
@@ -54,7 +55,7 @@ public class EnemyRangedAttack : MonoBehaviour
             }
 
             // 총알 발사
-            if (transform.position.x < player.position.x)
+            if (transform.position.x < _player.position.x)
             {
                 Instantiate(bulletPrefab, new Vector3(transform.position.x + 1.2f, transform.position.y, transform.position.z), transform.rotation);
             }

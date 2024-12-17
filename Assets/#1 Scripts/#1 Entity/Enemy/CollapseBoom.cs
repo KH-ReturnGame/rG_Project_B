@@ -25,7 +25,7 @@ public class CollapseBoom : MonoBehaviour
 
     IEnumerator Boom()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.1f);
         // Collapses 배열의 각 오브젝트를 랜덤 위치에서 생성
         foreach (GameObject collapse in Collapses)
         {
