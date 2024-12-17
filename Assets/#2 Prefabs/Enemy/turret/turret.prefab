@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 6610159178057185651}
   - component: {fileID: 4714834128676778180}
   - component: {fileID: 7805136689485025237}
+  - component: {fileID: -735781997645788244}
   - component: {fileID: 5080560799437055436}
+  - component: {fileID: -145542966056250497}
   m_Layer: 7
   m_Name: turret
   m_TagString: enemy
@@ -145,6 +147,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-735781997645788244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fedab31432452949a3b0e48aef4994c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 0
+  _currentHp: 0
 --- !u!114 &5080560799437055436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,3 +175,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9001450230958901993, guid: c3af338d17a223a4588a63e211e724fc, type: 3}
   fire_direc: 0
+--- !u!114 &-145542966056250497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

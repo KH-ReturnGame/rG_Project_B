@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7805136689485025237}
   - component: {fileID: 4709975163243856631}
   - component: {fileID: -1132778195556800111}
+  - component: {fileID: 8999130553382429777}
   m_Layer: 7
   m_Name: DarkWerewolf
   m_TagString: enemy
@@ -181,3 +182,15 @@ MonoBehaviour:
   - {fileID: 5888008710895829393, guid: 653af1e55a5512c40a7b7ffda3ab6ee2, type: 3}
   - {fileID: 5888008710895829393, guid: 6d554d7a04cfb444e8dfff281b8ea888, type: 3}
   spawnRange: 1
+--- !u!114 &8999130553382429777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

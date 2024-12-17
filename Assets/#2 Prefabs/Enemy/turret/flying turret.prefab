@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 2241334369362484679}
   - component: {fileID: 9163390810116253496}
   - component: {fileID: -1336965274407143848}
+  - component: {fileID: -4412052653274110318}
   m_Layer: 7
   m_Name: flying turret
   m_TagString: enemy
@@ -357,3 +358,15 @@ MonoBehaviour:
   - {fileID: 5888008710895829393, guid: d6bbae81ba294e74b89fa6d7047dd9e1, type: 3}
   - {fileID: 5888008710895829393, guid: a9cbbf1c9fc21d94c958d8d77262b27b, type: 3}
   spawnRange: 1
+--- !u!114 &-4412052653274110318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

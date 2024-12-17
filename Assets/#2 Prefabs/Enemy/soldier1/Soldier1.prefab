@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 7148278485875250914}
   - component: {fileID: 4636851102549030832}
   - component: {fileID: 7681124357648093954}
+  - component: {fileID: -7797456239117680812}
   m_Layer: 7
   m_Name: Soldier1
   m_TagString: enemy
@@ -248,3 +249,15 @@ MonoBehaviour:
   - {fileID: 5888008710895829393, guid: 84f53fc4768911e4c83fe12f50eea35c, type: 3}
   - {fileID: 5888008710895829393, guid: 48aa4d40d8f91114696432f990a5bc55, type: 3}
   spawnRange: 1
+--- !u!114 &-7797456239117680812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
