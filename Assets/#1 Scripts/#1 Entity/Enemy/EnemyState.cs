@@ -16,14 +16,17 @@ public class EnemyState : MonoBehaviour
     {
         if (_enemy.IsContainState(EnemyStates.IsMove))
         {
+            animator.SetBool("walk", true);
             Debug.Log("적 이동중");
         }
         if(!_enemy.IsContainState(EnemyStates.IsMove))
         {
+            animator.SetBool("walk", false);
             Debug.Log("적 이동 안함");
         }
         if (_enemy.IsContainState(EnemyStates.IsAttacking))
         {
+            animator.SetTrigger("attack");
             Debug.Log("적 공격중");
         }
         if(!_enemy.IsContainState(EnemyStates.IsAttacking))
