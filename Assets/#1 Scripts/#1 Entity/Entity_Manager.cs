@@ -66,13 +66,6 @@ public class Entity_Manager : MonoBehaviour
 
     private void Update()
     {
-        if (_player && Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            Destroy(clone);
-            clone = Instantiate(playerPrefab1);
-            _player = clone.GetComponent<Player>();
-            _player.Setup(100f);
-        }
         _player.Updated();
         testEnemy.Updated();
     }
