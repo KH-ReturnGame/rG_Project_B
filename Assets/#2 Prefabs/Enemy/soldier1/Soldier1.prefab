@@ -236,7 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distance: 0
-  limit_distance: 5
+  limit_distance: 3
   player: {fileID: 0}
 --- !u!114 &7148278485875250914
 MonoBehaviour:

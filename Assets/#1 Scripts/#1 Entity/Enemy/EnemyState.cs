@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class EnemyState : MonoBehaviour
 {
-    private Enemy _enemy;
-
+    Enemy _enemy;
+    Animator animator;
     private void Start()
     {
         _enemy = GetComponent<Enemy>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
         if (_enemy.IsContainState(EnemyStates.IsMove))
         {
             Debug.Log("적 이동중");
+            animator.SetBool("walk", true);
         }
         if(!_enemy.IsContainState(EnemyStates.IsMove))
         {
             Debug.Log("적 이동 안함");
+            animator.SetBool("walk", false);
         }
         if (_enemy.IsContainState(EnemyStates.IsAttacking))
         {
