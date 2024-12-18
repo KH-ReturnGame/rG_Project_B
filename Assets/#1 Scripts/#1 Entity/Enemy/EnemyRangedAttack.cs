@@ -7,6 +7,7 @@ public class EnemyRangedAttack : MonoBehaviour
     public Transform _player;
     private float distance;
     private Enemy _enemy;
+    Animator anim;
     private Coroutine fireCoroutine; // 실행 중인 Fire 코루틴의 참조
     [SerializeField]
     private GameObject bulletPrefab;
@@ -15,7 +16,7 @@ public class EnemyRangedAttack : MonoBehaviour
     {
         _enemy = GetComponent<Enemy>();        
         _player = GetComponent<Enemy_RangedPlayerChase>().player;
-        Debug.Log("Tlqkf");
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,6 +55,8 @@ public class EnemyRangedAttack : MonoBehaviour
                 yield break; // 코루틴 종료
             }
 
+            anim.SetTrigger("attack");
+            yield return new WaitForSeconds(0.5f);
             // 총알 발사
             if (transform.position.x < _player.position.x)
             {

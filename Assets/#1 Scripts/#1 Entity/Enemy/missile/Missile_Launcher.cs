@@ -5,16 +5,18 @@ using UnityEngine;
 public class Missile_Launcher : MonoBehaviour
 {
     Enemy enemy;
+    SpriteRenderer _flip;
+    Animator anim;
     public GameObject missile_perfab;
     public float cool;
     public Vector3 summon_pos;
-    private SpriteRenderer _flip;
     public bool isGT;
     // Start is called before the first frame update
     void Start()
     {
         enemy = GetComponent<Enemy>();
         _flip = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         StartCoroutine(Fire());
     }
 
@@ -28,6 +30,7 @@ public class Missile_Launcher : MonoBehaviour
     {
         if(!enemy.IsContainState(EnemyStates.IsDie))
         {
+            anim.SetTrigger("attack");
             enemy.AddState(EnemyStates.IsAttacking);
             Vector3 direc = isFlip();
             Quaternion _rotation = Rotate();

@@ -38,30 +38,6 @@ public class Entity_Manager : MonoBehaviour
         testEnemy = clone_enemy.GetComponent<Enemy>();
         testEnemy.Setup(100f);
         clone_enemy.transform.position = new Vector3(0,0,0);
-
-         //테스트 에너미 생성
-        clone_enemy = Instantiate(enemyPrefab);
-        testEnemy = clone_enemy.GetComponent<Enemy>();
-        testEnemy.Setup(100f);
-        clone_enemy.transform.position = new Vector3(4,-1,0);
-
-         //테스트 에너미 생성
-        clone_enemy = Instantiate(enemyPrefab);
-        testEnemy = clone_enemy.GetComponent<Enemy>();
-        testEnemy.Setup(100f);
-        clone_enemy.transform.position = new Vector3(-6,-2,0);
-
-         //테스트 에너미 생성
-        clone_enemy = Instantiate(enemyPrefab);
-        testEnemy = clone_enemy.GetComponent<Enemy>();
-        testEnemy.Setup(100f);
-        clone_enemy.transform.position = new Vector3(8,2,0);
-
-         //테스트 에너미 생성
-        clone_enemy = Instantiate(enemyPrefab);
-        testEnemy = clone_enemy.GetComponent<Enemy>();
-        testEnemy.Setup(100f);
-        clone_enemy.transform.position = new Vector3(-2,-3,0);
     }
 
     private void Update()

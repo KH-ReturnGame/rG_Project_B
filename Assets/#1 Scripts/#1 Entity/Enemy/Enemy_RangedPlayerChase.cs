@@ -17,7 +17,6 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
         player = GameObject.Find("player(Clone)").transform;
         _enemy = GetComponent<Enemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        Debug.Log("Tlqkff");
     }
 
     void Update()
@@ -27,6 +26,7 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
         if (distance > limit_distance && !_enemy.IsContainState(EnemyStates.IsDie))
         {
             StartCoroutine(ChasingPlayer());
+            _enemy.AddState(EnemyStates.IsMove);
         }
         if (distance <= limit_distance || _enemy.IsContainState(EnemyStates.IsDie))
         {
@@ -46,10 +46,9 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
     }
 
     IEnumerator ChasingPlayer()
-    {
+    {        
         yield return new WaitForSeconds(0.5f);
-
-        _enemy.AddState(EnemyStates.IsMove);
+        
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime); // �÷��̾����� �̵�
         
         yield return null;

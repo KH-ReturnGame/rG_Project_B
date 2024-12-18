@@ -5,6 +5,7 @@ using UnityEngine;
 public class turret : MonoBehaviour
 {
     private Enemy _enemy;
+    Animator anim;
     [SerializeField]
     private GameObject bulletPrefab;
     public int fire_direc;
@@ -12,6 +13,7 @@ public class turret : MonoBehaviour
     void Start()
     {
         _enemy = GetComponent<Enemy>();
+        anim = GetComponent<Animator>();
         StartCoroutine(Fire());
     }
 
@@ -27,6 +29,8 @@ public class turret : MonoBehaviour
         {
             yield break; // 코루틴 종료
         }
+        
+        anim.SetTrigger("attack");
         
         Instantiate(bulletPrefab, new Vector3(transform.position.x + (fire_direc * 1.2f), transform.position.y, transform.position.z), transform.rotation);
         
