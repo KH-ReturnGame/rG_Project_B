@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f075d7ab3ec9b345b4ebdcd54afd7c0
+guid: da7053dadfd58444795539d13b4bf352
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tile&Prop_0
+      name: porops_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 224
-        width: 32
-        height: 32
+        x: 7
+        y: 140
+        width: 59
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f84348e73a53f24393c117153747fc5
-      internalID: 665922018
+      spriteID: 13e0430b1648086408593ba65abd0c86
+      internalID: -485656103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile&Prop_1
+      name: porops_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 224
-        width: 32
-        height: 32
+        x: 93
+        y: 143
+        width: 81
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21259bcc1580f184797084fedb896489
-      internalID: -1299655947
+      spriteID: 281041cfba328c0408e93b90007381fa
+      internalID: -1225437991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile&Prop_2
+      name: porops_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 224
-        width: 42
-        height: 32
+        x: 15
+        y: 95
+        width: 38
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20e63d299fec1824c94ff62ec2de56e6
-      internalID: 744607347
+      spriteID: 0ea5aabef345be74dacd02dbb416cb16
+      internalID: -1144800083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile&Prop_3
+      name: porops_3
       rect:
         serializedVersion: 2
-        x: 160
-        y: 224
-        width: 42
-        height: 32
+        x: 83
+        y: 94
+        width: 16
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07a8658c08b197b4797d92e0fc92af16
-      internalID: 1406100212
+      spriteID: 93d861041e4f08d42b81802daebe1b15
+      internalID: 1529151908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile&Prop_4
+      name: porops_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 176
-        width: 32
-        height: 32
+        x: 116
+        y: 87
+        width: 23
+        height: 33
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,82 +215,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b985d9e5c28011544be7161a03cea98a
-      internalID: -1293766601
+      spriteID: 9cc1e121d882e6840bcd3573ac829500
+      internalID: 422588034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile&Prop_5
+      name: porops_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 176
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e72a49c86c1a93842b91224b8e99076e
-      internalID: 665346690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile&Prop_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 176
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43b87e33ac2273540b4c57e17cce7b31
-      internalID: -512739031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile&Prop_7
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 176
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5146f5294b689644eae9e5022e81f123
-      internalID: 1246487265
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Tile&Prop_8
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 188
-        width: 32
+        x: 150
+        y: 89
+        width: 12
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -299,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 060a9fef87aa9ef40987b9d72c2f9967
-      internalID: -336608822
+      spriteID: 3d31beaffdd6a0444860327870b8c5a3
+      internalID: -198138149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tile&Prop_9
+      name: porops_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 135
-        width: 32
-        height: 19
+        x: 110
+        y: 56
+        width: 12
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,8 +257,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b57494c240f4d64e9bd282073eafdc5
-      internalID: -510309965
+      spriteID: c989d5c6bf77b0f49bbc6952e0b0e640
+      internalID: -1229103388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porops_7
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 57
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f77df02a69bf0754981dfec48c562a75
+      internalID: 87416512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porops_8
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 56
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2329287ae80954588779045e3374f6
+      internalID: 1981859699
       vertices: []
       indices: 
       edges: []
@@ -337,16 +316,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tile&Prop_5: 665346690
-      Tile&Prop_3: 1406100212
-      Tile&Prop_8: -336608822
-      Tile&Prop_0: 665922018
-      Tile&Prop_4: -1293766601
-      Tile&Prop_9: -510309965
-      Tile&Prop_7: 1246487265
-      Tile&Prop_2: 744607347
-      Tile&Prop_6: -512739031
-      Tile&Prop_1: -1299655947
+      porops_8: 1981859699
+      porops_6: -1229103388
+      porops_7: 87416512
+      porops_5: -198138149
+      porops_3: 1529151908
+      porops_0: -485656103
+      porops_1: -1225437991
+      porops_4: 422588034
+      porops_2: -1144800083
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
