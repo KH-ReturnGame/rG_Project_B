@@ -115,6 +115,11 @@ public class SceneLoadManager : MonoBehaviour
             Instance.StartLoadingTargetScene();
         }
     }
+
+    public void GameQuit()
+    {
+        Application.Quit();
+    }
 }
 
 // LoadingScene에서 사용할 스크립트
@@ -126,8 +131,6 @@ public class LoadingSceneInitializer : MonoBehaviour
         if (SceneLoadManager.Instance != null)
         {
             SceneLoadManager.Instance.StartLoadingTargetScene();
-            Debug.Log("나와라 ㅅㅂ");
         }
-        Debug.Log("나와라 ㅅㅂ");
     }
 }
