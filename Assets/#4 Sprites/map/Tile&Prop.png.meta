@@ -326,6 +326,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Tile&Prop_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 430df2596b93e3f4e96a19e32ff371b5
+      internalID: -660128234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -346,6 +367,7 @@ TextureImporter:
       Tile&Prop_7: 1246487265
       Tile&Prop_2: 744607347
       Tile&Prop_6: -512739031
+      Tile&Prop_10: -660128234
       Tile&Prop_1: -1299655947
   spritePackingTag: 
   pSDRemoveMatte: 0

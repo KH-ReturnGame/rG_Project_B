@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/#0 Scenes/Settings.unity
     guid: ac760ef88844cb24d82acbad060030de
+  - enabled: 1
+    path: Assets/#0 Scenes/PlayMaps/jail.unity
+    guid: a853b0b7e1fe8c64ca7fc162c324accf
   m_configObjects: {}
