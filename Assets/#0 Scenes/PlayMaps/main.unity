@@ -3081,7 +3081,7 @@ GameObject:
   - component: {fileID: 2025458781}
   - component: {fileID: 2025458784}
   m_Layer: 0
-  m_Name: Square
+  m_Name: NextScenePortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
