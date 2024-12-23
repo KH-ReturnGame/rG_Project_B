@@ -3189,17 +3189,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 893424317553950623, guid: d1cb20634c87c58428fb03edc7b1291b, type: 3}
+      propertyPath: NextScene
+      value: MapTest1-1
+      objectReference: {fileID: 0}
     - target: {fileID: 893424317553950624, guid: d1cb20634c87c58428fb03edc7b1291b, type: 3}
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 893424317553950624, guid: d1cb20634c87c58428fb03edc7b1291b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.07
+      value: 15.09
       objectReference: {fileID: 0}
     - target: {fileID: 893424317553950624, guid: d1cb20634c87c58428fb03edc7b1291b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.55
+      value: -2.181
       objectReference: {fileID: 0}
     - target: {fileID: 893424317553950624, guid: d1cb20634c87c58428fb03edc7b1291b, type: 3}
       propertyPath: m_LocalPosition.z
