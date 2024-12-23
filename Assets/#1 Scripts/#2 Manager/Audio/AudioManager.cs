@@ -28,7 +28,6 @@ public class AudioManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             Init();
-            Debug.Log("Hey!");
         }
         else
         {
@@ -73,7 +72,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBGM(bool isPlay)
     {
-        Debug.Log("씨발?");
         GameObject childobj = GameObject.Find("BgmPLayer");
         bgmPlayer = childobj.GetComponent<AudioSource>();
         bgmPlayer.volume = bgmVolume * MasterVolume;
