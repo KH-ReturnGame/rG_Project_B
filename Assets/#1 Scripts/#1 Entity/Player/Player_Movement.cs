@@ -23,13 +23,16 @@ public class Player_Movement : MonoBehaviour
     
     //공격 대쉬
     public GameObject WhereToDash;
-    public Animator animator;
-    AfterImage ghost;
+    public float ghostDelay;
+
+    private float ghostDelaySeconds;
+    public GameObject ghost;
+    public bool makeGhost = false;
 
     //제일 처음 호출
     void Start()
     {
-        ghost = GetComponent<AfterImage>();
+        ghostDelaySeconds = ghostDelay;
         _playerRigidbody = GetComponent<Rigidbody2D>();
         _player = GetComponent<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -174,7 +177,22 @@ public class Player_Movement : MonoBehaviour
 
     public void DragonDash() // 대쉬하는거
     {
-        
+        this.makeGhost = true;
+        if (makeGhost)
+        {
+
+            if (ghostDelaySeconds > 0)
+            {
+                ghostDelaySeconds -= Time.deltaTime;
+            }
+            else
+            {
+                //Generate a ghost
+                GameObject currentGhost = Instantiate(ghost, transform.position, transform.rotation);
+                ghostDelaySeconds = ghostDelay;
+                this.makeGhost = false;
+            }
+        }
         transform.position = new Vector2(WhereToDash.transform.position.x, WhereToDash.transform.position.y);
         _playerRigidbody.velocity = Vector2.zero;
         _player.RemoveState(PlayerStates.IsDragon);

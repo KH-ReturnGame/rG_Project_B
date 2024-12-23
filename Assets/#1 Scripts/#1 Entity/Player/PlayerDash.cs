@@ -14,10 +14,10 @@ public class PlayerDash : MonoBehaviour
     public float radius;
     private bool isCanDash;
     public Animator animator;
-    AfterImage ghost;
+    
     void Awake()
     {
-        ghost = GetComponent<AfterImage>();
+        
         spriteRenderer = GetComponent<SpriteRenderer>();
         _player = this.transform.parent.GetComponent<Player>();
 
@@ -91,7 +91,6 @@ public class PlayerDash : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && isCanDash)
         {
-            ghost.makeGhost = true;
             _playerMovement.DragonDash();
             
             if(groundHit)
