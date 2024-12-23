@@ -13,6 +13,7 @@ public class PlayerDash : MonoBehaviour
     public Player_Movement _playerMovement;
     public float radius;
     private bool isCanDash;
+    public Animator animator;
     AfterImage ghost;
     void Awake()
     {
@@ -90,8 +91,9 @@ public class PlayerDash : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && isCanDash)
         {
-            _playerMovement.DragonDash();
             ghost.makeGhost = true;
+            _playerMovement.DragonDash();
+            
             if(groundHit)
             {
                 _player.AddState(PlayerStates.IsWall);
@@ -116,6 +118,8 @@ public class PlayerDash : MonoBehaviour
                     }
                 }
             }
+            
+            
         }
     }
 }

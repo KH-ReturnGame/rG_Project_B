@@ -23,10 +23,13 @@ public class Player_Movement : MonoBehaviour
     
     //공격 대쉬
     public GameObject WhereToDash;
+    public Animator animator;
+    AfterImage ghost;
 
     //제일 처음 호출
     void Start()
     {
+        ghost = GetComponent<AfterImage>();
         _playerRigidbody = GetComponent<Rigidbody2D>();
         _player = GetComponent<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -171,6 +174,7 @@ public class Player_Movement : MonoBehaviour
 
     public void DragonDash() // 대쉬하는거
     {
+        
         transform.position = new Vector2(WhereToDash.transform.position.x, WhereToDash.transform.position.y);
         _playerRigidbody.velocity = Vector2.zero;
         _player.RemoveState(PlayerStates.IsDragon);
