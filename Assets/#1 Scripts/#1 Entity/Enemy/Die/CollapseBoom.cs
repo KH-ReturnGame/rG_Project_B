@@ -20,7 +20,6 @@ public class CollapseBoom : MonoBehaviour
         if (enemy.IsContainState(EnemyStates.IsDie)) // 나중에 죽었을 때 발동
         {
             StartCoroutine(Boom());
-            Destroy(gameObject);
         }
     }
 
