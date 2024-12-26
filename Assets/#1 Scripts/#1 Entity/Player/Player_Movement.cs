@@ -226,8 +226,17 @@ public class Player_Movement : MonoBehaviour
             float t = i / (float)segmentCount;
             Vector2 spawnPos = Vector2.Lerp(startPos, endPos, t);
 
-            GameObject currentGhost = Instantiate(ghost, spawnPos, transform.rotation);
-            Destroy(currentGhost, 0.3f);
+            if(spriteRenderer.flipX == true)
+            {  
+                GameObject currentGhost = Instantiate(ghost, spawnPos, transform.rotation);
+                Destroy(currentGhost, 0.3f);
+            }
+            else
+            {
+                Quaternion Ghost_rot = Quaternion.Euler(0, 180, 0);
+                GameObject currentGhost = Instantiate(ghost, spawnPos, Ghost_rot);
+                Destroy(currentGhost, 0.3f); 
+            }
             yield return new WaitForSeconds(0.025f);
         }
     }
