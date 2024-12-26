@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/#0 Scenes/PlayMaps/main.unity
-    guid: ee7843a3c598a40e290bdc59abfd5d7c
+  - enabled: 1
+    path: Assets/#0 Scenes/SpeedRun.unity
+    guid: 2456d423089fabb47b3e8247cef07956
   - enabled: 1
     path: Assets/#0 Scenes/LoadingScene.unity
     guid: 8c476313e61ecd14ea5a5328ce9f7a88
