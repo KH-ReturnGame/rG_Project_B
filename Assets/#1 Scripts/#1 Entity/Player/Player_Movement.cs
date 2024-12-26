@@ -23,6 +23,10 @@ public class Player_Movement : MonoBehaviour
     
     //공격 대쉬
     public GameObject WhereToDash;
+    public float ghostDelay;
+    private float ghostDelaySeconds;
+    public GameObject ghost;
+    public bool makeGhost = false;
 
     //제일 처음 호출
     void Start()
@@ -182,13 +186,50 @@ public class Player_Movement : MonoBehaviour
     }
 
     public void DragonDash() // 대쉬하는거
-    {
+    {   
+        this.makeGhost = true;
+        if (makeGhost)
+        {
+            if (ghostDelaySeconds > 0)
+            {
+                ghostDelaySeconds -= Time.deltaTime;
+            }
+            else
+            {
+                DragonDashSegmented();
+                ghostDelaySeconds = ghostDelay;
+                this.makeGhost = false;
+            }
+        }
+
         transform.position = new Vector2(WhereToDash.transform.position.x, WhereToDash.transform.position.y);
         _playerRigidbody.velocity = Vector2.zero;
         AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Dash);
         _player.RemoveState(PlayerStates.IsDragon);
         WhereToDash.SetActive(false);
         StartCoroutine(CoolDown());
+    }
+
+    public void DragonDashSegmented()
+    {
+        StartCoroutine(CreateGhostSegments());
+    }
+
+    IEnumerator CreateGhostSegments()
+    {
+        Vector2 startPos = transform.position;
+        Vector2 endPos = WhereToDash.transform.position;
+        int segmentCount = 5;
+
+        for (int i = 1; i <= segmentCount; i++)
+        {
+            float t = i / (float)segmentCount;
+            Vector2 spawnPos = Vector2.Lerp(startPos, endPos, t);
+
+            GameObject currentGhost = Instantiate(ghost, spawnPos, transform.rotation);
+            Destroy(currentGhost, 0.3f);
+            yield return new WaitForSeconds(0.025f);
+        }
     }
 
     IEnumerator CoolDown()

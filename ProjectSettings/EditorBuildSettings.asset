@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/#0 Scenes/PlayMaps/library.unity
     guid: 1d3360e7535b338459f1d24b3f2a414d
   - enabled: 1
+    path: Assets/#0 Scenes/End.unity
+    guid: 6dfff841cdb328841948b7c9df9f1ad5
+  - enabled: 1
     path: Assets/#0 Scenes/PlayMaps/interval3.unity
     guid: c097fdc6b348d9d48bd4c23aa2f6f89e
   - enabled: 1

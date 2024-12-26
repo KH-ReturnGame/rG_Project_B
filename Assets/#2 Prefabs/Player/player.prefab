@@ -856,6 +856,9 @@ MonoBehaviour:
   _jumpForce: 15
   tr: {fileID: 6359978308909536661}
   WhereToDash: {fileID: 543489498112546667}
+  ghostDelay: 0
+  ghost: {fileID: 2891638859253293228, guid: ed6e53cd7bf44dd4a84f977fd853eba3, type: 3}
+  makeGhost: 0
 --- !u!114 &6667239430377057043
 MonoBehaviour:
   m_ObjectHideFlags: 0
