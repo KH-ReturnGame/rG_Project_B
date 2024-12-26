@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2db5c40510f99a448703075431bf228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missile_perfab: {fileID: 9053691379455779787, guid: 4d6b82271ddcc004d8dda1e54f97e1a6, type: 3}
+  missile_perfab: {fileID: 9053691379455779787, guid: 06b8a853abfaaac44bcbcde8fdd3835d, type: 3}
   cool: 3
   summon_pos: {x: 0, y: 1.25, z: 0}
   isGT: 1
