@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 1739000380179588231}
   - component: {fileID: 7805136689485025237}
   - component: {fileID: 4709975163243856631}
-  - component: {fileID: 4218318221424571357}
-  - component: {fileID: -2347996688029901685}
   - component: {fileID: 5759795311759896843}
+  - component: {fileID: 4218318221424571357}
   - component: {fileID: 6362842196641429821}
+  - component: {fileID: -2347996688029901685}
+  - component: {fileID: 2427732177172474835}
   m_Layer: 7
   m_Name: Zombie
   m_TagString: Enemy
@@ -34,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 4709975163243856628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!70 &1739000380179588231
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,6 +164,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 30
   _currentHp: 30
+--- !u!114 &5759795311759896843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4218318221424571357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +186,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4a2274b364bdd849873af24d9fb6f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6362842196641429821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4709975163243856628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b96bcc7a6dccd468002a76821af078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-2347996688029901685
@@ -187,9 +212,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acc0b184780a21499076b5be15b2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collapses: []
+  Collapses:
+  - {fileID: 5888008710895829393, guid: 0892467fb1fc31640938ee96f12a43bd, type: 3}
+  - {fileID: 5888008710895829393, guid: 189fb46072b12da46935adcef85a31ce, type: 3}
+  - {fileID: 5888008710895829393, guid: 121cd8555660cd942906b4b4fb836c8b, type: 3}
+  - {fileID: 5888008710895829393, guid: 5ec52c7d0b95be4499cf8aef6e70ea73, type: 3}
+  - {fileID: 5888008710895829393, guid: 668ce65502d4299428a48b5e0674061a, type: 3}
   spawnRange: 1
---- !u!114 &5759795311759896843
+--- !u!114 &2427732177172474835
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,18 +228,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4709975163243856628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b929672c6df280440a929dfdd5ae711a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6362842196641429821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4709975163243856628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77b96bcc7a6dccd468002a76821af078, type: 3}
+  m_Script: {fileID: 11500000, guid: ca13550ca65fa194fbc800eced061421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

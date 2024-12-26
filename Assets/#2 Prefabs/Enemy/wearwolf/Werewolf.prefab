@@ -187,7 +187,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acc0b184780a21499076b5be15b2676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collapses: []
+  Collapses:
+  - {fileID: 5888008710895829393, guid: e50ce97c5132d4b4c867fccd73bea95a, type: 3}
+  - {fileID: 5888008710895829393, guid: 239a2a050b828b64c9e0f28a0e6f95ea, type: 3}
+  - {fileID: 5888008710895829393, guid: e68e8d598a83b664bb48d0854dd5a183, type: 3}
+  - {fileID: 5888008710895829393, guid: dce128cf4faed29449ca39e9d8572436, type: 3}
+  - {fileID: 5888008710895829393, guid: b77866ef7d7c2544ba5e0c0e5fd938cb, type: 3}
+  - {fileID: 5888008710895829393, guid: 9caf4e5ff8cfeb9409a721b48c9d805d, type: 3}
+  - {fileID: 5888008710895829393, guid: a02d37cd1f5e7474c83666902772045d, type: 3}
   spawnRange: 1
 --- !u!114 &5051421585624682877
 MonoBehaviour:
