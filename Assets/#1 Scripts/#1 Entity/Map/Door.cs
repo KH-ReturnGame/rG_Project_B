@@ -31,6 +31,10 @@ public class Door : MonoBehaviour
     {
         foreach (GameObject enemy in enemies)
         {
+            if(enemy == null)
+            {
+                return true;
+            }
             Enemy enemyScript = enemy.GetComponent<Enemy>();
             if (enemyScript != null && !enemyScript.IsContainState(EnemyStates.IsDie))
             {

@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/#0 Scenes/PlayMaps/main.unity
     guid: ee7843a3c598a40e290bdc59abfd5d7c
   - enabled: 1
@@ -18,8 +18,14 @@ EditorBuildSettings:
     path: Assets/#0 Scenes/PlayMaps/interval2.unity
     guid: a675c4c953ed71b48a8a4ac5b307213a
   - enabled: 1
+    path: Assets/#0 Scenes/PlayMaps/library.unity
+    guid: 1d3360e7535b338459f1d24b3f2a414d
+  - enabled: 1
     path: Assets/#0 Scenes/PlayMaps/interval3.unity
     guid: c097fdc6b348d9d48bd4c23aa2f6f89e
+  - enabled: 1
+    path: Assets/#0 Scenes/PlayMaps/lab.unity
+    guid: e90fb88dbf53b0e4c9ec5aa14c2b7fad
   - enabled: 1
     path: Assets/#0 Scenes/StartScene.unity
     guid: 052ea3f9638b0244d94d243a21a227fe

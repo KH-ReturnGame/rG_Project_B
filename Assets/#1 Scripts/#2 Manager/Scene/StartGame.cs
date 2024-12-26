@@ -26,7 +26,7 @@ public class StartGame : MonoBehaviour
 
         yield return new WaitForSeconds(5f);//딱 [5초]...다!
         
-        SceneLoadManager.Instance.LoadScene("main");
+        SceneLoadManager.Instance.LoadScene("interval1");
 
         yield return null;
     }

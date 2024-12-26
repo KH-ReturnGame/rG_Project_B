@@ -20,7 +20,10 @@ public class CreateBoom : MonoBehaviour
         if(enemy.IsContainState(EnemyStates.IsDie) && isboom == false)
         {
             Animator anim = GetComponent<Animator>();
-            anim.enabled = false;
+            if(anim != null)
+            {
+                anim.enabled = false;
+            }
 
             Instantiate(Boooom, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1), Quaternion.identity);
             isboom = true;

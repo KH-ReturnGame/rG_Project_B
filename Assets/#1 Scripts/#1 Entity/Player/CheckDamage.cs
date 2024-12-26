@@ -21,11 +21,11 @@ public class CheckDamage : MonoBehaviour
     {
         if (other.gameObject.tag == "bullet")
         {
-            _player.TakeDamage(5);
+            _player.TakeDamage(2.5f);
         }
         else if(other.gameObject.tag == "missile")
         {
-            _player.TakeDamage(15);
+            _player.TakeDamage(5);
         }
     }
 }

@@ -15,7 +15,7 @@ public class EnemyRangedAttack : MonoBehaviour
     void Start()
     {
         _enemy = GetComponent<Enemy>();        
-        _player = GetComponent<Enemy_RangedPlayerChase>().player;
+        _player = GameObject.Find("player(Clone)").transform;
         anim = GetComponent<Animator>();
     }
 
@@ -54,8 +54,10 @@ public class EnemyRangedAttack : MonoBehaviour
             {
                 yield break; // 코루틴 종료
             }
-
-            anim.SetTrigger("attack");
+            if(anim != null)
+            {
+                anim.SetTrigger("attack");
+            }
             yield return new WaitForSeconds(0.5f);
             // 총알 발사
             if (transform.position.x < _player.position.x)
