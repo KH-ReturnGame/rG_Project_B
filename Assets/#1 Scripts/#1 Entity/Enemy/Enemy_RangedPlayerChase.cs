@@ -13,7 +13,6 @@ public class Enemy_RangedPlayerChase : MonoBehaviour
 
     void Start()
     {
-        limit_distance = 5f;
         player_trs = GameObject.Find("player(Clone)").transform;
         _enemy = GetComponent<Enemy>();
         spriteRenderer = GetComponent<SpriteRenderer>();

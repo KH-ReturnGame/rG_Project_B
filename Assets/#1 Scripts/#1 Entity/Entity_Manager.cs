@@ -22,7 +22,7 @@ public class Entity_Manager : MonoBehaviour
         //플레이어 생성
         clone = Instantiate(playerPrefab1);
         _player = clone.GetComponent<Player>();
-        _player.Setup(1000f);
+        _player.Setup(500f);
     }
 
     private void Update()

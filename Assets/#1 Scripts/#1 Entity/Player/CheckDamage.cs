@@ -19,13 +19,18 @@ public class CheckDamage : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "bullet")
+        if (other.gameObject.tag == "trap")
         {
-            _player.TakeDamage(2.5f);
+            Debug.Log("??");
+            _player.TakeDamage(25f);
+        }
+        else if (other.gameObject.tag == "bullet")
+        {
+            _player.TakeDamage(15f);
         }
         else if(other.gameObject.tag == "missile")
         {
-            _player.TakeDamage(5);
+            _player.TakeDamage(20f);
         }
     }
 }
