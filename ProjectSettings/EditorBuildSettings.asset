@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/#0 Scenes/SpeedRun.unity
-    guid: 2456d423089fabb47b3e8247cef07956
+    path: Assets/#0 Scenes/StartScene.unity
+    guid: 052ea3f9638b0244d94d243a21a227fe
   - enabled: 1
     path: Assets/#0 Scenes/LoadingScene.unity
     guid: 8c476313e61ecd14ea5a5328ce9f7a88
@@ -18,11 +18,11 @@ EditorBuildSettings:
     path: Assets/#0 Scenes/PlayMaps/interval2.unity
     guid: a675c4c953ed71b48a8a4ac5b307213a
   - enabled: 1
+    path: Assets/#0 Scenes/SpeedRun.unity
+    guid: 2456d423089fabb47b3e8247cef07956
+  - enabled: 1
     path: Assets/#0 Scenes/PlayMaps/library.unity
     guid: 1d3360e7535b338459f1d24b3f2a414d
-  - enabled: 1
-    path: Assets/#0 Scenes/End.unity
-    guid: 6dfff841cdb328841948b7c9df9f1ad5
   - enabled: 1
     path: Assets/#0 Scenes/PlayMaps/interval3.unity
     guid: c097fdc6b348d9d48bd4c23aa2f6f89e
@@ -30,12 +30,12 @@ EditorBuildSettings:
     path: Assets/#0 Scenes/PlayMaps/lab.unity
     guid: e90fb88dbf53b0e4c9ec5aa14c2b7fad
   - enabled: 1
-    path: Assets/#0 Scenes/StartScene.unity
-    guid: 052ea3f9638b0244d94d243a21a227fe
+    path: Assets/#0 Scenes/PlayMaps/jail.unity
+    guid: a853b0b7e1fe8c64ca7fc162c324accf
   - enabled: 1
     path: Assets/#0 Scenes/Settings.unity
     guid: ac760ef88844cb24d82acbad060030de
   - enabled: 1
-    path: Assets/#0 Scenes/PlayMaps/jail.unity
-    guid: a853b0b7e1fe8c64ca7fc162c324accf
+    path: Assets/#0 Scenes/End.unity
+    guid: 6dfff841cdb328841948b7c9df9f1ad5
   m_configObjects: {}

@@ -70,7 +70,6 @@ public class rankManager : MonoBehaviour
                                     Debug.LogError("Failed to update data: " + writeTask.Exception);
                                 } else if (writeTask.IsCompleted) {
                                     Debug.Log("Score successfully updated for existing user!");
-                                    SceneLoadManager.Instance.LoadScene("StartScene");
                                 }
                             });
                     }
@@ -84,7 +83,6 @@ public class rankManager : MonoBehaviour
                                     Debug.LogError("Failed to update data: " + writeTask.Exception);
                                 } else if (writeTask.IsCompleted) {
                                     Debug.Log("Score successfully updated for existing user!");
-                                    SceneLoadManager.Instance.LoadScene("StartScene");
                                 }
                         });
                     }
@@ -100,7 +98,6 @@ public class rankManager : MonoBehaviour
                                 Debug.LogError("Failed to write data: " + writeTask.Exception);
                             } else if (writeTask.IsCompleted) {
                                 Debug.Log("Data successfully written!");
-                                SceneLoadManager.Instance.LoadScene("StartScene");
                             }
                         });
                 }

@@ -38,7 +38,6 @@ public class EndSpeed : MonoBehaviour
     {
         string userInput = inputField.text;
         _rankManager.SetRank(3, userInput, uiText.text, false);
-        SceneLoadManager.Instance.LoadScene("StartScene");
     }
 
     private void UpdateTimerUI()
