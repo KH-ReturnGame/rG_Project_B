@@ -6,6 +6,7 @@ public class StartGame : MonoBehaviour
 {
     public GameObject StartCam;
     public GameObject UI;
+    public StartSceneManage _startSceneManage;
     float a = 0;
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,11 @@ public class StartGame : MonoBehaviour
     IEnumerator startCor()
     {
         UI.SetActive(false);
+        Time.timeScale = 1;
 
         yield return new WaitForSeconds(5f);//딱 [5초]...다!
         
-        SceneLoadManager.Instance.LoadScene("interval1");
+        _startSceneManage.LoadScene("interval1");
 
         yield return null;
     }

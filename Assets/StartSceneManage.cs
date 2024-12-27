@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Restart : MonoBehaviour
+public class StartSceneManage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,13 @@ public class Restart : MonoBehaviour
     {
         
     }
-    public void _restart()
+    public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene(sceneName); // 로딩 씬으로 이동
+    }
+    
+    public void GameQuit()
+    {
+        Application.Quit();
     }
 }

@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 211430371}
   - component: {fileID: 211430370}
   - component: {fileID: 211430369}
+  - component: {fileID: 211430372}
   m_Layer: 5
   m_Name: "\uC124\uC815"
   m_TagString: Untagged
@@ -325,8 +326,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 510327650}
-        m_TargetAssemblyTypeName: SceneLoadManager, Assembly-CSharp
+      - m_Target: {fileID: 211430372}
+        m_TargetAssemblyTypeName: StartSceneManage, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -375,6 +376,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211430367}
   m_CullTransparentMesh: 1
+--- !u!114 &211430372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211430367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27c6080f4f4d7d4aa3176575d116334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &427352552
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,8 +713,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 510327650}
-        m_TargetAssemblyTypeName: SceneLoadManager, Assembly-CSharp
+      - m_Target: {fileID: 211430372}
+        m_TargetAssemblyTypeName: StartSceneManage, Assembly-CSharp
         m_MethodName: GameQuit
         m_Mode: 1
         m_Arguments:
@@ -781,6 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartCam: {fileID: 56753210}
   UI: {fileID: 2004735299}
+  _startSceneManage: {fileID: 211430372}
 --- !u!4 &516551959
 Transform:
   m_ObjectHideFlags: 0
@@ -1599,8 +1613,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 510327650}
-        m_TargetAssemblyTypeName: SceneLoadManager, Assembly-CSharp
+      - m_Target: {fileID: 211430372}
+        m_TargetAssemblyTypeName: StartSceneManage, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
